@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["FullTitle"] = ViewData["Title"] + (Url.Action() != "/" ? " | ReGuilded" : "");
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @* Title *@
+    <title>@ViewData["FullTitle"]</title>
+    <link rel="icon" href="~/favicon.ico" />
+        
+    @* Meta *@
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="@ViewData["Description"]" />
+    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta name="theme-color" content="#cc3333" />
+    
+    @* OpenGraph Meta *@
+    <meta name="og:image" content="" />
+    
+    @* Styles *@
+    <link rel="stylesheet" href="~/css/site.min.css">
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body>
+    <nav>
+        <a href="/"><h1><img src="~/img/LogoTransparent.svg" alt="ReGuilded Logo">ReGuilded</h1></a>
+        <menu>
+            <li><a href="/themes">Themes</a></li>
+            <li><a href="/addons">Addons</a></li>
+            <li><a href="https://guilded.gg/reguilded">Guilded</a></li>
+            <li><a href="https://github.com/ReGuilded/ReGuilded">GitHub</a></li>
+        </menu>
+    </nav>
+
+    <main>@RenderBody()</main>
+
+    <footer>
+        <p class="copyright">&copy;@DateTime.Now.Year All Rights Reserved - ReGuilded</p>
+        <p class="disclaimer">Not affiliated with <a href="https://guilded.gg">Guilded Inc.</a></p>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
