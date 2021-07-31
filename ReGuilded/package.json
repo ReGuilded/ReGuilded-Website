@@ -1,0 +1,37 @@
+{
+  "name": "reguilded_website",
+  "version": "1.0.0",
+  "description": "The website for ReGuilded.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReGuilded/Website.git"
+  },
+  "keywords": [
+    "reguilded",
+    "guilded",
+    "website",
+    "web",
+    "site",
+    "client",
+    "app",
+    "injector",
+    "mod",
+    "modifier"
+  ],
+  "author": "ReGuilded team",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ReGuilded/Website/issues"
+  },
+  "homepage": "https://reguilded.dev",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-header": "^2.0.9",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.37.0"
+  }
+}

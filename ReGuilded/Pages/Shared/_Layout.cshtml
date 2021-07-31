@@ -14,8 +14,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="@ViewData["Description"]" />
-    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta name="description" content='@ViewData["Description"]' />
+    <meta name="keywords" content='@ViewData["Keywords"]' />
     <meta name="theme-color" content="#cc3333" />
     
     @* OpenGraph Meta *@
@@ -24,16 +24,29 @@
     @* Styles *@
     <link rel="stylesheet" href="~/css/site.css">
     @await RenderSectionAsync("Styles", required: false)
+
+    @* // Include Prism.JS // *@
 </head>
 
 <body>
-    <nav>
-        <a href="/"><img class="navLogo" src="~/img/LogoTransparent.svg" alt="ReGuilded Logo" />ReGuilded</a>
-        <menu>
-            <li><a href="/themes">Themes</a></li>
-            <li><a href="/addons">Addons</a></li>
-            <li><a href="https://guilded.gg/reguilded">Guilded</a></li>
-            <li><a href="https://github.com/ReGuilded/ReGuilded">GitHub</a></li>
+    <nav class="navigation">
+        <a class="navigation-logo" href="/">
+            <img class="navigation-icon" src="~/img/LogoTransparent.svg" alt="ReGuilded Logo" />
+            <span class="navigation-label">ReGuilded</span>
+        </a>
+        <menu class="navigation-menu">
+            <li class="navigation-button">
+                <a class="navigation-link" href="/themes">Themes</a>
+            </li>
+            <li class="navigation-button">
+                <a class="navigation-link" href="/addons">Addons</a>
+            </li>
+            <li class="navigation-button">
+                <a class="navigation-link" href="https://guilded.gg/reguilded">Guilded</a>
+            </li>
+            <li class="navigation-button">
+                <a class="navigation-link" href="https://github.com/ReGuilded/ReGuilded">GitHub</a>
+            </li>
         </menu>
     </nav>
 

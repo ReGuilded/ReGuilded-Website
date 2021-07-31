@@ -1,0 +1,36 @@
+@use 'sass:color'
+
+// Background colours
+$bg-0: #161616
+$bg-1: #202020
+$bg-2: #353535
+
+// Foreground colours
+$fg-0: #dfdfdf
+$fg-1: #ccc
+$fg-2: #aaa
+
+// Special colours
+$theme: #CC3333
+$theme-highlight: color.adjust($theme, $whiteness: 30%)
+
+// Padding and margin
+$spacing-0: 0.4rem
+$spacing-1: 0.8rem
+$spacing-2: 1rem
+$spacing-3: 1.4rem
+
+// Misc
+$font: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+$transition-period: 0.2s
+
+// Creates -moz-, -o- and -webkit- versions of same variable
+@mixin cross-prop($prop, $value)
+    -o-#{$prop}: $value
+    -moz-#{$prop}: $value
+    -webkit-#{$prop}: $value 
+    #{$prop}: $value
+
+@mixin default-transition($prop)
+    @include cross-prop(transition-property, $prop)
+    @include cross-prop(transition-duration, $transition-period)
