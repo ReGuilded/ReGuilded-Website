@@ -22,13 +22,13 @@
     <meta name="og:image" content="" />
     
     @* Styles *@
-    <link rel="stylesheet" href="~/css/site.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
     @await RenderSectionAsync("Styles", required: false)
 </head>
 
 <body>
     <nav>
-        <a href="/"><h1><img src="~/img/LogoTransparent.svg" alt="ReGuilded Logo">ReGuilded</h1></a>
+        <a href="/"><img class="navLogo" src="~/img/LogoTransparent.svg" alt="ReGuilded Logo" />ReGuilded</a>
         <menu>
             <li><a href="/themes">Themes</a></li>
             <li><a href="/addons">Addons</a></li>
@@ -41,6 +41,7 @@
 
     <footer>
         <p class="copyright">&copy;@DateTime.Now.Year All Rights Reserved - ReGuilded</p>
+        <p>&nbsp;•&nbsp;</p>
         <p class="disclaimer">Not affiliated with <a href="https://guilded.gg">Guilded Inc.</a></p>
     </footer>
 

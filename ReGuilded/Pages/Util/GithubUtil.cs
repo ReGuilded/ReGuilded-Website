@@ -1,5 +1,3 @@
 ﻿namespace ReGuilded.Pages.Util {
-    public class GithubUtil {
-        
-    }
+    public class GithubUtil { }
 }

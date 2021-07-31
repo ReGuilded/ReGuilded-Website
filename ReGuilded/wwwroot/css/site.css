@@ -1,1 +1,139 @@
-﻿
+﻿/**************/
+/* Components */
+/**************/
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: #dfdfdf;
+    background-color: #202020;
+    overflow-x: hidden;
+}
+
+hr {
+    border: none;
+}
+
+/* Links */
+a {
+    color: #cc3333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d35050;
+}
+
+/* Headers & Content */
+h1, h2, h3, h4, h5 {
+    font-weight: 400;
+    font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.75em;
+    font-weight: 300;
+    margin: 15px 0;
+}
+
+h3 {
+    font-size: 1.875em;
+    font-weight: 300;
+    margin: 0;
+}
+
+h4 {
+    font-size: 1.225em;
+    margin: 25px 0 5px 0;
+}
+
+h5 {
+    font-size: 1.1em;
+    margin: 10px 0 5px 0;
+}
+
+p {
+    font-size: 1.3em;
+    line-height: 1.4em;
+    margin: 10px 0 10px 0;
+}
+
+/* Lists */
+ul, menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/**************/
+/* Navigation */
+/**************/
+nav {
+    width: 100%;
+    height: 52px;
+    
+    display: flex;
+    align-items: center;
+    
+    background-color: #202020;
+}
+
+nav > a {
+    width: 52px;
+
+    font-size: 26px;
+    
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navLogo {
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+}
+
+nav > menu {
+    position: absolute;
+    right: 0;
+    display: flex;
+    
+}
+
+nav > menu > li {
+    margin: 10px;
+}
+
+/**********/
+/* Footer */
+/**********/
+footer {
+    color: #202020;
+    background-color: #CC3333;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 52px;
+}
+
+footer > p > a {
+    color: #202020;
+}
+
+footer > p > a:hover {
+    color: #353535;
+}

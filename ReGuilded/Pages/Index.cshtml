@@ -7,9 +7,38 @@
 }
 
 <section id="splash">
-    <img src="~/img/Banner.png" alt="ReGuilded Banner">
+    <img class="banner" src="~/img/Banner.png" alt="ReGuilded Banner">
 </section>
 
 <section id="download">
-    
+    <h1>Downloads</h1>
+    <ul class="downloads">
+        <li id="linux" class="download">
+            <img src="https://icongr.am/fontawesome/linux.svg?color=ffffff" alt="Linux Logo">
+            <h3>Linux</h3>
+            <a href="https://github.com/ReGuilded/ReGuilded-Setup/releases/download/v0.0.1-alpha/ReGuilded-Setup-0.0.1-alpha.AppImage"><button>Download</button></a>
+        </li>
+
+        <li id="windows" class="download">
+            <img src="https://icongr.am/fontawesome/windows.svg?color=ffffff" alt="Windows Logo">
+            <h3>Windows</h3>
+            <a href="https://github.com/ReGuilded/ReGuilded-Setup/releases/download/v0.0.1-alpha/ReGuilded-Setup-0.0.1-alpha.exe" download><button>Download</button></a>
+        </li>
+
+        <li id="mac" class="download mac">
+            <img src="https://icongr.am/fontawesome/apple.svg?color=ffffff" alt="Mac Logo">
+            <h3>Mac</h3>
+            <a href="https://github.com/ReGuilded/ReGuilded-Setup/releases/download/v0.0.1-alpha/ReGuilded-Setup-0.0.1-alpha.dmg" download><button>Download</button></a>
+        </li>
+    </ul>
 </section>
+
+@* <section id="roadmap"> *@
+@*     <ul> *@
+@*          *@
+@*     </ul> *@
+@* </section> *@
+
+@section Styles {
+    <link href="~/css/index.css" rel="stylesheet" asp-append-version="true"/>
+}
