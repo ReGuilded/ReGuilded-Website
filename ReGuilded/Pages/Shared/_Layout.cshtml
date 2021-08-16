@@ -22,7 +22,7 @@
     <meta name="og:image" content="" />
     
     @* Styles *@
-    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
     @await RenderSectionAsync("Styles", required: false)
 
     @* // Include Prism.JS // *@
@@ -35,11 +35,14 @@
             <span class="navigation-label">ReGuilded</span>
         </a>
         <menu class="navigation-menu">
-            <li class="navigation-button">
-                <a class="navigation-link" href="/themes">Themes</a>
+            <li class="navigation-button disabled">
+                <a class="navigation-link disabled" href="/themes" onclick="return false">Themes</a>
+            </li>
+            <li class="navigation-button disabled">
+                <a class="navigation-link disabled" href="/addons" onclick="return false">Addons</a>
             </li>
             <li class="navigation-button">
-                <a class="navigation-link" href="/addons">Addons</a>
+                <a class="navigation-link" href="/downloads">Downloads</a>
             </li>
             <li class="navigation-button">
                 <a class="navigation-link" href="https://guilded.gg/reguilded">Guilded</a>

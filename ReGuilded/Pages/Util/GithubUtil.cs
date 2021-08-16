@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Primitives;
 using Octokit;
@@ -45,7 +47,7 @@ namespace ReGuilded.Pages.Util {
 
             return downloads;
         }
-        
+
     }
 
     public class FetchedDownload {

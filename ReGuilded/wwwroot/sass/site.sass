@@ -59,9 +59,15 @@ body
                 display: flex
                 align-items: center
                 color: $theme
+            .navigation-link.disabled
+                color: $theme-disabled
+                
             // Add border at the bottom
             &:hover
                 border-bottom-color: $theme
+            &:hover.disabled
+                border-bottom-color: $theme-disabled
+
 
 // Site footer
 footer
@@ -86,6 +92,7 @@ footer
         &:hover
             color: $theme-highlight
 
+
 // The body
 main
     padding: $spacing-2
@@ -96,6 +103,9 @@ main
 
 hr
     border: none
+
+ul
+    padding-inline: 0
 
 // Links
 a
@@ -151,4 +161,8 @@ p
 // Highlighted text with the theme
 .text-themed
     color: $theme
+    font-weight: bold
+
+.guilded-themed
+    color: $guilded
     font-weight: bold

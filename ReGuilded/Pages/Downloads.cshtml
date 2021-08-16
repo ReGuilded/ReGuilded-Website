@@ -2,9 +2,9 @@
 @model DownloadsModel
 @using ReGuilded.Pages.Util;
 @{
-    ViewData["Title"] = "ReGuilded";
+    ViewData["Title"] = "Downloads";
     ViewData["Description"] = "ReGuilded is a client injector/client mod that allows you to extend the functionality of Guilded's client by providing theme and add-on support.";
-    ViewData["Keywords"] = "reguilded,guilded,client,mod,themes,addons";
+    ViewData["Keywords"] = "reguilded,guilded,client,mod,themes,addons,download";
 }
 
 <section id="splash">
@@ -15,15 +15,15 @@
     <h2>Downloads</h2>
     <ul class="downloads">
         @if (Model.FetchedDownloads == null || Model.FetchedDownloads.Count == 0 || Model.InternalServerError) {
-            <li class="download">
+            <li class="download-item">
                 <p>Internal Server Error</p>
             </li>
         } else {
             @foreach (FetchedDownload fetchedDownload in Model.FetchedDownloads) {
-                <li id="@fetchedDownload.Platform" class="downloads">
+                <li id="@fetchedDownload.Platform" data-tilt class="download-item">
                     <img src="img/platforms/@(fetchedDownload.Platform).svg" alt="@fetchedDownload.DisplayName Logo">
                     <h3>@fetchedDownload.DisplayName</h3>
-                    <a href="@fetchedDownload.DownloadUrl"><button>Download</button></a>
+                    <a class="download-link" href="@fetchedDownload.DownloadUrl"><button class="download-button">Download</button></a>
                 </li>
             }
         }
@@ -39,3 +39,5 @@
 @section Styles {
     <link href="~/css/downloads.css" rel="stylesheet" asp-append-version="true"/>
 }
+
+<script type="text/javascript" src="~/js/vanilla-tilt.js" asp-append-version="true"></script>
