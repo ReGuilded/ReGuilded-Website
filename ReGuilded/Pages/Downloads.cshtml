@@ -20,7 +20,7 @@
             </li>
         } else {
             @foreach (FetchedDownload fetchedDownload in Model.FetchedDownloads) {
-                <li id="@fetchedDownload.Platform" data-tilt class="download-item">
+                <li id="@fetchedDownload.Platform" class="download-item">
                     <img src="img/platforms/@(fetchedDownload.Platform).svg" alt="@fetchedDownload.DisplayName Logo">
                     <h3>@fetchedDownload.DisplayName</h3>
                     <a class="download-link" href="@fetchedDownload.DownloadUrl"><button class="download-button">Download</button></a>
@@ -39,5 +39,3 @@
 @section Styles {
     <link href="~/css/downloads.css" rel="stylesheet" asp-append-version="true"/>
 }
-
-<script type="text/javascript" src="~/js/vanilla-tilt.js" asp-append-version="true"></script>
