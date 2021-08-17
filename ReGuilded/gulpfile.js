@@ -1,7 +1,7 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
 
-gulp.task('default', async cb => compileSass)
+gulp.task('default', async cb => compileSass())
 gulp.task('live-rebuild', async cb => {
     gulp.watch(`./wwwroot/sass/**/*.sass`, compileSass)
 })
