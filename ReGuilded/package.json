@@ -4,7 +4,9 @@
   "description": "The website for ReGuilded.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp"
+    "test": "gulp",
+    "build": "gulp",
+    "watch": "gulp live-rebuild"
   },
   "repository": {
     "type": "git",
