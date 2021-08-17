@@ -31,7 +31,8 @@
     border: $theme
     border-radius: $spacing-1
 
-    transition: $transition-period ease
+    transition-property: width, height, box-shadow, border-radius
+    transition-duration: $transition-period
     
     &:hover
         //border: $theme solid 2px
@@ -42,7 +43,7 @@
         
         
     .download-link
-        width: 40%
+        width: 50%
         height: 20%
         
     .download-button
@@ -62,3 +63,24 @@
             cursor: pointer
             border: $theme solid
             border-radius: $spacing-3
+
+/*
+ * -=- Smaller Screens -=-
+ */
+@media (max-width: 1100px)
+
+    .download-item
+        .download-link
+            width: 80%
+
+/*
+ * -=- Mobile -=-
+ */
+
+@media (max-width: 800px)
+
+    .downloads
+        flex-direction: column
+
+        .download-item
+            width: calc(100% - 2rem - 2vw)

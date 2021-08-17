@@ -48,7 +48,6 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\img\platforms" />
-      <Folder Include="wwwroot\js" />
     </ItemGroup>
 
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
