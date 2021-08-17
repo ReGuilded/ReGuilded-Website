@@ -34,6 +34,11 @@
             <img class="navigation-icon" src="~/img/LogoTransparent.svg" alt="ReGuilded Logo" />
             <span class="navigation-label">ReGuilded</span>
         </a>
+        <button>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <menu class="navigation-menu">
             <li class="navigation-button disabled">
                 <a class="navigation-link disabled" href="/themes" onclick="return false">Themes</a>
@@ -60,7 +65,8 @@
         <p>&nbsp;•&nbsp;</p>
         <p class="disclaimer">Not affiliated with <a href="https://guilded.gg">Guilded Inc.</a></p>
     </footer>
-
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
