@@ -1,8 +1,21 @@
 @import '../header'
 
 .banner
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
     width: 100%
     border-radius: $spacing-1
+    background-color: $theme
+
+    .banner-logo
+        fill: $bg-1
+
+    .banner-wordmark
+        color: #111820
+        font-size: xxx-large
 
 #download
     text-align: center
@@ -84,3 +97,6 @@
 
         .download-item
             width: calc(100% - 2rem - 2vw)
+            
+    .banner-wordmark
+        display: none

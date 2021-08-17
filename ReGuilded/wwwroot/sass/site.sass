@@ -32,6 +32,7 @@ body
         display: flex
         position: absolute
         align-items: center
+        z-index: 10
 
         fill: $theme
         color: $theme
@@ -86,6 +87,7 @@ footer
     align-items: center
 
     width: 100%
+    height: 100px
     padding: 1.5rem
     box-sizing: border-box
 
@@ -103,6 +105,7 @@ footer
 // The body
 main
     padding: $spacing-2
+    min-height: calc(100vh - 42px - 100px - 2rem)
 
 /*
  * -=- Element overrides -=-
@@ -179,7 +182,6 @@ p
  */
 
 @media (max-width: 800px)
-
     // Navigation Menu
     .navigation
         display: block
@@ -193,10 +195,7 @@ p
             justify-content: center
             flex-direction: column
             visibility: hidden
-
-            // Menu Items
-            .navigation-button
-                background-color: $bg-0
+            background-color: $bg-0      
 
         // Mobile Menu Button
         button
