@@ -1,11 +1,114 @@
-{
-  "developers": [
-    "xd9ZOzpm",
-    "R40Mp0Wd",
-    "ZdNv9Kwd",
-    "Pm780yPA",
-    "ArgrPvw4",
-    "AnbaMOyA"
-  ],
-  "contributors": [ ]
-}
+[
+  {
+    "guildedId": "xd9ZOzpm",
+    "commentName": "Nathaniel",
+    "titles": [ "Founder", "Project Lead", "Lead Developer"],
+    "coreProjects": [ "App", "Installer", "Website" ],
+    "isCoreDeveloper": true,
+    "isProjectLead": true,
+    "socials": {
+      "github": "https://github.com/ItzNxthaniel",
+      "twitter": "https://twitter.com/ItzNxthaniel"
+    }
+  },
+  {
+    "guildedId": "R40Mp0Wd",
+    "commentName": "IdkGoodName",
+    "titles": [ "Project Lead", "Lead Developer"],
+    "coreProjects": [ "App", "Website" ],
+    "isCoreDeveloper": true,
+    "isProjectLead": true,
+    "socials": {
+      "github": "https://github.com/IdkGoodName",
+      "twitter": "https://twitter.com/IdkGoodNameV1"
+    }
+  },
+  {
+    "guildedId": "Pm780yPA",
+    "commentName": "MasicoreLord",
+    "titles": [ "Core Developer" ],
+    "coreProjects": [ "App" ],
+    "isCoreDeveloper": true,
+    "socials": {
+      "github": "https://github.com/MasicoreLord"
+    }
+  },
+  {
+    "guildedId": "ZdNv9Kwd",
+    "commentName": "Metalloriff",
+    "titles": [ "Core Developer" ],
+    "coreProjects": [ "App" ],
+    "isCoreDeveloper": true,
+    "socials": {
+      "github": "https://github.com/Metalloriff"
+    }
+  },
+  {
+    "guildedId": "bdz9V214",
+    "commentName": "11pixels",
+    "titles": [ "Icon Designer" ],
+    "isContributor": true
+  },
+  {
+    "guildedId": "AnbaMOyA",
+    "commentName": "Bloom Sirenix",
+    "titles": [ "Contributor" ],
+    "contributedProjects": [ "App" ],
+    "isContributor": true,
+    "socials": {
+      "github": "https://github.com/bloomsirenix"
+    }
+  },
+  {
+    "guildedId": "GmjJZnMm",
+    "commentName": "Burrito",
+    "titles": [ "Twitter Manager", "Contributor" ],
+    "contributedProjects": [ "App" ],
+    "isContributor": true,
+    "isSocialTeam": true,
+    "socials": {
+      "github": "https://github.com/burritosoftware",
+      "twitter": "https://twitter.com/BurritoSOFTWARE"
+    }
+  },
+  {
+    "guildedId": "xAY1P1RA",
+    "commentName": "Korbs",
+    "titles": [ "Contributor" ],
+    "contributedProjects": [ "App", "Installer" ],
+    "isContributor": true,
+    "socials": {
+      "github": "https://github.com/KorbsStudio",
+      "twitter": "https://twitter.com/KorbsStudio"
+    }
+  },
+  {
+    "guildedId": "bdz2VWbd",
+    "commentName": "FireController#1847",
+    "titles": [ "Contributor", "Website Host" ],
+    "coreProjects": [ "App", "Website" ],
+    "isContributor": true,
+    "socials": {
+      "github": "https://github.com/FireController1847"
+    }
+  },
+  {
+    "guildedId": "VmMLeVEd",
+    "commentName": "Ny404",
+    "titles": [ "Reddit Manager", "Internal MacOS Tester" ],
+    "isSocialTeam": true,
+    "socials": {
+      "twitter": "https://twitter.com/SirNickYeung"
+    }
+  },
+  {
+    "guildedId": "GAnY7w2m",
+    "commentName": "Zane DragonBorn",
+    "titles": [ "Reddit Manager" ],
+    "isSocialTeam": true,
+    "socials": {
+      "github": "https://github.com/ZaneDragonBorn",
+      "twitter": "https://twitter.com/DragonbornZane"
+    }
+  }
+]
