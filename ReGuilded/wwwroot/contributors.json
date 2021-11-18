@@ -86,7 +86,7 @@
     "guildedId": "bdz2VWbd",
     "commentName": "FireController#1847",
     "titles": [ "Contributor", "Website Host" ],
-    "coreProjects": [ "App", "Website" ],
+    "contributedProjects": [ "App", "Website" ],
     "isContributor": true,
     "socials": {
       "github": "https://github.com/FireController1847"
