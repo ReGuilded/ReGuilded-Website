@@ -72,17 +72,6 @@
     }
   },
   {
-    "guildedId": "xAY1P1RA",
-    "commentName": "Korbs",
-    "titles": [ "Contributor" ],
-    "contributedProjects": [ "App", "Installer" ],
-    "isContributor": true,
-    "socials": {
-      "github": "https://github.com/KorbsStudio",
-      "twitter": "https://twitter.com/KorbsStudio"
-    }
-  },
-  {
     "guildedId": "bdz2VWbd",
     "commentName": "FireController#1847",
     "titles": [ "Contributor", "Website Host" ],
