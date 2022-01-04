@@ -36,9 +36,9 @@
   {
     "guildedId": "ZdNv9Kwd",
     "commentName": "Metalloriff",
-    "titles": [ "Core Developer" ],
-    "coreProjects": [ "App" ],
-    "isCoreDeveloper": true,
+    "titles": [ "Contributor" ],
+    "contributedProjects": [ "App" ],
+    "isContributor": true,
     "socials": {
       "github": "https://github.com/Metalloriff"
     }
