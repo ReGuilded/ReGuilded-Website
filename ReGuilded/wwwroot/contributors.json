@@ -60,18 +60,6 @@
     }
   },
   {
-    "guildedId": "GmjJZnMm",
-    "commentName": "Burrito",
-    "titles": [ "Twitter Manager", "Contributor" ],
-    "contributedProjects": [ "App" ],
-    "isContributor": true,
-    "isSocialTeam": true,
-    "socials": {
-      "github": "https://github.com/burritosoftware",
-      "twitter": "https://twitter.com/BurritoSOFTWARE"
-    }
-  },
-  {
     "guildedId": "bdz2VWbd",
     "commentName": "FireController#1847",
     "titles": [ "Contributor", "Website Host" ],
@@ -82,12 +70,15 @@
     }
   },
   {
-    "guildedId": "VmMLeVEd",
-    "commentName": "Ny404",
-    "titles": [ "Reddit Manager", "Internal MacOS Tester" ],
+    "guildedId": "GmjJZnMm",
+    "commentName": "Burrito",
+    "titles": [ "Twitter Manager", "Contributor" ],
+    "contributedProjects": [ "App" ],
+    "isContributor": true,
     "isSocialTeam": true,
     "socials": {
-      "twitter": "https://twitter.com/SirNickYeung"
+      "github": "https://github.com/burritosoftware",
+      "twitter": "https://twitter.com/BurritoSOFTWARE"
     }
   },
   {
