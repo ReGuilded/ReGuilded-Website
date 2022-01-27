@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp",
+    "buildJson": "gulp json",
     "watch": "gulp live-rebuild"
   },
   "repository": {
