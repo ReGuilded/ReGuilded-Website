@@ -15,10 +15,16 @@ async function compileSass() {
         .pipe(gulp.dest(`./wwwroot/css`));
 }
 const transformJson = through2.obj((file, encoding, callback) => {
-    const content = file.contents.toString();
-    const json = JSON.stringify(JSON.parse(content).map(contributor => contributor.guildedId));
+    const content = JSON.parse(file.contents.toString());
+    const json = {
+        dev: [],
+        contrib: []
+    };
+    
+    json.dev = content.filter(contributor => contributor.isCoreDeveloper).map(contributor => contributor.guildedId);
+    json.contrib = content.filter(contributor => contributor.isContributor).map(contributor => contributor.guildedId);
 
-    file.contents = Buffer.from(json);
+    file.contents = Buffer.from(JSON.stringify(json));
     file.path = file.path.replace(/contributors[.]json$/, "contributorIds.json");
 
     callback(null, file);
