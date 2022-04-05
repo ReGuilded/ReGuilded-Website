@@ -1,0 +1,16 @@
+@namespace ReGuilded.Shared
+
+<section class="index-page-qna section">
+    <h3 class="index-page-qna question">@Question</h3>
+    <div class="index-page-qna answer">
+        @ChildContent
+    </div>
+</section>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Question { get; set; }
+
+    [Parameter, EditorRequired]
+    public RenderFragment ChildContent { get; set; }
+}

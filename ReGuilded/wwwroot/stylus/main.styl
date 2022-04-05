@@ -1,0 +1,24 @@
+@require "./include/variables.styl"
+@require "./include/util-mixins.styl"
+
+.page-main
+    background-color: bg-colour[0]
+    color: fg-colour[1]
+
+.page-content.panel
+    padding: spacing-size[2] spacing-size[3]
+
+.page-header
+    &.panel
+        background-color: theme
+        font-color: black
+    &.logo
+        display: flex
+        align-items: center
+        flex-direction: row
+        font-weight: bolder
+
+        &-icon
+            sizing: 40px
+        &-text
+            font-size: 1.5em
