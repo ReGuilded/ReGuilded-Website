@@ -1,0 +1,13 @@
+@require "./include/variables.styl"
+@require "./include/util-mixins.styl"
+
+.index-page-qna
+    &.section
+        background-color: bg-colour[1]
+        border: solid 1px alpha(white, 0.07)
+
+        padding: spacing-size[1] spacing-size[2]
+        border-radius: rounding-size[2]
+
+        &:not(:first-child)
+            margin-top: spacing-size[2]

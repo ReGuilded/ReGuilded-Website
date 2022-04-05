@@ -33,8 +33,12 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-header": "^2.0.9",
-    "gulp-sass": "^5.0.0",
-    "sass": "^1.37.0",
     "through2": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-postcss": "^9.0.1",
+    "gulp-stylus": "^2.7.1",
+    "postcss": "^8.4.8",
+    "stylus": "^0.56.0"
   }
 }

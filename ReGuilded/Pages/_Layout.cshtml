@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @* Title *@
+    <title>@ViewData["FullTitle"]</title>
+    <link rel="icon" href="~/img/LogoTransparent.svg" />
+
+    @* Meta *@
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content='@ViewData["Description"]' />
+    <meta name="keywords" content='@ViewData["Keywords"]' />
+    <meta name="theme-color" content="#cc3333" />
+
+    @* OpenGraph Meta *@
+    <meta name="og:image" content="~/img/Logo.png" />
+
+    @* Styles *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+    @await RenderSectionAsync("Styles", required: false)
+
+    @* // Include Prism.JS // *@
+</head>
+
+<body>
+    @RenderBody()
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

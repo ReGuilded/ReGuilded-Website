@@ -1,19 +1,22 @@
 const gulp = require("gulp"),
-    sass = require("gulp-sass")(require("sass")),
+    stylus = require("gulp-stylus"),
     through2 = require("through2");
 
-gulp.task("default", compileSass);
+const stylusPath = "./wwwroot/stylus/src/**/*.styl";
+
+gulp.task("default", compileStylus);
 gulp.task("json", () => gulp.src(`./wwwroot/contributors.json`).pipe(transformJson).pipe(gulp.dest(`./wwwroot/`)));
 gulp.task("live-rebuild", async () => {
-    gulp.watch(`./wwwroot/sass/**/*.sass`, compileSass);
+    gulp.watch(stylusPath, compileStylus);
 });
 
-async function compileSass() {
-    // Compile all SASS files
-    gulp.src(`./wwwroot/sass/**/*.sass`)
-        .pipe(sass({ indentedSyntax: false, outputStyle: "compressed" }))
+async function compileStylus() {
+    // Compile all Stylus files
+    gulp.src(stylusPath)
+        .pipe(stylus({ indentedSyntax: false, outputStyle: "compressed" }))
         .pipe(gulp.dest(`./wwwroot/css`));
 }
+
 const transformJson = through2.obj((file, encoding, callback) => {
     const content = JSON.parse(file.contents.toString());
     const json = {

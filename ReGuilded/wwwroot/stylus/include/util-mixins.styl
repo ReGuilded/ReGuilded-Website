@@ -1,0 +1,15 @@
+@require "./variables.styl"
+
+// Custom properties
+sizing()
+    width: arguments
+    height: arguments
+font-color()
+    color: arguments
+    fill: arguments
+
+// Replace default properties
+transition()
+    fn = @transition-timing-function || ease-out
+    duration = @transition-duration || default-transition-period
+    transition: arguments duration fn

@@ -17,17 +17,15 @@ namespace ReGuilded.Pages
         /// Determines whether there was any errors during page fetching.
         /// </summary>
         /// <value>Error occurred</value>
-        public bool InternalServerError { get; private set; }
+        public bool InternalServerError { get; private set; } = false;
         /// <summary>
         /// The fetched list of all downloads from latest release.
         /// </summary>
         /// <value>List of downloads</value>
         // [TempData] - Can't serialize it error
-        public List<FetchedDownload> FetchedDownloads { get; set; }
-        public DownloadsModel(IMemoryCache cache)
-        {
+        public List<FetchedDownload>? FetchedDownloads { get; set; }
+        public DownloadsModel(IMemoryCache cache) =>
             _cache = cache;
-        }
         public async Task OnGetAsync()
         {
             try
