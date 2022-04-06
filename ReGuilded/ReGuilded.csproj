@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="gulp" />
+    <Exec Command="npx gulp" />
   </Target>
 
 </Project>
