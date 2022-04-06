@@ -1,4 +1,4 @@
 ﻿{
-  "question1": "What is <span class=\"text-themed\">ReGuilded</span>?",
-  "answer1": "<span class=\"text-themed\">ReGuilded</span> is a client injector/client mod that allows you to extend the functionality of <a href=\"https://guilded.gg\"><span class=\"guilded-themed\">Guilded's</span></a> client by providing theme and add-on support.<br>You should <a href=\"/downloads\"><span class=\"text-themed\">Download</span></a> it."
+  "question1": "Co jest <span class=\"text-themed\">ReGuilded</span>?",
+  "answer1": "<span class=\"text-themed\">ReGuilded</span> jest programem który nadaje dodatkowe funkcje dla twojej <a href=\"https://guilded.gg\"><span class=\"guilded-themed\">aplikacji Guilded</span></a> poprzez dodanie motyw i niestandardowych moddów.<br><a href=\"/downloads\"><span class=\"text-themed\">Pobierz je tutaj</span></a>."
 }
