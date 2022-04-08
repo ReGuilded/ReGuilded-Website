@@ -1,8 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace ReGuilded.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    @* Title *@
-    <title>@ViewData["FullTitle"]</title>
     <link rel="icon" href="~/img/LogoTransparent.svg" />
 
     @* Meta *@
@@ -18,7 +20,8 @@
 
     @* Styles *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
-    @await RenderSectionAsync("Styles", required: false)
+    <link rel="stylesheet" href="~/css/fontawesome.css" asp-append-version="true">
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 
     @* // Include Prism.JS // *@
 </head>
@@ -27,6 +30,7 @@
     @RenderBody()
 
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="_framework/blazor.server.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

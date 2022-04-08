@@ -1,24 +1,89 @@
 @require "./include/variables.styl"
 @require "./include/util-mixins.styl"
+@require "./text.styl"
+
+page-horizontal-padding = spacing-size[5]
 
 .page-main
-    background-color: bg-colour[0]
-    color: fg-colour[1]
+    &.whole
+        display: flex
+        flex-direction: column
+        min-height: 100vh
+        background-color: bg-colour[0]
+        color: fg-colour[1]
+    &.content
+        display: grid
+        flex: 1
+        grid-template-rows: 1fr auto
 
 .page-content.panel
-    padding: spacing-size[2] spacing-size[3]
+    padding: spacing-size[5] page-horizontal-padding spacing-size[3] page-horizontal-padding
+    &.grid
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: spacing-size[3]
 
 .page-header
+    &.top
+        display: grid
+        grid-template-columns: 1fr auto
     &.panel
-        background-color: theme
-        font-color: black
+        z-index: 2
+        padding: spacing-size[4] page-horizontal-padding spacing-size[6] page-horizontal-padding
+        position: relative
+        // Tilted background
+        &::before
+            content: ""
+            background-color: bg-colour[1]
+            transform: rotate(-1deg)
+
+            position: absolute
+            z-index: -1
+            top: -50%
+            left: -25%
+            right: -25%
+            // Since it goes outside
+            bottom: 8px
     &.logo
         display: flex
         align-items: center
         flex-direction: row
         font-weight: bolder
+        font-color: fg-colour[1]
+        cursor: default
+        user-select: none
 
         &-icon
-            sizing: 40px
+            sizing: 35px
         &-text
-            font-size: 1.5em
+            font-size: 1.3em
+    //---- Menu
+    &.nav-button
+        display: inline-block
+        &::marker
+            display: none
+    &.nav-link
+        &, &[href]:visited, &[href]:active, &[href]:focus
+            color: fg-colour[2]
+            transition: color
+            text-decoration: none
+            padding: spacing-size[0] spacing-size[1]
+            font-weight: bolder
+            &.active
+                color: fg-colour[1]
+        &:hover, &[href]:hover, &.active:hover, &[href].active:hover
+            color: fg-colour[0]
+        // Don't change the colour on hover, only actionable things must have a transition
+        &.disabled, &.disabled:hover, &.disabled[href]:hover
+            color: fg-colour[2]
+            opacity: 65%
+            cursor: not-allowed
+
+.page-footer.panel
+    padding: 10px page-horizontal-padding
+    color: fg-colour[2]
+
+    p:first-child
+        margin-top: 0
+    p:last-child
+        margin-bottom: 0

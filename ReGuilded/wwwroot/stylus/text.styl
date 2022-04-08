@@ -1,0 +1,9 @@
+@require "./include/variables.styl"
+
+a[href]
+    &, &:visited, &:focus, &:active
+        color: accent-fg
+        transition: color
+        text-decoration: none
+    &:hover
+        color: tint(accent-fg, 40%)

@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+
+<main id="page" class="page-main whole">
+    @* Top *@
+    <PageHeader>
+        <section class="index-page-motto section">
+            <h1 class="index-page-motto title">Enhance your experience</h1>
+            <p class="index-page-motto subtitle">Alter your Guilded client the way you want using ReGuilded.</p>
+        </section>
+        <section class="index-page-download section">
+            <a class="index-page-download main-button" href="/"><i class="index-page-download button-icon fa-brands fa-windows"></i>Download for @platform</a>
+            <a class="index-page-download sub-hyperlink" href="/downloads">Not using @platform? Click here</a>
+        </section>
+    </PageHeader>
+
+    @* Main stuff *@
+    <div class="page-main content">
+        <article class="page-content panel grid">
+            @Body
+        </article>
+
+        <footer class="page-footer panel">
+            <p>
+                <span class="page-footer copyright">&copy;@DateTime.Now.Year All Rights Reserved - ReGuilded</span>
+                <span>&nbsp;•&nbsp;</span>
+                <span class="page-footer disclaimer">Not affiliated with <a href="https://guilded.gg">Guilded Inc.</a></span>
+            </p>
+            <p>This website uses FontAwesome icons licensed under <a href="/FA-LICENSE.txt">CC BY 4.0 license</a>.</p>
+        </footer>
+    </div>
+</main>
+
+@code {
+    private string platform = "Unset platform";
+}

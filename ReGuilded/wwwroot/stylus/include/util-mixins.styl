@@ -7,6 +7,16 @@ sizing()
 font-color()
     color: arguments
     fill: arguments
+vertical-prop(prop, args...)
+    {prop}-top: args
+    {prop}-bottom: args
+horizontal-prop(prop, args...)
+    {prop}-left: args
+    {prop}-right: args
+margin-vertical()
+    vertical-prop('margin', arguments)
+margin-horizontal()
+    horizontal-prop('margin', arguments)
 
 // Replace default properties
 transition()
