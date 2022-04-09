@@ -1,0 +1,11 @@
+﻿@using ReGuilded.Pages.Util
+<div class="download-page item @DownloadObject.Platform">
+    <div class="download-page item-icon"><i class="fa-brand fa-@(DownloadObject.Platform == "mac" ? "apple" : DownloadObject.Platform)"></i></div>
+    <h3 class="download-page item-title">@DownloadObject.DisplayName</h3>
+    <a class="download-page item-button" href="@DownloadObject.DownloadUrl">Download</a>
+</div>
+
+@code {
+    [Parameter]
+    public FetchedDownload DownloadObject { get; set; }
+}

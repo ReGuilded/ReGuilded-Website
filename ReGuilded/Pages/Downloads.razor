@@ -7,21 +7,31 @@
     <h3 class="download-page header">Downloads</h3>
     <div class="download-page content">
         @* If no downloads were fetched, output it as an error *@
-        @* @if (Model.FetchedDownloads == null || Model.FetchedDownloads.Count == 0 || Model.InternalServerError)
+        @if (_fetchedDownloads == null || _fetchedDownloads.Count == 0)
         {
             <p>Internal Server Error</p>
         }
         else
         {
-            @* Add download for each platform * @
-            @foreach (FetchedDownload fetchedDownload in Model.FetchedDownloads)
+            @* Add download for each platform *@
+            @foreach (FetchedDownload fetchedDownload in _fetchedDownloads)
             {
-                <div class="download-page item">
-                    <img class="download-page item-icon" src="img/platforms/@(fetchedDownload.Platform).svg" alt="@fetchedDownload.DisplayName Logo">
-                    <h3 class="download-page item-title">@fetchedDownload.DisplayName</h3>
-                    <a class="download-page item-button" href="@fetchedDownload.DownloadUrl">Download</a>
-                </div>
+                <DownloadItem DownloadObject="@fetchedDownload"></DownloadItem>
             }
-        } *@
+        }
     </div>
 </section>
+
+<script>
+    alert(window.navigator.userAgent);
+</script>
+
+@code
+{
+    private List <FetchedDownload>? _fetchedDownloads;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _fetchedDownloads = await GithubUtil.FetchedDownloads();
+    }
+}
