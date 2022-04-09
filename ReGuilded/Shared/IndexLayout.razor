@@ -1,4 +1,4 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 
 <main id="page" class="page-main whole">
     @* Top *@
@@ -21,7 +21,7 @@
 
         <footer class="page-footer panel">
             <p>
-                <span class="page-footer copyright">&copy;@DateTime.Now.Year All Rights Reserved - ReGuilded</span>
+                <span class="page-footer copyright">&copy;2021-@DateTime.Now.Year All Rights Reserved - ReGuilded</span>
                 <span>&nbsp;•&nbsp;</span>
                 <span class="page-footer disclaimer">Not affiliated with <a href="https://guilded.gg">Guilded Inc.</a></span>
             </p>
@@ -30,6 +30,7 @@
     </div>
 </main>
 
-@code {
-    private string platform = "Unset platform";
+@code 
+{
+    private string platform = "Unset Platform";
 }
