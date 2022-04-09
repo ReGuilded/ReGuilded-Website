@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNetCore.Http;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Primitives;
-using Octokit;
 
 namespace ReGuilded.Pages.Util
 {
@@ -21,30 +14,42 @@ namespace ReGuilded.Pages.Util
             {
                 downloads = new List<FetchedDownload>();
 
-                GitHubClient githubClient = new(new ProductHeaderValue("ReGuilded-Website"));
-                // Gets latest release
-                var latestRelease = await githubClient.Repository.Release.GetLatest("ReGuilded", "ReGuilded-Setup");
-                // Gets each file in the latest release
-                foreach (var releaseAsset in latestRelease.Assets)
+                try
                 {
-                    var downloadUrl = releaseAsset.BrowserDownloadUrl;
-                    // Gets the platform of the file
-                    var platform =
-                        downloadUrl.EndsWith(".exe") ? "windows"
-                        : downloadUrl.EndsWith(".dmg") ? "mac"
-                        : downloadUrl.EndsWith(".AppImage") ? "linux"
-                        : null;
-                    // Discards source downloads
-                    if (platform != null)
+                    HttpResponseMessage httpResponseMessage = await new HttpClient().GetAsync("https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest");
+                    if (!httpResponseMessage.IsSuccessStatusCode) return null;
+                    
+                    var response = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                    if (string.IsNullOrEmpty(response)) return null;
+
+                    JsonDocument responseObj = JsonDocument.Parse(response);
+                    if (responseObj.RootElement.TryGetProperty("assets", out JsonElement assetsArr))
                     {
-                        // Adds it to downloads list
-                        downloads.Add(new FetchedDownload()
+                        foreach (JsonElement assetObj in assetsArr.EnumerateArray())
                         {
-                            Platform = platform,
-                            DownloadUrl = downloadUrl,
-                            DisplayName = char.ToUpper(platform[0]) + platform[1..]
-                        });
-                    }
+                            string? downloadUrl = assetObj.GetProperty("browser_download_url").GetString();
+
+                            if (downloadUrl == null) return null;
+                            string? platform =
+                                downloadUrl.EndsWith(".AppImage") ? "linux"   :
+                                downloadUrl.EndsWith(".exe")      ? "windows" :
+                                downloadUrl.EndsWith(".dmg")      ? "mac"     :
+                                                                    null;
+
+                            if (platform == null) return null;
+                            downloads.Add(new FetchedDownload()
+                            {
+                                Platform = platform,
+                                DownloadUrl = downloadUrl,
+                                DisplayName = char.ToUpper(platform[0]) + platform[1..]
+                            });
+                        }
+                    } else { return null; }
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Internal Server Error:\n{0}", e);
+                    return null;
                 }
 
                 cache.Set(cacheKey, downloads, new MemoryCacheEntryOptions().AddExpirationToken(new CancellationChangeToken(new CancellationTokenSource(cacheTime).Token)));
@@ -54,6 +59,7 @@ namespace ReGuilded.Pages.Util
         }
 
     }
+    
     /// <summary>
     /// A GitHub repository release.
     /// </summary>
