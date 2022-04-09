@@ -16,8 +16,10 @@
     "commentName": "IdkGoodName",
     "titles": [ "Project Lead", "Lead Developer"],
     "coreProjects": [ "App", "Website" ],
+    "translationProjects": [ "Lithuanian" ],
     "isCoreDeveloper": true,
     "isProjectLead": true,
+    "isTranslator": true,
     "socials": {
       "github": "https://github.com/IdkGoodName",
       "twitter": "https://twitter.com/IdkGoodNameV1"
@@ -26,7 +28,7 @@
   {
     "guildedId": "Pm780yPA",
     "commentName": "MasicoreLord",
-    "titles": [ "Core Developer" ],
+    "titles": [ "Project Lead" ],
     "coreProjects": [ "App" ],
     "isCoreDeveloper": true,
     "socials": {
@@ -90,5 +92,36 @@
       "github": "https://github.com/ZaneDragonBorn",
       "twitter": "https://twitter.com/DragonbornZane"
     }
+  },
+  {
+    "guildedId": "kdK8ob9m",
+    "commentName": "daSk0ut",
+    "translationProjects": [ "Hungarian" ],
+    "socials": {
+      "twitter": "https://twitter.com/daSk0ut"
+    }
+  },
+  {
+    "guildedId": "x4oN2yJA",
+    "commentName": "Kero",
+    "translationProjects": [ "French" ]
+  },
+  {
+    "guildedId": "nm6wMRqA",
+    "commentName": "Koiske",
+    "translationProjects": [ "Polish" ],
+    "socials": {
+      "twitter": "https://twitter.com/ItsKoiske"
+    }
+  },
+  {
+    "guildedId": "841vDZRd",
+    "commentName": "FieryHacker",
+    "translationProjects": [ "Vietnamese" ]
+  },
+  {
+    "guildedId": "8412wg5d",
+    "commentName": "MCUmbrella",
+    "translationProjects": [ "Chinese (Simplified)" ]
   }
 ]
