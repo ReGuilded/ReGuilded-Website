@@ -12,10 +12,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.8" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\img\platforms" />
-  </ItemGroup>
-
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="npx gulp" />
   </Target>
