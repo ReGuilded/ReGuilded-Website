@@ -1,0 +1,35 @@
+﻿@using System.Net
+@inject IStringLocalizer<ReGuildedLang> _loc;
+
+<footer class="page-footer panel">
+    <div class="page-footer footer-find-us">
+        <h3 class="page-footer header-text">@_loc["PageFooter/FindUsOn"]</h3>
+        <ul class="page-footer footer-nav">
+            <li class="page-footer footer-nav-button">
+                <a class="page-footer footer-nav-link" href="https://guilded.gg/ReGuilded" target="_blank">Guilded</a>
+            </li>
+            <li class="page-footer footer-nav-button">
+                <a class="page-footer footer-nav-link" href="https://twitter.com/ReGuilded" target="_blank">Twitter</a>
+            </li>
+            <li class="page-footer footer-nav-button">
+                <a class="page-footer footer-nav-link" href="https://reddit.com/r/reguilded/" target="_blank">Reddit</a>
+            </li>
+            <li class="page-footer footer-nav-button">
+                <a class="page-footer footer-nav-link" href="https://github.com/ReGuilded" target="_blank">GitHub</a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="page-footer footer-extra">
+        <div class="page-footer footer-credits">
+            <p class="page-footer footer-message">@_loc["PageFooter/CreditMessage"]</p>
+            <a class="page-footer footer-credit-link" href="/credits">@_loc["PageFooter/CreditMessage"]</a>
+        </div>
+        
+        <div class="page-footer footer-disclaimers">
+            <p class="page-footer disclaimer">©2021-@(DateTime.Now.Year) All Rights Reserved - ReGuilded</p>
+            <p class="page-footer disclaimer">ReGuilded is not affiliated with or endorsed by <a href="https://guilded.gg">Guilded Inc.</a></p>
+            <p class="page-footer license">This website uses FontAwesome icons licensed under <a href="/FA-LICENSE.txt">CC BY 4.0 license</a>.</p>
+        </div>
+    </div>
+</footer>

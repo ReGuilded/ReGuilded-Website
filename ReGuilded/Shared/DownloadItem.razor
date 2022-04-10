@@ -1,11 +1,17 @@
 ﻿@using ReGuilded.Pages.Util
-<div class="download-page item @DownloadObject.Platform">
-    <div class="download-page item-icon"><i class="fa-brand fa-@(DownloadObject.Platform == "mac" ? "apple" : DownloadObject.Platform)"></i></div>
-    <h3 class="download-page item-title">@DownloadObject.DisplayName</h3>
-    <a class="download-page item-button" href="@DownloadObject.DownloadUrl">Download</a>
-</div>
+@inject IStringLocalizer<ReGuildedLang> _loc;
+
+@if (DownloadObject is not null)
+{
+    <div class="download-page item @DownloadObject.Platform">
+        <div class="download-page item-icon"><i class="fa-brand fa-@(DownloadObject.Platform == "mac" ? "apple" : DownloadObject.Platform)"></i></div>
+        <h3 class="download-page item-title">@DownloadObject.DisplayName</h3>
+        <a class="download-page item-button" href="@DownloadObject.DownloadUrl">@_loc["DownloadItem/Button"]</a>
+    </div>
+
+}
 
 @code {
-    [Parameter]
-    public FetchedDownload DownloadObject { get; set; }
+    [Parameter, EditorRequired]
+    public FetchedDownload? DownloadObject { get; set; }
 }

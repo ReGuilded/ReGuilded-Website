@@ -4,35 +4,33 @@ using System.Text.Json;
 
 namespace ReGuilded.Pages.Util
 {
-    public class GithubUtil
+    public static class GithubUtil
     {
-        private static readonly HttpClient httpClient = new HttpClient();
+        private static readonly HttpClient HttpClient = new HttpClient();
         static GithubUtil()
         {
-            httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ReGuilded-Website", "2.0.0-alpha"));
+            HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ReGuilded-Website", "2.0.0-alpha"));
         }
         
-        public static async Task<List<FetchedDownload>> FetchedDownloads()
+        public static async Task <List <FetchedDownload>?> FetchedDownloads()
         {
-            List<FetchedDownload> downloads = new List<FetchedDownload>();
+            var downloads = new List<FetchedDownload>();
             
             try
             {
-                HttpResponseMessage httpResponseMessage = await httpClient.GetAsync("https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest");
+                var httpResponseMessage = await HttpClient.GetAsync("https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest");
                 if (!httpResponseMessage.IsSuccessStatusCode) return null;
 
                 var response = httpResponseMessage.Content.ReadAsStringAsync().Result;
                 if (string.IsNullOrEmpty(response)) return null;
 
-                JsonDocument responseObj = JsonDocument.Parse(response);
-                if (responseObj.RootElement.TryGetProperty("assets", out JsonElement assetsArr))
+                var responseObj = JsonDocument.Parse(response);
+                if (responseObj.RootElement.TryGetProperty("assets", out var assetsArr))
                 {
-                    foreach (JsonElement assetObj in assetsArr.EnumerateArray())
+                    foreach (var downloadUrl in assetsArr.EnumerateArray().Select(assetObj => assetObj.GetProperty("browser_download_url").GetString()))
                     {
-                        string? downloadUrl = assetObj.GetProperty("browser_download_url").GetString();
-
                         if (downloadUrl == null) return null;
-                        string? platform =
+                        var platform =
                             downloadUrl.EndsWith(".AppImage") ? "linux"   :
                             downloadUrl.EndsWith(".exe")      ? "windows" :
                             downloadUrl.EndsWith(".dmg")      ? "mac"     :
@@ -68,16 +66,16 @@ namespace ReGuilded.Pages.Util
         /// The platform/OS of the download.
         /// </summary>
         /// <value>OS</value>
-        public string Platform { get; set; }
+        public string? Platform { get; set; }
         /// <summary>
         /// The URL link to download the release file.
         /// </summary>
         /// <value>URL</value>
-        public string DownloadUrl { get; set; }
+        public string? DownloadUrl { get; set; }
         /// <summary>
         /// The name of the release.
         /// </summary>
         /// <value>Name</value>
-        public string DisplayName { get; set; }
+        public string? DisplayName { get; set; }
     }
 }

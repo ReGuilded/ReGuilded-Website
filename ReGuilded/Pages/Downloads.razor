@@ -1,20 +1,21 @@
 ﻿@page "/downloads"
 @using ReGuilded.Pages.Util
+@inject IStringLocalizer<ReGuildedLang> _loc;
 
-<PageTitle>Downloads</PageTitle>
+<PageTitle>@(_loc["Downloads/Page-Title"]) | ReGuilded</PageTitle>
 
 <section class="download-page section">
-    <h3 class="download-page header">Downloads</h3>
+    <h3 class="download-page header">@_loc["Downloads/Header"]</h3>
     <div class="download-page content">
         @* If no downloads were fetched, output it as an error *@
         @if (_fetchedDownloads == null || _fetchedDownloads.Count == 0)
         {
-            <p>Internal Server Error</p>
+            <p>@_loc["Downloads/InternalServerError"]</p>
         }
         else
         {
             @* Add download for each platform *@
-            @foreach (FetchedDownload fetchedDownload in _fetchedDownloads)
+            @foreach (var fetchedDownload in _fetchedDownloads)
             {
                 <DownloadItem DownloadObject="@fetchedDownload"></DownloadItem>
             }
@@ -24,7 +25,7 @@
 
 @code
 {
-    private List <FetchedDownload>? _fetchedDownloads;
+    private List<FetchedDownload>? _fetchedDownloads;
 
     protected override async Task OnInitializedAsync()
     {

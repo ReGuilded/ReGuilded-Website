@@ -1,3 +1,6 @@
+@using ReGuilded.Resources
+@inject IStringLocalizer<ReGuildedLang> _loc;
+
 <header class="page-header panel">
     <div class="page-header top">
         <aside class="page-header logo" href="/">
@@ -11,19 +14,14 @@
         <nav class="page-header nav">
             @* TODO: For looping *@
             <li class="page-header nav-button">
-                <NavLink ActiveClass="active" class="page-header nav-link" href="/" Match="NavLinkMatch.All">Home</NavLink>
+                <NavLink ActiveClass="active" class="page-header nav-link" href="/" Match="NavLinkMatch.All">@_loc["PageHeader/Home"]</NavLink>
             </li>
             <li class="page-header nav-button">
-                <NavLink ActiveClass="active" class="page-header nav-link" href="downloads">Downloads</NavLink>
+                <NavLink ActiveClass="active" class="page-header nav-link" href="downloads">@_loc["PageHeader/Downloads"]</NavLink>
             </li>
+            @* TODO: Drop-down  *@
             <li class="page-header nav-button disabled">
-                <NavLink ActiveClass="active" class="page-header nav-link disabled" href="themes" onclick="return false">Themes</NavLink>
-            </li>
-            <li class="page-header nav-button disabled">
-                <NavLink ActiveClass="active" class="page-header nav-link disabled" href="addons" onclick="return false">Addons</NavLink>
-            </li>
-            <li class="page-header nav-button disabled">
-                <NavLink ActiveClass="active" class="page-header nav-link disabled" href="sounds" onclick="return false">Sound packs</NavLink>
+                <NavLink ActiveClass="active" class="page-header nav-link disabled" href="Enhancements" onclick="return false">@_loc["PageHeader/Enhancements"]</NavLink>
             </li>
         </nav>
     </div>

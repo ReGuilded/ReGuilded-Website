@@ -12,6 +12,21 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ReGuildedLang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReGuildedLang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ReGuildedLang.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReGuilded.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="npx gulp" />
   </Target>

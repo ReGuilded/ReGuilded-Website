@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Components
+@using System.Globalization
+@inject NavigationManager _nav
+
+<p>
+    <label>
+        Select your locale:
+        <select @bind="Culture">
+            @foreach (var culture in _supportedCultures)
+            {
+                <option value="@culture">@culture.DisplayName</option>
+            }
+        </select>
+    </label>
+</p>
+
+@code
+{
+    private CultureInfo[] _supportedCultures = new[]
+    {
+        new CultureInfo("en-US")
+    };
+
+    protected override void OnInitialized()
+    {
+        Culture = CultureInfo.CurrentCulture;
+    }
+
+    private CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set {
+            if (CultureInfo.CurrentCulture.Equals(value)) return;
+            
+            var uri = new Uri(_nav.Uri)
+                .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+            var cultureEscaped = Uri.EscapeDataString(value.Name);
+            var uriEscaped = Uri.EscapeDataString(uri);
+
+            _nav.NavigateTo(
+                $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
+                forceLoad: true);
+            
+        }
+    }
+}
