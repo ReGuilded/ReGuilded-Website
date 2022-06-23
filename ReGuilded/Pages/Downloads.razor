@@ -1,27 +1,22 @@
 ﻿@page "/downloads"
 @using ReGuilded.Pages.Util
+@layout DownloadsLayout
 @inject IStringLocalizer<ReGuildedLang> _loc;
 
 <PageTitle>@(_loc["Downloads/Page-Title"]) | ReGuilded</PageTitle>
 
-<section class="download-page section">
-    <h3 class="download-page header">@_loc["Downloads/Header"]</h3>
-    <div class="download-page content">
-        @* If no downloads were fetched, output it as an error *@
-        @if (_fetchedDownloads == null || _fetchedDownloads.Count == 0)
+@if (_fetchedDownloads == null || _fetchedDownloads.Count == 0)
+    {
+        <p>@_loc["Downloads/InternalServerError"]</p>
+    }
+    else
+    {
+        @* Add download for each platform *@
+        @foreach (var fetchedDownload in _fetchedDownloads)
         {
-            <p>@_loc["Downloads/InternalServerError"]</p>
+            <DownloadItem DownloadObject="@fetchedDownload"></DownloadItem>
         }
-        else
-        {
-            @* Add download for each platform *@
-            @foreach (var fetchedDownload in _fetchedDownloads)
-            {
-                <DownloadItem DownloadObject="@fetchedDownload"></DownloadItem>
-            }
-        }
-    </div>
-</section>
+    }
 
 @code
 {

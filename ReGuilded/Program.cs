@@ -7,7 +7,7 @@ builder.Services.AddControllers();
 
 WebApplication app = builder.Build();
 
-var supportedCultures = new[] { "en-US" };
+var supportedCultures = new[] { "en-US", "fr-FR" };
 var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
                                                           .AddSupportedCultures(supportedCultures)
                                                           .AddSupportedUICultures(supportedCultures);

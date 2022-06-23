@@ -214,11 +214,11 @@ namespace ReGuilded.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find us on:.
+        ///   Looks up a localized string similar to Find Us.
         /// </summary>
-        internal static string PageFooter_FindUsOn {
+        internal static string PageFooter_FindUs {
             get {
-                return ResourceManager.GetString("PageFooter/FindUsOn", resourceCulture);
+                return ResourceManager.GetString("PageFooter/FindUs", resourceCulture);
             }
         }
         

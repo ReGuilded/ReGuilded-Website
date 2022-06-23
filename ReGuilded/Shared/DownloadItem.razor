@@ -3,12 +3,11 @@
 
 @if (DownloadObject is not null)
 {
-    <div class="download-page item @DownloadObject.Platform">
-        <div class="download-page item-icon"><i class="fa-brand fa-@(DownloadObject.Platform == "mac" ? "apple" : DownloadObject.Platform)"></i></div>
+    <div class="download-page download-item @DownloadObject.Platform">
+        <object class="download-page item-icon" data="img/Platforms/@(DownloadObject.Platform).svg" alt="@(DownloadObject.DisplayName)'s Image"></object>
         <h3 class="download-page item-title">@DownloadObject.DisplayName</h3>
         <a class="download-page item-button" href="@DownloadObject.DownloadUrl">@_loc["DownloadItem/Button"]</a>
     </div>
-
 }
 
 @code {

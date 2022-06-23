@@ -3,7 +3,7 @@
 <section class="index-page-feature section">
     @if (Image is not null)
     {
-        <div class="index-page-feature image"><i class="fa-solid fa-@Image"></i></div>
+        <object class="index-page-feature image" data="img/Enhancements/@(Image).svg" alt="@Image Image"></object>
     }
     <h3 class="index-page-feature title">@Title</h3>
     <div class="index-page-feature description">

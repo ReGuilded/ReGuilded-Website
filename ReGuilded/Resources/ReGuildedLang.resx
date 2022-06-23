@@ -40,8 +40,8 @@
     </data>
     
     <!-- PageFooter -->
-    <data name="PageFooter/FindUsOn" xml:space="preserve">
-        <value>Find us on:</value>
+    <data name="PageFooter/FindUs" xml:space="preserve">
+        <value>Find Us</value>
     </data>
     <data name="PageFooter/CreditMessage" xml:space="preserve">
         <value>This project wouldn't be possible without the amazing contributors along the way.</value>

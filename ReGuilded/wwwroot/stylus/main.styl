@@ -17,7 +17,7 @@ page-horizontal-padding = spacing-size[5]
         grid-template-rows: 1fr auto
 
 .page-content.panel
-    padding: spacing-size[5] page-horizontal-padding spacing-size[3] page-horizontal-padding
+    padding: spacing-size[4] page-horizontal-padding spacing-size[4] page-horizontal-padding
     &.grid
         display: grid
         grid-template-columns: 1fr 1fr 1fr
@@ -79,11 +79,45 @@ page-horizontal-padding = spacing-size[5]
             opacity: 65%
             cursor: not-allowed
 
-.page-footer.panel
-    padding: 10px page-horizontal-padding
-    color: fg-colour[2]
+.page-footer
+    &.panel
+        z-index: 2
+        padding: spacing-size[6] page-horizontal-padding spacing-size[4] page-horizontal-padding
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        overflow: hidden
+    
+        // Tilted background
+        &::before
+            content: ""
+            background-color: bg-colour[1]
+            transform: rotate(-1deg)
+    
+            position: absolute
+            z-index: -1
+            top: 8px
+            left: -25%
+            right: -25%
 
-    p:first-child
-        margin-top: 0
-    p:last-child
-        margin-bottom: 0
+            bottom: -50%
+            
+    &.footer-nav
+        list-style: none
+        padding: 0
+            
+    &.footer-credits
+        padding-bottom: 5px
+        
+    &.footer-disclaimers
+        padding-top: 5px
+            
+    &.footer-extra
+        text-align: right
+        
+    p
+        margin: auto
+    
+    h4
+        margin: auto
