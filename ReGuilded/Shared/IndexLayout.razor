@@ -1,17 +1,20 @@
 @inherits LayoutComponentBase
-@inject IStringLocalizer<ReGuildedLang> _loc;
+@inject IStringLocalizer<ReGuildedLang> Loc;
+@inject IHttpContextAccessor HttpContextAccessor
 
 <main id="page" class="page-main whole">
     @* Top *@
     <PageHeader>
         <section class="index-page-motto section">
-            <h1 class="index-page-motto title">@_loc["IndexLayout/Motto/Title"]</h1>
-            <p class="index-page-motto subtitle">@_loc["IndexLayout/Motto/Subtitle"]</p>
+            <h1 class="index-page-motto title">@Loc["IndexLayout/Motto/Title"]</h1>
+            <p class="index-page-motto subtitle">@Loc["IndexLayout/Motto/Subtitle"]</p>
         </section>
         <section class="index-page-download section">
-            <a class="index-page-download main-button" href="/"><i class="index-page-download button-icon fa-brands fa-windows"></i>@string.Format(_loc["IndexLayout/QuickDownload/DownloadForPlatform"], Platform)
+            <a class="index-page-download main-button" href="/">
+                <img class="index-page-download button-icon" src="img/Platforms/@(Platform.ToLower()).svg" alt="@(Platform)'s Image" />
+                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], Platform)
             </a>
-            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(_loc["IndexLayout/QuickDownload/NotUsingPlatform"], Platform)</a>
+            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], Platform)</a>
         </section>
         
         <CultureSelector />
@@ -30,5 +33,16 @@
 
 @code 
 { 
-    private const string Platform = "Unset Platform";
+    private string Platform = "Unset Platform";
+
+    protected override void OnInitialized()
+    {
+        string UserAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString();
+
+        Platform = "Linux";
+
+    // Platform = UserAgent.Contains("Linux") ? "Linux" 
+    //                : UserAgent.Contains("Mac") ? "Mac" 
+    //                      : "Windows";
+    }
 }

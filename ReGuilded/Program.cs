@@ -4,6 +4,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddRazorPages();
 builder.Services.AddLocalization();
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
 
 WebApplication app = builder.Build();
 
