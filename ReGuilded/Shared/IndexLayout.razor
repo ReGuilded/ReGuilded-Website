@@ -41,10 +41,7 @@
     {
         string UserAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString();
 
-        Platform = "Linux";
-
-    // Platform = UserAgent.Contains("Linux") ? "Linux"
-    //                : UserAgent.Contains("Mac") ? "Mac"
-    //                      : "Windows";
+        Platform = UserAgent.Contains("Linux") ? "Linux"
+                   : UserAgent.Contains("Mac") ? "Mac" : "Windows";
     }
 }
