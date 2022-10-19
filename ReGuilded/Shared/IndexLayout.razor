@@ -1,6 +1,7 @@
 @inherits LayoutComponentBase
 @inject IStringLocalizer<ReGuildedLang> Loc;
 @inject IHttpContextAccessor HttpContextAccessor
+@using ReGuilded.Shared.Svgs
 
 <main id="page" class="page-main whole">
     @* Top *@
@@ -11,12 +12,13 @@
         </section>
         <section class="index-page-download section">
             <a class="index-page-download main-button" href="/">
-                <img class="index-page-download button-icon" src="img/Platforms/@(Platform.ToLower()).svg" alt="@(Platform)'s Image" />
+                <SvgIcon Type="@(SvgIconUtil.GetIcon(Platform))" Class="index-page-download main-button-icon" />
+                @* <img class="index-page-download button-icon" src="img/Platforms/@(Platform.ToLower()).svg" alt="@(Platform)'s Image" /> *@
                 @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], Platform)
             </a>
             <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], Platform)</a>
         </section>
-        
+
         <CultureSelector />
     </PageHeader>
 
@@ -26,13 +28,13 @@
             @Body
         </article>
     </div>
-    
+
     @* Bottom *@
     <PageFooter />
 </main>
 
-@code 
-{ 
+@code
+{
     private string Platform = "Unset Platform";
 
     protected override void OnInitialized()
@@ -41,8 +43,8 @@
 
         Platform = "Linux";
 
-    // Platform = UserAgent.Contains("Linux") ? "Linux" 
-    //                : UserAgent.Contains("Mac") ? "Mac" 
+    // Platform = UserAgent.Contains("Linux") ? "Linux"
+    //                : UserAgent.Contains("Mac") ? "Mac"
     //                      : "Windows";
     }
 }

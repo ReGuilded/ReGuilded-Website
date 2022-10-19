@@ -1,24 +1,30 @@
 @require "./include/variables.styl"
 @require "./include/util-mixins.styl"
 
-.index-page-feature
+.page-grid-item
     &.section
         background-color: bg-colour[1]
         border: solid 1px alpha(white, 0.05)
 
         padding: spacing-size[2] spacing-size[3]
         border-radius: rounding-size[2]
-        
+
         display: flex
         flex-direction: column
         align-items: center
         justify-content: center
-        
+
     &.image
         fill: fg-colour[0]
         height: 2.5em
         width: auto
-        
+        .svg-icon
+            &.svg
+                height: 2.5em
+                width: auto
+            &.with-stroke
+                stroke: fg-colour[0]
+
     &.title
         color: fg-colour[0]
         text-align: center
@@ -65,5 +71,12 @@
             background-color: hover-accent
             color: black
             box-shadow: hover-accent 0px 0px 6px
+
+        .svg-icon.base, .svg-icon.svg
+            height: 1.5em
+            width: auto
+            fill: black
+        &-icon
+            margin-right: spacing-size[0]
     &.sub-hyperlink
         font-size: 0.8em

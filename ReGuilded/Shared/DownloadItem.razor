@@ -3,11 +3,13 @@
 
 @if (DownloadObject is not null)
 {
-    <div class="download-page download-item @DownloadObject.Platform">
+    <PageGridItem Title="@(DownloadObject.DisplayName)" Image="@(DownloadObject.Icon)">
+        <a class="download-page item-button" href="@DownloadObject.DownloadUrl">@_loc["DownloadItem/Button"]</a>
+    </PageGridItem>
+    @* <div class="download-page download-item @DownloadObject.Platform">
         <object class="download-page item-icon" data="img/Platforms/@(DownloadObject.Platform).svg" alt="@(DownloadObject.DisplayName)'s Image"></object>
         <h3 class="download-page item-title">@DownloadObject.DisplayName</h3>
-        <a class="download-page item-button" href="@DownloadObject.DownloadUrl">@_loc["DownloadItem/Button"]</a>
-    </div>
+    </div> *@
 }
 
 @code {

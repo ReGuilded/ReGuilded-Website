@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using ReGuilded.Shared.Svgs;
 
 namespace ReGuilded.Pages.Util
 {
@@ -11,11 +12,11 @@ namespace ReGuilded.Pages.Util
         {
             HttpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("ReGuilded-Website", "2.0.0-alpha"));
         }
-        
-        public static async Task <List <FetchedDownload>?> FetchedDownloads()
+
+        public static async Task<List<FetchedDownload>?> FetchedDownloads()
         {
             var downloads = new List<FetchedDownload>();
-            
+
             try
             {
                 var httpResponseMessage = await HttpClient.GetAsync("https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest");
@@ -30,52 +31,60 @@ namespace ReGuilded.Pages.Util
                     foreach (var downloadUrl in assetsArr.EnumerateArray().Select(assetObj => assetObj.GetProperty("browser_download_url").GetString()))
                     {
                         if (downloadUrl == null) return null;
-                        var platform =
-                            downloadUrl.EndsWith(".AppImage") ? "linux"   :
-                            downloadUrl.EndsWith(".exe")      ? "windows" :
-                            downloadUrl.EndsWith(".dmg")      ? "mac"     :
-                                                                null;
-                        
+                        var (platform, icon) =
+                            downloadUrl.EndsWith(".AppImage") ? ("linux", SvgIconType.Linux) :
+                            downloadUrl.EndsWith(".exe") ? ("windows", SvgIconType.Windows) :
+                            downloadUrl.EndsWith(".dmg") ? ("mac", SvgIconType.Mac) :
+                                                                (null, SvgIconType.Windows);
+
                         if (platform == null) return null;
                         downloads.Add(new FetchedDownload()
                         {
                             Platform = platform,
                             DownloadUrl = downloadUrl,
-                            DisplayName = char.ToUpper(platform[0]) + platform[1..]
+                            DisplayName = char.ToUpper(platform[0]) + platform[1..],
+                            Icon = icon
                         });
                     }
-                } else { return null; }
+                }
+                else { return null; }
             }
             catch (Exception e)
             {
                 Debug.WriteLine("Internal Server Error:\n{0}", e);
                 return null;
             }
-            
+
             return downloads;
         }
 
     }
-    
+
     /// <summary>
-    /// A GitHub repository release.
+    /// Represents a GitHub repository release.
     /// </summary>
     public class FetchedDownload
     {
         /// <summary>
-        /// The platform/OS of the download.
+        /// Gets the platform/OS of the download.
         /// </summary>
-        /// <value>OS</value>
+        /// <value>The platform/OS of the download</value>
         public string? Platform { get; set; }
         /// <summary>
-        /// The URL link to download the release file.
+        /// Gets the URL link to download the release file.
         /// </summary>
-        /// <value>URL</value>
+        /// <value>The URL link to download the release file</value>
         public string? DownloadUrl { get; set; }
         /// <summary>
-        /// The name of the release.
+        /// Gets the name of the release.
         /// </summary>
-        /// <value>Name</value>
+        /// <value>The name of the release</value>
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets the SVG icon of the download.
+        /// </summary>
+        /// <value>The SVG icon of the download</value>
+        public SvgIconType Icon { get; set; }
     }
 }

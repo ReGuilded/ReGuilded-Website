@@ -1,17 +1,18 @@
 ﻿@page "/"
 @layout IndexLayout
 @inject IStringLocalizer<ReGuildedLang> _loc;
+@using ReGuilded.Shared.Svgs
 
 <PageTitle>@(_loc["Index/Page-Title"]) | ReGuilded</PageTitle>
 
-<IndexPageFeature Title=@_loc["Index/Feature/Themes-Title"] Image="Themes">
+<PageGridItem Title=@_loc["Index/Feature/Themes-Title"] Image="@SvgIconType.Themes">
     <p>@_loc["Index/Feature/Themes-Description"]</p>
-</IndexPageFeature>
+</PageGridItem>
 
-<IndexPageFeature Title=@_loc["Index/Feature/Addons-Title"] Image="Addons">
+<PageGridItem Title=@_loc["Index/Feature/Addons-Title"] Image="@SvgIconType.Addons">
     <p>@_loc["Index/Feature/Addons-Description"]</p>
-</IndexPageFeature>
+</PageGridItem>
 
-<IndexPageFeature Title=@_loc["Index/Feature/Sound_Packs-Title"] Image="Sounds">
+<PageGridItem Title=@_loc["Index/Feature/Sound_Packs-Title"] Image="@SvgIconType.Sounds">
     <p>@_loc["Index/Feature/Sound_Packs-Description"]</p>
-</IndexPageFeature>
+</PageGridItem>
