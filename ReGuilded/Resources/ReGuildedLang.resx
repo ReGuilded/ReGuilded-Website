@@ -80,7 +80,7 @@
     <data name="IndexLayout/Motto/Subtitle" xml:space="preserve">
         <value>Alter your Guilded client the way you want using ReGuilded.</value>
     </data>
-    <data name="IndexLayout/QuickDownload/DownloadForPlatform" xml:space="preserve">
+    <data name="oIndexLayout/QuickDownload/DownloadForPlatform" xml:space="preserve">
         <comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
         <value>Download for {0}</value>
     </data>
@@ -103,5 +103,8 @@
     <!-- DownloadItem -->
     <data name="DownloadItem/Button" xml:space="preserve">
         <value>Download</value>
+    </data>
+    <data name="IndexLayout/QuickDownload/DownloadForPlatform" xml:space="preserve">
+        <value>Download for {0}</value>
     </data>
 </root>

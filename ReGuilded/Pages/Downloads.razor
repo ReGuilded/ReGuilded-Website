@@ -1,29 +1,31 @@
 ﻿@page "/downloads"
 @using ReGuilded.Pages.Util
+@using System.Diagnostics
 @layout DownloadsLayout
 @inject IStringLocalizer<ReGuildedLang> _loc;
 
 <PageTitle>@(_loc["Downloads/Page-Title"]) | ReGuilded</PageTitle>
 
-@if (_fetchedDownloads == null || _fetchedDownloads.Count == 0)
+@if (FetchedDownloads == null || FetchedDownloads.Count == 0)
     {
         <p>@_loc["Downloads/InternalServerError"]</p>
     }
     else
     {
         @* Add download for each platform *@
-        @foreach (var fetchedDownload in _fetchedDownloads)
+        @foreach (var fetchedDownload in FetchedDownloads)
         {
             <DownloadItem DownloadObject="@fetchedDownload"></DownloadItem>
         }
     }
 
-@code
-{
-    private List<FetchedDownload>? _fetchedDownloads;
+@code {
 
-    protected override async Task OnInitializedAsync()
-    {
-        _fetchedDownloads = await GithubUtil.FetchedDownloads();
+    [CascadingParameter]
+    public List<FetchedDownload>? FetchedDownloads { get; set; }
+
+    protected override void OnInitialized() {
+        Debug.WriteLine(FetchedDownloads?.Count);
     }
+
 }

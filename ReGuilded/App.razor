@@ -1,6 +1,9 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using ReGuilded.Pages.Util
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <CascadingValue Value="@FetchedDownloads">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        </CascadingValue>
         @* <FocusOnNavigate RouteData="@routeData" Selector="h1" /> *@
     </Found>
     <NotFound>
@@ -11,3 +14,10 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+@code {
+
+    [Parameter]
+    public List<FetchedDownload> FetchedDownloads { get; set; }
+
+}

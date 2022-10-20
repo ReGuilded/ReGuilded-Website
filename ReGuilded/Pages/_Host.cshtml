@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using System.Globalization
 @using Microsoft.AspNetCore.Localization
+@model HostModel
 @namespace ReGuilded.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
@@ -14,4 +15,4 @@
                 CultureInfo.CurrentUICulture)));
 }
 
-<component type="typeof(App)" render-mode="ServerPrerendered" />
+<component type="typeof(App)" render-mode="ServerPrerendered" param-FetchedDownloads="@Model.FetchedDownloads"/>

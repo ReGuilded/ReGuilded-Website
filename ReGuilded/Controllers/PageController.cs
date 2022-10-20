@@ -3,11 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReGuilded.Controllers;
 
+using Microsoft.Extensions.Caching.Memory;
+
 [Route("[controller]/[action]")]
-public class CultureController : Controller
-{
-    public IActionResult Set(string? culture, string redirectUri)
-    {
+public class PageController : Controller {
+    
+    public IActionResult Set(string? culture, string redirectUri) {
         if (culture != null)
         {
             HttpContext.Response.Cookies.Append(
@@ -18,4 +19,5 @@ public class CultureController : Controller
 
         return LocalRedirect(redirectUri);
     }
+
 }

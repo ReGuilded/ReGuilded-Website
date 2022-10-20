@@ -2,6 +2,7 @@
 @inject IStringLocalizer<ReGuildedLang> Loc;
 @inject IHttpContextAccessor HttpContextAccessor
 @using ReGuilded.Shared.Svgs
+@using ReGuilded.Pages.Util
 
 <main id="page" class="page-main whole">
     @* Top *@
@@ -11,12 +12,11 @@
             <p class="index-page-motto subtitle">@Loc["IndexLayout/Motto/Subtitle"]</p>
         </section>
         <section class="index-page-download section">
-            <a class="index-page-download main-button" href="/">
-                <SvgIcon Type="@(SvgIconUtil.GetIcon(Platform))" Class="index-page-download main-button-icon" />
-                @* <img class="index-page-download button-icon" src="img/Platforms/@(Platform.ToLower()).svg" alt="@(Platform)'s Image" /> *@
-                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], Platform)
+            <a class="index-page-download main-button" href="@PlatformDownload.DownloadUrl">
+                <SvgIcon Type="@(SvgIconUtil.GetIcon(_platformName))" Class="index-page-download main-button-icon" />
+                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], _platformName)
             </a>
-            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], Platform)</a>
+            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], _platformName)</a>
         </section>
 
         <CultureSelector />
@@ -35,13 +35,20 @@
 
 @code
 {
-    private string Platform = "Unset Platform";
+    
+    [CascadingParameter]
+    public List<FetchedDownload> FetchedDownloads { get; set; }
+    
+    private string _platformName = "Unset Platform";
+    private FetchedDownload PlatformDownload;
 
     protected override void OnInitialized()
     {
-        string UserAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString();
+        string userAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString() ;
 
-        Platform = UserAgent.Contains("Linux") ? "Linux"
-                   : UserAgent.Contains("Mac") ? "Mac" : "Windows";
+        _platformName = userAgent.Contains("Linux") ? "Linux"
+                   : userAgent.Contains("Mac") ? "Mac" : "Windows";
+
+        PlatformDownload = FetchedDownloads.Find(download => download.Platform == _platformName.ToLower());
     }
 }
