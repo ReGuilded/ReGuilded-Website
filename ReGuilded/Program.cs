@@ -43,7 +43,7 @@ app.UseEndpoints(endpoints => {
                      async context => {
                          context.Response.Redirect(builder.Configuration.GetSection("Socials").GetValue<string>("GitHub"));
                      });
-    endpoints.MapGet("/donate",
+    endpoints.MapGet("/tip",
                      async context => {
                          context.Response.Redirect(builder.Configuration.GetSection("Socials").GetValue<string>("KoFi"));
                      });
