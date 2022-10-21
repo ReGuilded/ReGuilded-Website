@@ -47,6 +47,10 @@ app.UseEndpoints(endpoints => {
                      async context => {
                          context.Response.Redirect(builder.Configuration.GetSection("Socials").GetValue<string>("KoFi"));
                      });
+    endpoints.MapGet("/donation",
+                     async context => {
+                         context.Response.Redirect(builder.Configuration.GetSection("Socials").GetValue<string>("KoFi"));
+                     });
     endpoints.MapGet("/subscribe",
                      async context => {
                          context.Response.Redirect(builder.Configuration.GetSection("Socials").GetValue<string>("Guilded-Subscriptions"));
