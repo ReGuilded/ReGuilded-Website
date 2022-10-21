@@ -2,8 +2,7 @@
 using System.Text.Json;
 using ReGuilded.Shared.Svgs;
 
-namespace ReGuilded.Pages.Util
-{
+namespace ReGuilded.Pages.Util {
     using Microsoft.Extensions.Caching.Memory;
     using Microsoft.Extensions.Primitives;
 
@@ -57,8 +56,7 @@ namespace ReGuilded.Pages.Util
     /// <summary>
     /// Represents a GitHub repository release.
     /// </summary>
-    public class FetchedDownload
-    {
+    public class FetchedDownload {
         /// <summary>
         /// Gets the platform/OS of the download.
         /// </summary>

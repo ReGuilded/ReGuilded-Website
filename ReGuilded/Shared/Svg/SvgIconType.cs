@@ -1,7 +1,6 @@
 namespace ReGuilded.Shared.Svgs;
 
-public enum SvgIconType
-{
+public enum SvgIconType {
     Linux,
     Mac,
     Windows,

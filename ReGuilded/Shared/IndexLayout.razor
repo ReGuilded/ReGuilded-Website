@@ -13,10 +13,10 @@
         </section>
         <section class="index-page-download section">
             <a class="index-page-download main-button" href="@PlatformDownload.DownloadUrl">
-                <SvgIcon Type="@(SvgIconUtil.GetIcon(_platformName))" Class="index-page-download main-button-icon" />
-                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], _platformName)
+                <SvgIcon Type="@(SvgIconUtil.GetIcon(PlatformDownload.DisplayName))" Class="index-page-download main-button-icon" />
+                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], PlatformDownload.DisplayName)
             </a>
-            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], _platformName)</a>
+            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], PlatformDownload.DisplayName)</a>
         </section>
 
         <CultureSelector />
@@ -33,22 +33,20 @@
     <PageFooter />
 </main>
 
-@code
-{
+@code {
     
     [CascadingParameter]
     public List<FetchedDownload> FetchedDownloads { get; set; }
     
-    private string _platformName = "Unset Platform";
     private FetchedDownload PlatformDownload;
 
-    protected override void OnInitialized()
-    {
-        string userAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString() ;
+    protected override void OnInitialized() {
+        var userAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString() ;
 
-        _platformName = userAgent.Contains("Linux") ? "Linux"
-                   : userAgent.Contains("Mac") ? "Mac" : "Windows";
+        var platformName  = userAgent.Contains("Linux") ? "linux" 
+                                 : userAgent.Contains("Mac") ? "mac" : "windows";
 
-        PlatformDownload = FetchedDownloads.Find(download => download.Platform == _platformName.ToLower());
+        PlatformDownload = FetchedDownloads.Find(download => download.Platform.Equals(platformName));
     }
+    
 }

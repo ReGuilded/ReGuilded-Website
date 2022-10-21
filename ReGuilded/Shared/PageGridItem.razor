@@ -2,8 +2,7 @@
 @using ReGuilded.Shared.Svgs
 
 <section class="page-grid-item section">
-    @if (Image is not null)
-    {
+    @if (Image is not null) {
         <div class="page-grid-item image">
             <SvgIcon Type="@(Image)" Class="page-grid-item image-svg" />
         </div>
@@ -16,6 +15,7 @@
 </section>
 
 @code {
+    
     [Parameter]
     public SvgIconType? Image { get; set; }
 
@@ -24,4 +24,5 @@
 
     [Parameter, EditorRequired]
     public RenderFragment? ChildContent { get; set; }
+    
 }

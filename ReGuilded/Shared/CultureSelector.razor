@@ -9,31 +9,27 @@
     <label>
         Select your locale:
         <select @bind="Culture">
-            @foreach (var culture in _supportedCultures)
-            {
+            @foreach (var culture in _supportedCultures) {
                 <option value="@culture">@culture.DisplayName</option>
             }
         </select>
     </label>
 </p>
 
-@code
-{
+@code {
+    
     private List<CultureInfo> _supportedCultures = new List<CultureInfo>();
 
-    protected override void OnInitialized()
-    {
+    protected override void OnInitialized() {
         var supportedCultures = Configuration.GetSection("SupportedCultures").Get<string[]>();
-        foreach (var supportedCulture in supportedCultures) 
-        {
+        foreach (var supportedCulture in supportedCultures) {
             _supportedCultures.Add(new CultureInfo(supportedCulture));
         }
         
-            Culture = CultureInfo.CurrentCulture;
+        Culture = CultureInfo.CurrentCulture;
     }
 
-    private CultureInfo Culture
-    {
+    private CultureInfo Culture {
         get => CultureInfo.CurrentCulture;
         set {
             if (CultureInfo.CurrentCulture.Equals(value)) return;
@@ -49,4 +45,5 @@
             
         }
     }
+    
 }

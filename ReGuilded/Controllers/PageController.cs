@@ -9,8 +9,7 @@ using Microsoft.Extensions.Caching.Memory;
 public class PageController : Controller {
     
     public IActionResult Set(string? culture, string redirectUri) {
-        if (culture != null)
-        {
+        if (culture != null) {
             HttpContext.Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(

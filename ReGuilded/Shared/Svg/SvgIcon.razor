@@ -2,8 +2,7 @@
 
 <span class="@($"svg-icon base {Class}")">
     @{
-        switch(Type)
-        {
+        switch(Type) {
             case SvgIconType.Linux:
                 <SvgLinux />
                 break;
@@ -27,9 +26,11 @@
 </span>
 
 @code {
+    
     [Parameter, EditorRequired]
     public SvgIconType? Type { get; set; }
 
     [Parameter]
     public string? Class { get; set; }
+    
 }

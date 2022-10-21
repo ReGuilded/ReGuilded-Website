@@ -28,8 +28,7 @@
         </nav>
     </div>
 
-    @if (ChildContent is not null)
-    {
+    @if (ChildContent is not null) {
         <section class="page-header additional">
             @ChildContent
         </section>
@@ -37,6 +36,8 @@
 </header>
 
 @code {
+    
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
+    
 }

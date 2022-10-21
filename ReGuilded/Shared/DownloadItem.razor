@@ -1,8 +1,7 @@
 ﻿@using ReGuilded.Pages.Util
 @inject IStringLocalizer<ReGuildedLang> _loc;
 
-@if (DownloadObject is not null)
-{
+@if (DownloadObject is not null) {
     <PageGridItem Title="@(DownloadObject.DisplayName)" Image="@(DownloadObject.Icon)">
         <a class="download-page item-button" href="@DownloadObject.DownloadUrl">@_loc["DownloadItem/Button"]</a>
     </PageGridItem>
@@ -13,6 +12,8 @@
 }
 
 @code {
+    
     [Parameter, EditorRequired]
     public FetchedDownload? DownloadObject { get; set; }
+    
 }
