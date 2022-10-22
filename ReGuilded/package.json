@@ -4,8 +4,9 @@
   "description": "The website for ReGuilded.",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp",
-    "watch": "gulp live-rebuild"
+    "build": "npm run buildJson && gulp",
+    "watch": "gulp live-rebuild",
+    "buildJson": "gulp json"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,7 @@
   },
   "homepage": "https://reguilded.dev",
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-header": "^2.0.9",
     "through2": "^4.0.2"
   },

@@ -26,28 +26,25 @@
     <data name="PageHeader/Downloads" xml:space="preserve">
         <value>Downloads</value>
     </data>
+    <data name="PageHeader/SupportUs" xml:space="preserve">
+        <value>Support Us</value>
+    </data>
+    <data name="PageHeader/SupportUs/Tip" xml:space="preserve">
+        <value>Tip</value>
+    </data>
+    <data name="PageHeader/SupportUs/Subscribe" xml:space="preserve">
+        <value>Subscribe</value>
+    </data>
     <data name="PageHeader/Enhancements" xml:space="preserve">
         <value>Enhancements</value>
-    </data>
-    <data name="PageHeader/Enhancements/Themes" xml:space="preserve">
-        <value>Themes</value>
-    </data>
-    <data name="PageHeader/Enhancements/Addons" xml:space="preserve">
-        <value>Addons</value>
-    </data>
-    <data name="PageHeader/Enhancements/Sound_Packs" xml:space="preserve">
-        <value>Sound Packs</value>
     </data>
     
     <!-- PageFooter -->
     <data name="PageFooter/FindUs" xml:space="preserve">
         <value>Find Us</value>
     </data>
-    <data name="PageFooter/CreditMessage" xml:space="preserve">
-        <value>This project wouldn't be possible without the amazing contributors along the way.</value>
-    </data>
     <data name="PageFooter/CreditLink" xml:space="preserve">
-        <value>View the Credits.</value>
+        <value>View the Contributors.</value>
     </data>
     
     <!-- Index -->

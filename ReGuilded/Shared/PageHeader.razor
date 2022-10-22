@@ -18,10 +18,17 @@
             <li class="page-header nav-button">
                 <NavLink ActiveClass="active" class="page-header nav-link" href="downloads">@_loc["PageHeader/Downloads"]</NavLink>
             </li>
-            @* <li class="page-header nav-dropdown"> *@
-            @*     <NavLink ActiveClass="active" class="page-header nav-link" href="/" Match="NavLinkMatch.All">@_loc["PageHeader/Home"]</NavLink> *@
-            @* </li> *@
-            @* TODO: Drop-down  *@
+            <li class="page-header nav-button nav-dropdown">
+                <p class="page-header nav-link nav-dropdown-header">@_loc["PageHeader/SupportUs"] ▼</p>
+                <ul class="page-header nav-dropdown-content">
+                    <li class="page-header nav-link nav-dropdown-link">
+                        <NavLink ActiveClass="active" class="page-header nav-link" href="/tip">@_loc["PageHeader/SupportUs/Tip"]</NavLink>
+                    </li>
+                    <li class="page-header nav-link nav-dropdown-link">
+                        <NavLink ActiveClass="active" class="page-header nav-link" href="/subscribe">@_loc["PageHeader/SupportUs/Subscribe"]</NavLink>
+                    </li>
+                </ul>
+            </li>
             <li class="page-header nav-button disabled">
                 <NavLink ActiveClass="active" class="page-header nav-link disabled" href="enhancements" onclick="return false">@_loc["PageHeader/Enhancements"]</NavLink>
             </li>

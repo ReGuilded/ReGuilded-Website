@@ -97,6 +97,7 @@
     "guildedId": "kdK8ob9m",
     "commentName": "daSk0ut",
     "translationProjects": [ "Hungarian" ],
+    "isTranslationTeam": true,
     "socials": {
       "twitter": "https://twitter.com/daSk0ut"
     }
@@ -104,12 +105,14 @@
   {
     "guildedId": "x4oN2yJA",
     "commentName": "Kero",
+    "isTranslationTeam": true,
     "translationProjects": [ "French" ]
   },
   {
     "guildedId": "nm6wMRqA",
     "commentName": "Koiske",
     "translationProjects": [ "Polish" ],
+    "isTranslationTeam": true,
     "socials": {
       "twitter": "https://twitter.com/ItsKoiske"
     }
@@ -117,11 +120,13 @@
   {
     "guildedId": "841vDZRd",
     "commentName": "FieryHacker",
+    "isTranslationTeam": true,
     "translationProjects": [ "Vietnamese" ]
   },
   {
     "guildedId": "8412wg5d",
     "commentName": "MCUmbrella",
+    "isTranslationTeam": true,
     "translationProjects": [ "Chinese (Simplified)" ]
   }
 ]

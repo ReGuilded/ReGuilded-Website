@@ -91,7 +91,22 @@ page-horizontal-padding = spacing-size[5]
             color: fg-colour[2]
             opacity: 65%
             cursor: not-allowed
-
+            
+    //---- Dropdown
+    &.nav-dropdown-content
+        display: none
+        position: absolute
+        flex-direction: column
+        list-style: none
+        margin-block: 0
+        padding: spacing-size[4] 0
+        
+        background-color: bg-colour[0]
+        border-radius: rounding-size[2]
+        border: solid 1px alpha(white, 0.05)
+    &.nav-dropdown:hover &.nav-dropdown-content
+        display: flex
+            
 .page-footer
     &.panel
         z-index: 2
