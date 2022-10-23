@@ -49,6 +49,7 @@
     
     <!-- Index -->
     <data name="Index/Page-Title" xml:space="preserve">
+        <comment>The browser tab's title, seen as "Home | ReGuilded"</comment>
         <value>Home</value>
     </data>
     <data name="Index/Feature/Themes-Title" xml:space="preserve">
@@ -77,6 +78,10 @@
     <data name="IndexLayout/Motto/Subtitle" xml:space="preserve">
         <value>Alter your Guilded client the way you want using ReGuilded.</value>
     </data>
+    <data name="IndexLayout/QuickDownload/DownloadForPlatform" xml:space="preserve">
+        <comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
+        <value>Download for {0}</value>
+    </data>
     <data name="IndexLayout/QuickDownload/NotUsingPlatform" xml:space="preserve">
         <comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
         <value>Not using {0}? Click here</value>
@@ -84,6 +89,7 @@
     
     <!-- Downloads -->
     <data name="Downloads/Page-Title" xml:space="preserve">
+        <comment>The browser tab's title, seen as "Home | ReGuilded"</comment>
         <value>Downloads</value>
     </data>
     <data name="Downloads/Header" xml:space="preserve">
@@ -96,8 +102,5 @@
     <!-- DownloadItem -->
     <data name="DownloadItem/Button" xml:space="preserve">
         <value>Download</value>
-    </data>
-    <data name="IndexLayout/QuickDownload/DownloadForPlatform" xml:space="preserve">
-        <value>Download for {0}</value><comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
     </data>
 </root>
