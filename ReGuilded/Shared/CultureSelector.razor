@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Components
 @using System.Collections
 @using System.Globalization
-@inject NavigationManager _nav
+@inject NavigationManager Nav
 @inject IConfiguration Configuration
 
 <p>
@@ -34,12 +34,12 @@
         set {
             if (CultureInfo.CurrentCulture.Equals(value)) return;
             
-            var uri = new Uri(_nav.Uri)
+            var uri = new Uri(Nav.Uri)
                 .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
             var cultureEscaped = Uri.EscapeDataString(value.Name);
             var uriEscaped = Uri.EscapeDataString(uri);
 
-            _nav.NavigateTo(
+            Nav.NavigateTo(
                 $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
                 forceLoad: true);
             

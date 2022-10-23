@@ -1,17 +1,19 @@
 ﻿@page "/downloads"
 @using ReGuilded.Pages.Util
 @layout DownloadsLayout
-@inject IStringLocalizer<ReGuildedLang> _loc;
+@inject IStringLocalizer<ReGuildedLang> Loc;
 @inject IHttpContextAccessor HttpContextAccessor
 
-<PageTitle>@(_loc["Downloads/Page-Title"]) | ReGuilded</PageTitle>
+<PageTitle>@(Loc["Downloads/Page-Title"]) | ReGuilded</PageTitle>
 
 @if (FetchedDownloads == null || FetchedDownloads.Count == 0) {
-        <p>@_loc["Downloads/InternalServerError"]</p>
+        <p>@Loc["Downloads/InternalServerError"]</p>
     } else {
         @* Add download for each platform *@
         @foreach (var fetchedDownload in FetchedDownloads) {
-            <DownloadItem DownloadObject="@fetchedDownload"></DownloadItem>
+            <PageGridItem Title="@fetchedDownload.DisplayName" Image="fetchedDownload.Icon">
+                <a class="download-page item-button" href="@fetchedDownload.DownloadUrl">@Loc["DownloadItem/Button"]</a>
+            </PageGridItem>
         }
     }
 

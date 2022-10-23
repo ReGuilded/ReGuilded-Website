@@ -12,11 +12,11 @@
             <p class="index-page-motto subtitle">@Loc["IndexLayout/Motto/Subtitle"]</p>
         </section>
         <section class="index-page-download section">
-            <a class="index-page-download main-button" href="@PlatformDownload.DownloadUrl">
-                <SvgIcon Type="@(SvgIconUtil.GetIcon(PlatformDownload.DisplayName))" Class="index-page-download main-button-icon" />
-                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], PlatformDownload.DisplayName)
+            <a class="index-page-download main-button" href="@_platformDownload.DownloadUrl">
+                <SvgIcon Type="@(SvgIconUtil.GetIcon(_platformDownload.DisplayName))" Class="index-page-download main-button-icon" />
+                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], _platformDownload.DisplayName)
             </a>
-            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], PlatformDownload.DisplayName)</a>
+            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], _platformDownload.DisplayName)</a>
         </section>
 
         @* <CultureSelector /> *@
@@ -38,7 +38,7 @@
     [CascadingParameter]
     public List<FetchedDownload> FetchedDownloads { get; set; }
     
-    private FetchedDownload PlatformDownload;
+    private FetchedDownload _platformDownload;
 
     protected override void OnInitialized() {
         var userAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString() ;
@@ -46,7 +46,7 @@
         var platformName  = userAgent.Contains("Linux") ? "linux" 
                                  : userAgent.Contains("Mac") ? "mac" : "windows";
 
-        PlatformDownload = FetchedDownloads.Find(download => download.Platform.Equals(platformName));
+        _platformDownload = FetchedDownloads.Find(download => download.Platform.Equals(platformName));
     }
     
 }

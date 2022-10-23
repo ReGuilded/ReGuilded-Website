@@ -1,6 +1,6 @@
 @using ReGuilded.Resources
 @using ReGuilded.Shared.Svgs
-@inject IStringLocalizer<ReGuildedLang> _loc;
+@inject IStringLocalizer<ReGuildedLang> Loc;
 
 <header class="page-header panel">
     <div class="page-header top">
@@ -13,24 +13,24 @@
         <nav class="page-header nav">
             @* TODO: For looping *@
             <li class="page-header nav-button">
-                <NavLink ActiveClass="active" class="page-header nav-link" href="/" Match="NavLinkMatch.All">@_loc["PageHeader/Home"]</NavLink>
+                <NavLink ActiveClass="active" class="page-header nav-link" href="/" Match="NavLinkMatch.All">@Loc["PageHeader/Home"]</NavLink>
             </li>
             <li class="page-header nav-button">
-                <NavLink ActiveClass="active" class="page-header nav-link" href="downloads">@_loc["PageHeader/Downloads"]</NavLink>
+                <NavLink ActiveClass="active" class="page-header nav-link" href="downloads">@Loc["PageHeader/Downloads"]</NavLink>
             </li>
             <li class="page-header nav-button nav-dropdown">
-                <p class="page-header nav-link nav-dropdown-header">@_loc["PageHeader/SupportUs"] ▼</p>
+                <p class="page-header nav-link nav-dropdown-header">@Loc["PageHeader/SupportUs"] ▼</p>
                 <ul class="page-header nav-dropdown-content">
                     <li class="page-header nav-link nav-dropdown-link">
-                        <NavLink ActiveClass="active" class="page-header nav-link" href="/tip">@_loc["PageHeader/SupportUs/Tip"]</NavLink>
+                        <NavLink ActiveClass="active" class="page-header nav-link" href="/tip">@Loc["PageHeader/SupportUs/Tip"]</NavLink>
                     </li>
                     <li class="page-header nav-link nav-dropdown-link">
-                        <NavLink ActiveClass="active" class="page-header nav-link" href="/subscribe">@_loc["PageHeader/SupportUs/Subscribe"]</NavLink>
+                        <NavLink ActiveClass="active" class="page-header nav-link" href="/subscribe">@Loc["PageHeader/SupportUs/Subscribe"]</NavLink>
                     </li>
                 </ul>
             </li>
             <li class="page-header nav-button disabled">
-                <NavLink ActiveClass="active" class="page-header nav-link disabled" href="enhancements" onclick="return false">@_loc["PageHeader/Enhancements"]</NavLink>
+                <NavLink ActiveClass="active" class="page-header nav-link disabled" href="enhancements" onclick="return false">@Loc["PageHeader/Enhancements"]</NavLink>
             </li>
         </nav>
     </div>
