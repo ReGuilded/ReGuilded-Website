@@ -1,3 +1,5 @@
+preserve_hierarchy: true
+
 files:
   - source: /ReGuilded/Resources/ReGuildedLang.resx
     translation: /ReGuilded/Resources/%file_name%.%locale%.%file_extension%
