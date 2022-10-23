@@ -4,15 +4,15 @@
 @inject IStringLocalizer<ReGuildedLang> Loc;
 @inject IHttpContextAccessor HttpContextAccessor
 
-<PageTitle>@(Loc["Downloads/Page-Title"]) | ReGuilded</PageTitle>
+<PageTitle>@(Loc["Global/Downloads"]) | ReGuilded</PageTitle>
 
 @if (FetchedDownloads == null || FetchedDownloads.Count == 0) {
-        <p>@Loc["Downloads/InternalServerError"]</p>
+        <p>@Loc["Global/InternalServerError"]</p>
     } else {
         @* Add download for each platform *@
         @foreach (var fetchedDownload in FetchedDownloads) {
             <PageGridItem Title="@fetchedDownload.DisplayName" Image="fetchedDownload.Icon">
-                <a class="download-page item-button" href="@fetchedDownload.DownloadUrl">@Loc["DownloadItem/Button"]</a>
+                <a class="download-page item-button" href="@fetchedDownload.DownloadUrl">@Loc["Global/Download"]</a>
             </PageGridItem>
         }
     }

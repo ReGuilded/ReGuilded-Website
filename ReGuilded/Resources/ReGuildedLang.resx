@@ -19,13 +19,46 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     
-    <!-- PageHeader -->
-    <data name="PageHeader/Home" xml:space="preserve">
+    <!-- Global -->
+    <!-- Words or Phrases are only used here if they're used more than twice (EXACTLY) on the website. -->
+    <data name="Global/Home" xml:space="preserve">
         <value>Home</value>
     </data>
-    <data name="PageHeader/Downloads" xml:space="preserve">
+    <data name="Global/Download" xml:space="preserve">
+        <value>Download</value>
+    </data>
+    <data name="Global/Downloads" xml:space="preserve">
         <value>Downloads</value>
     </data>
+    <data name="Global/Enhancement" xml:space="preserve">
+        <value>Enhancement</value>
+    </data>
+    <data name="Global/Enhancements" xml:space="preserve">
+        <value>Enhancements</value>
+    </data>
+    <data name="Global/Theme" xml:space="preserve">
+        <value>Theme</value>
+    </data>
+    <data name="Global/Themes" xml:space="preserve">
+        <value>Themes</value>
+    </data>
+    <data name="Global/Addon" xml:space="preserve">
+        <value>Addon</value>
+    </data>
+    <data name="Global/Addons" xml:space="preserve">
+        <value>Addons</value>
+    </data>
+    <data name="Global/Sound_Pack" xml:space="preserve">
+        <value>Sound Pack</value>
+    </data>
+    <data name="Global/Sound_Packs" xml:space="preserve">
+        <value>Sound Packs</value>
+    </data>
+    <data name="Global/InternalServerError" xml:space="preserve">
+        <value>Internal Server Error</value>
+    </data>
+    
+    <!-- PageHeader -->
     <data name="PageHeader/SupportUs" xml:space="preserve">
         <value>Support Us</value>
     </data>
@@ -34,9 +67,6 @@
     </data>
     <data name="PageHeader/SupportUs/Subscribe" xml:space="preserve">
         <value>Subscribe</value>
-    </data>
-    <data name="PageHeader/Enhancements" xml:space="preserve">
-        <value>Enhancements</value>
     </data>
     
     <!-- PageFooter -->
@@ -48,24 +78,11 @@
     </data>
     
     <!-- Index -->
-    <data name="Index/Page-Title" xml:space="preserve">
-        <comment>The browser tab's title, seen as "Home | ReGuilded"</comment>
-        <value>Home</value>
-    </data>
-    <data name="Index/Feature/Themes-Title" xml:space="preserve">
-        <value>Themes</value>
-    </data>
     <data name="Index/Feature/Themes-Description" xml:space="preserve">
         <value>Change the look of Guilded's UI using unrestricted CSS.</value>
     </data>
-    <data name="Index/Feature/Addons-Title" xml:space="preserve">
-        <value>Addons</value>
-    </data>
     <data name="Index/Feature/Addons-Description" xml:space="preserve">
         <value>Add additional content, change UI components or run any kind of code in Guilded.</value>
-    </data>
-    <data name="Index/Feature/Sound_Packs-Title" xml:space="preserve">
-        <value>Sound Packs</value>
     </data>
     <data name="Index/Feature/Sound_Packs-Description" xml:space="preserve">
         <value>Change or add sounds to your Guilded app.</value>
@@ -85,22 +102,5 @@
     <data name="IndexLayout/QuickDownload/NotUsingPlatform" xml:space="preserve">
         <comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
         <value>Not using {0}? Click here</value>
-    </data>
-    
-    <!-- Downloads -->
-    <data name="Downloads/Page-Title" xml:space="preserve">
-        <comment>The browser tab's title, seen as "Home | ReGuilded"</comment>
-        <value>Downloads</value>
-    </data>
-    <data name="Downloads/Header" xml:space="preserve">
-        <value>Downloads</value>
-    </data>
-    <data name="Downloads/InternalServerError" xml:space="preserve">
-        <value>Internal Server Error</value>
-    </data>
-
-    <!-- DownloadItem -->
-    <data name="DownloadItem/Button" xml:space="preserve">
-        <value>Download</value>
     </data>
 </root>
