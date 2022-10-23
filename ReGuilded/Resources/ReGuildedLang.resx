@@ -98,6 +98,6 @@
         <value>Download</value>
     </data>
     <data name="IndexLayout/QuickDownload/DownloadForPlatform" xml:space="preserve">
-        <value>Download for {0}</value>
+        <value>Download for {0}</value><comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
     </data>
 </root>
