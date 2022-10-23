@@ -29,7 +29,7 @@ const transformJson = through2.obj((file, encoding, callback) => {
                 .map(contributor => contributor.guildedId)
         });
 
-    file.contents = Buffer.from(json);
+    file.contents = Buffer.from(JSON.stringify(json));
     file.path = file.path.replace(/contributors[.]json$/, "contributorIds.json");
 
     callback(null, file);

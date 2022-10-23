@@ -1,0 +1,23 @@
+@namespace ReGuilded.Shared
+
+<section class="index-page-feature section">
+    @if (Image is not null)
+    {
+        <div class="index-page-feature image"><i class="fa-solid fa-@Image"></i></div>
+    }
+    <h3 class="index-page-feature title">@Title</h3>
+    <div class="index-page-feature description">
+        @ChildContent
+    </div>
+</section>
+
+@code {
+    [Parameter]
+    public string? Image { get; set; }
+
+    [Parameter, EditorRequired]
+    public string Title { get; set; }
+
+    [Parameter, EditorRequired]
+    public RenderFragment ChildContent { get; set; }
+}

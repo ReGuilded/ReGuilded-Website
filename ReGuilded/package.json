@@ -4,9 +4,9 @@
   "description": "The website for ReGuilded.",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "npm run buildJson && gulp",
-    "watch": "gulp live-rebuild",
-    "buildJson": "gulp json"
+    "build": "gulp",
+    "buildJson": "gulp json",
+    "watch": "gulp live-rebuild"
   },
   "repository": {
     "type": "git",
