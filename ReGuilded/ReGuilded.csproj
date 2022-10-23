@@ -10,11 +10,19 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.8" />
-    <PackageReference Include="Octokit" Version="0.50.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0-rc.2.22472.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\platforms" />
+    <None Remove="Resources\test.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ReGuildedLang.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReGuilded.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">

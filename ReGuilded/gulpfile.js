@@ -18,14 +18,16 @@ async function compileStylus() {
 }
 
 const transformJson = through2.obj((file, encoding, callback) => {
-    const content = JSON.parse(file.contents.toString());
-    const json = {
-        dev: [],
-        contrib: []
-    };
-    
-    json.dev = content.filter(contributor => contributor.isCoreDeveloper).map(contributor => contributor.guildedId);
-    json.contrib = content.filter(contributor => contributor.isContributor).map(contributor => contributor.guildedId);
+    const content = file.contents.toString();
+    const json = JSON.stringify({ 
+            "dev": JSON.parse(content)
+                .filter(contributor => contributor.isCoreDeveloper)
+                .map(contributor => contributor.guildedId),
+            
+            "contrib": JSON.parse(content)
+                .filter(contributor => contributor.isContributor)
+                .map(contributor => contributor.guildedId)
+        });
 
     file.contents = Buffer.from(JSON.stringify(json));
     file.path = file.path.replace(/contributors[.]json$/, "contributorIds.json");

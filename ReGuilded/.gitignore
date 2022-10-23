@@ -3,3 +3,4 @@ obj
 package-lock.json
 node_modules
 wwwroot/css/*
+!wwwroot/css/fontawesome.css

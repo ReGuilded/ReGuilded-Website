@@ -1,17 +1,18 @@
 ﻿@page "/"
-@using ReGuilded.Shared
 @layout IndexLayout
+@inject IStringLocalizer<ReGuildedLang> _loc;
+@using ReGuilded.Shared.Svgs
 
-<PageTitle>Home</PageTitle>
+<PageTitle>@(_loc["Index/Page-Title"]) | ReGuilded</PageTitle>
 
-<IndexPageFeature Title="Themes" Image="paintbrush">
-    <p>Change the look of Guilded's UI using unrestricted CSS.</p>
-</IndexPageFeature>
+<PageGridItem Title=@_loc["Index/Feature/Themes-Title"] Image="@SvgIconType.Themes">
+    <p>@_loc["Index/Feature/Themes-Description"]</p>
+</PageGridItem>
 
-<IndexPageFeature Title="Addons" Image="puzzle-piece">
-    <p>Add additional content, change UI components or run any kind of code in Guilded.</p>
-</IndexPageFeature>
+<PageGridItem Title=@_loc["Index/Feature/Addons-Title"] Image="@SvgIconType.Addons">
+    <p>@_loc["Index/Feature/Addons-Description"]</p>
+</PageGridItem>
 
-<IndexPageFeature Title="Sound packs" Image="volume-high">
-    <p>Change or add sounds to your Guilded app.</p>
-</IndexPageFeature>
+<PageGridItem Title=@_loc["Index/Feature/Sound_Packs-Title"] Image="@SvgIconType.Sounds">
+    <p>@_loc["Index/Feature/Sound_Packs-Description"]</p>
+</PageGridItem>

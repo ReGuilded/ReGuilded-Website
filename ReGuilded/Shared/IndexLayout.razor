@@ -1,16 +1,25 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
+@inject IStringLocalizer<ReGuildedLang> Loc;
+@inject IHttpContextAccessor HttpContextAccessor
+@using ReGuilded.Shared.Svgs
+@using ReGuilded.Pages.Util
 
 <main id="page" class="page-main whole">
     @* Top *@
     <PageHeader>
         <section class="index-page-motto section">
-            <h1 class="index-page-motto title">Enhance your experience</h1>
-            <p class="index-page-motto subtitle">Alter your Guilded client the way you want using ReGuilded.</p>
+            <h1 class="index-page-motto title">@Loc["IndexLayout/Motto/Title"]</h1>
+            <p class="index-page-motto subtitle">@Loc["IndexLayout/Motto/Subtitle"]</p>
         </section>
         <section class="index-page-download section">
-            <a class="index-page-download main-button" href="/"><i class="index-page-download button-icon fa-brands fa-windows"></i>Download for @platform</a>
-            <a class="index-page-download sub-hyperlink" href="/downloads">Not using @platform? Click here</a>
+            <a class="index-page-download main-button" href="@PlatformDownload.DownloadUrl">
+                <SvgIcon Type="@(SvgIconUtil.GetIcon(PlatformDownload.DisplayName))" Class="index-page-download main-button-icon" />
+                @string.Format(Loc["IndexLayout/QuickDownload/DownloadForPlatform"], PlatformDownload.DisplayName)
+            </a>
+            <a class="index-page-download sub-hyperlink" href="/downloads">@string.Format(Loc["IndexLayout/QuickDownload/NotUsingPlatform"], PlatformDownload.DisplayName)</a>
         </section>
+
+        @* <CultureSelector /> *@
     </PageHeader>
 
     @* Main stuff *@
@@ -18,18 +27,26 @@
         <article class="page-content panel grid">
             @Body
         </article>
-
-        <footer class="page-footer panel">
-            <p>
-                <span class="page-footer copyright">&copy;@DateTime.Now.Year All Rights Reserved - ReGuilded</span>
-                <span>&nbsp;•&nbsp;</span>
-                <span class="page-footer disclaimer">Not affiliated with <a href="https://guilded.gg">Guilded Inc.</a></span>
-            </p>
-            <p>This website uses FontAwesome icons licensed under <a href="/FA-LICENSE.txt">CC BY 4.0 license</a>.</p>
-        </footer>
     </div>
+
+    @* Bottom *@
+    <PageFooter />
 </main>
 
 @code {
-    private string platform = "Unset platform";
+    
+    [CascadingParameter]
+    public List<FetchedDownload> FetchedDownloads { get; set; }
+    
+    private FetchedDownload PlatformDownload;
+
+    protected override void OnInitialized() {
+        var userAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString() ;
+
+        var platformName  = userAgent.Contains("Linux") ? "linux" 
+                                 : userAgent.Contains("Mac") ? "mac" : "windows";
+
+        PlatformDownload = FetchedDownloads.Find(download => download.Platform.Equals(platformName));
+    }
+    
 }

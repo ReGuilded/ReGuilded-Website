@@ -7,6 +7,7 @@ sizing()
 font-color()
     color: arguments
     fill: arguments
+    transition: color, fill
 vertical-prop(prop, args...)
     {prop}-top: args
     {prop}-bottom: args
@@ -22,4 +23,6 @@ margin-horizontal()
 transition()
     fn = @transition-timing-function || ease-out
     duration = @transition-duration || default-transition-period
-    transition: arguments duration fn
+    transition-property: arguments
+    transition-duration: duration
+    transition-timing-function: fn

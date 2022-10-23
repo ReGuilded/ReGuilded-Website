@@ -1,27 +1,35 @@
 ﻿@page "/downloads"
 @using ReGuilded.Pages.Util
+@layout DownloadsLayout
+@inject IStringLocalizer<ReGuildedLang> _loc;
+@inject IHttpContextAccessor HttpContextAccessor
 
-<PageTitle>Downloads</PageTitle>
+<PageTitle>@(_loc["Downloads/Page-Title"]) | ReGuilded</PageTitle>
 
-<section class="download-page section">
-    <h3 class="download-page header">Downloads</h3>
-    <div class="download-page content">
-        @* If no downloads were fetched, output it as an error *@
-        @* @if (Model.FetchedDownloads == null || Model.FetchedDownloads.Count == 0 || Model.InternalServerError)
-        {
-            <p>Internal Server Error</p>
+@if (FetchedDownloads == null || FetchedDownloads.Count == 0) {
+        <p>@_loc["Downloads/InternalServerError"]</p>
+    } else {
+        @* Add download for each platform *@
+        @foreach (var fetchedDownload in FetchedDownloads) {
+            <DownloadItem DownloadObject="@fetchedDownload"></DownloadItem>
         }
-        else
-        {
-            @* Add download for each platform * @
-            @foreach (FetchedDownload fetchedDownload in Model.FetchedDownloads)
-            {
-                <div class="download-page item">
-                    <img class="download-page item-icon" src="img/platforms/@(fetchedDownload.Platform).svg" alt="@fetchedDownload.DisplayName Logo">
-                    <h3 class="download-page item-title">@fetchedDownload.DisplayName</h3>
-                    <a class="download-page item-button" href="@fetchedDownload.DownloadUrl">Download</a>
-                </div>
-            }
-        } *@
-    </div>
-</section>
+    }
+
+@code {
+
+    [CascadingParameter]
+    public List<FetchedDownload>? FetchedDownloads { get; set; }
+
+    protected override void OnInitialized() {
+        var userAgent = HttpContextAccessor.HttpContext?.Request.Headers["User-Agent"].ToString() ;
+
+        var platformName = userAgent.Contains("Linux") ? "linux"
+                                : userAgent.Contains("Mac") ? "mac" : "windows";
+
+        var platformDownloadIndex = FetchedDownloads.FindIndex(download => download.Platform == platformName);
+        var platformDownload = FetchedDownloads[platformDownloadIndex];
+        FetchedDownloads.RemoveAt(platformDownloadIndex);
+        FetchedDownloads.Insert(1, platformDownload);
+    }
+
+}
