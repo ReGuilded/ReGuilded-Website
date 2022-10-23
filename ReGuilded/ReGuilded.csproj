@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Resources\test.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Resources\ReGuildedLang.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
