@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!-- Global -->
+  <!-- Words or Phrases are only used here if they're used more than twice (EXACTLY) on the website. -->
+  <data name="Global/Home" xml:space="preserve">
+        <value>Accueil</value>
+    </data>
+  <data name="Global/Download" xml:space="preserve">
+        <value>Télécharger</value>
+    </data>
+  <data name="Global/Downloads" xml:space="preserve">
+        <value>Téléchargements</value>
+    </data>
+  <data name="Global/Enhancement" xml:space="preserve">
+        <value>Extensions</value>
+    </data>
+  <data name="Global/Enhancements" xml:space="preserve">
+        <value>Extensions</value>
+    </data>
+  <data name="Global/Theme" xml:space="preserve">
+        <value>Thème</value>
+    </data>
+  <data name="Global/Themes" xml:space="preserve">
+        <value>Thèmes</value>
+    </data>
+  <data name="Global/Addon" xml:space="preserve">
+        <value>Modules</value>
+    </data>
+  <data name="Global/Addons" xml:space="preserve">
+        <value>Modules</value>
+    </data>
+  <data name="Global/Sound_Pack" xml:space="preserve">
+        <value>Packs de sons</value>
+    </data>
+  <data name="Global/Sound_Packs" xml:space="preserve">
+        <value>Packs de sons</value>
+    </data>
+  <data name="Global/InternalServerError" xml:space="preserve">
+        <value>Erreur interne du serveur</value>
+    </data>
+  <!-- PageHeader -->
+  <data name="PageHeader/SupportUs" xml:space="preserve">
+        <value>Nous soutenir</value>
+    </data>
+  <data name="PageHeader/SupportUs/Tip" xml:space="preserve">
+        <value>Astuce</value>
+    </data>
+  <data name="PageHeader/SupportUs/Subscribe" xml:space="preserve">
+        <value>S'abonner</value>
+    </data>
+  <!-- PageFooter -->
+  <data name="PageFooter/FindUs" xml:space="preserve">
+        <value>Nous trouver</value>
+    </data>
+  <data name="PageFooter/CreditLink" xml:space="preserve">
+        <value>Voir les Contributeurs.</value>
+    </data>
+  <!-- Index -->
+  <data name="Index/Feature/Themes-Description" xml:space="preserve">
+        <value>Changez l'apparence de l'interface de Guilded en utilisant du CSS sans restrictions.</value>
+    </data>
+  <data name="Index/Feature/Addons-Description" xml:space="preserve">
+        <value>Ajoutez du contenu additionnel, changez les composants de l'interface ou exécutez tout type de code dans Guilded.</value>
+    </data>
+  <data name="Index/Feature/Sound_Packs-Description" xml:space="preserve">
+        <value>Changez ou ajoutez des sons pour votre client Guilded.</value>
+    </data>
+  <!-- IndexLayout -->
+  <data name="IndexLayout/Motto/Title" xml:space="preserve">
+        <value>Améliorez votre expérience</value>
+    </data>
+  <data name="IndexLayout/Motto/Subtitle" xml:space="preserve">
+        <value>Modifiez votre client Guilded comme vous le souhaitez en utilisant ReGuilded.</value>
+    </data>
+  <data name="IndexLayout/QuickDownload/DownloadForPlatform" xml:space="preserve">
+        <comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
+        <value>Télécharger pour {0}</value>
+    </data>
+  <data name="IndexLayout/QuickDownload/NotUsingPlatform" xml:space="preserve">
+        <comment>{0} = Users current platform. (Windows, Mac, or Linux)</comment>
+        <value>Vous n'utilisez pas {0}? Cliquez ici</value>
+    </data>
+</root>
