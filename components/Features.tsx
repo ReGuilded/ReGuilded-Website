@@ -56,7 +56,7 @@ const features: IFeature[] = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
-          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+          d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
         ></path>
       </svg>
     ),
@@ -64,7 +64,7 @@ const features: IFeature[] = [
   {
     heading: "Sounds",
     content:
-      "Add sounds to Guilded. You can add sounds to Guilded's events, such as when a message is sent, or when a user joins a server.",
+      "Add sounds to Guilded. Build your own soundpacks, or use one of the many soundpacks from the community.",
     icon: (
       <svg
         width={36}
@@ -78,7 +78,7 @@ const features: IFeature[] = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
-          d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
         ></path>
       </svg>
     ),
@@ -88,8 +88,14 @@ const features: IFeature[] = [
 const Features = () => {
   return (
     <Container maxW="6xl" p={{ base: 5, md: 10 }}>
-      <chakra.h3 fontSize="4xl" fontWeight="bold" mb={20} textAlign="center">
-        What <chakra.span color="red.400">ReGuilded</chakra.span> has to offer
+      <chakra.h3
+        fontSize="4xl"
+        fontWeight="bold"
+        mb={20}
+        textAlign="center"
+        fontFamily="Inter"
+      >
+        What <chakra.span color="red.400">ReGuilded</chakra.span> has to offer.
       </chakra.h3>
       <SimpleGrid
         columns={{ base: 1, sm: 2, md: 3 }}
@@ -107,7 +113,7 @@ const Features = () => {
             pos="relative"
             _hover={{
               transition: "all 0.2s ease-in-out",
-              transform: "translateY(-5px)",
+              transform: "translateY(-10px)",
             }}
             boxShadow="lg"
           >

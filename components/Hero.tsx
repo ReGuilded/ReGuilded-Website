@@ -16,6 +16,7 @@ import {
 // Here we have used react-icons package for the icons
 import { GoChevronRight } from "react-icons/go";
 import { MdBolt } from "react-icons/md";
+import { FaGuilded } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
@@ -36,6 +37,7 @@ const HeroSection = () => {
             lineHeight={1}
             fontWeight="bold"
             textAlign="left"
+            fontFamily="Inter"
           >
             Enhancing Guilded <br />
             <chakra.span color="red.400" fontWeight="black">
@@ -48,6 +50,7 @@ const HeroSection = () => {
             lineHeight="1.375"
             fontWeight="400"
             color="gray.500"
+            fontFamily="Inter"
           >
             ReGuilded is a client injector mod that allows you to extend the
             functionality of Guilded&apos;s client by providing theme and add-on
@@ -61,6 +64,7 @@ const HeroSection = () => {
             <Button
               bg="red.400"
               shadow={"0 0 40px #F56565"}
+              fontFamily="Inter"
               _hover={{
                 bg: "red.500",
                 transform: "translateY(-2px)",
@@ -73,6 +77,8 @@ const HeroSection = () => {
             <Button
               variant="outline"
               _hover={{ transform: "translateY(-2px)" }}
+              fontFamily="Inter"
+              leftIcon={<FaGuilded />}
             >
               Support
             </Button>

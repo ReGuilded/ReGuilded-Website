@@ -21,7 +21,26 @@ import Image from "next/image";
 
 const Links = ["Themes", "Addons", "Contributors", "Support"];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const navItems = [
+  {
+    name: "Themes",
+    href: "/themes",
+  },
+  {
+    name: "Addons",
+    href: "/addons",
+  },
+  {
+    name: "Contributors",
+    href: "/contributors",
+  },
+  {
+    name: "Support",
+    href: "//guilded.gg/reguilded",
+  },
+];
+
+const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
   <Link
     px={2}
     py={1}
@@ -30,7 +49,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"#"}
+    href={href}
   >
     {children}
   </Link>
@@ -60,20 +79,24 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Image
-                src="/LogoTransparent.svg"
-                height="30"
-                width="30"
-                alt="Logo"
-              />
+              <Link href="/">
+                <Image
+                  src="/LogoTransparent.svg"
+                  height="30"
+                  width="30"
+                  alt="Logo"
+                />
+              </Link>
             </Box>
             <HStack
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {navItems.map((navItem, index) => (
+                <NavLink key={index} href={navItem.href}>
+                  {navItem.name}
+                </NavLink>
               ))}
             </HStack>
           </HStack>
@@ -91,8 +114,10 @@ export default function Simple() {
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {navItems.map((navItem, index) => (
+                <NavLink key={index} href={navItem.href}>
+                  {navItem.name}
+                </NavLink>
               ))}
             </Stack>
           </Box>
