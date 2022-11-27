@@ -5,14 +5,23 @@ import {
   extendTheme,
   type ThemeConfig,
 } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 import Layout from "../components/Layout";
 
 const config: ThemeConfig = {
-  initialColorMode: "dark",
+  initialColorMode: "dark", // light mode not officially supported (switching is possible, just not officially supported)
   useSystemColorMode: false,
 };
 
-const theme = extendTheme({ config });
+const styles = {
+  global: (props: any) => ({
+    body: {
+      bg: mode("gray.50", "#151a23")(props),
+    },
+  }),
+};
+
+const theme = extendTheme({ ...config, styles });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

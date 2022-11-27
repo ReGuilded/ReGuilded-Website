@@ -100,13 +100,16 @@ export default function Simple() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={"center"}>
+          <Flex alignItems={"center"} gap={2}>
             <Button
               bg="red.400"
               size="sm"
               _hover={{ bg: "red.500", transform: "translateY(-2px)" }}
             >
               Download
+            </Button>
+            <Button size="sm" variant="outline">
+              Sign in
             </Button>
           </Flex>
         </Flex>
