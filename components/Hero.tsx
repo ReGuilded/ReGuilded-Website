@@ -40,7 +40,11 @@ const HeroSection = () => {
             fontFamily="Inter"
           >
             Enhancing Guilded <br />
-            <chakra.span color="red.400" fontWeight="black">
+            <chakra.span
+              bgGradient="linear(to-r, red.400,pink.400)"
+              bgClip="text"
+              fontWeight="black"
+            >
               with ReGuilded
             </chakra.span>
           </chakra.h1>
@@ -63,10 +67,11 @@ const HeroSection = () => {
           >
             <Button
               bg="red.400"
+              bgGradient="linear(to-r, red.400,pink.400)"
               shadow={"0 0 40px #F56565"}
               fontFamily="Inter"
               _hover={{
-                bg: "red.500",
+                bgGradient: "linear(to-r, red.500,pink.500)",
                 transform: "translateY(-2px)",
                 shadow: "0 0 30px #E53E3E",
               }}

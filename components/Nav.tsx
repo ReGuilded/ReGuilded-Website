@@ -15,6 +15,7 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  color,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import Image from "next/image";
@@ -45,9 +46,9 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
     px={2}
     py={1}
     rounded={"md"}
+    textUnderlineOffset="4px"
     _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
+      textDecoration: "underline",
     }}
     href={href}
   >
@@ -61,13 +62,11 @@ export default function Simple() {
   return (
     <>
       <Box
-        bg={useColorModeValue("gray.100", "gray.900")}
+        bg={"gray.800"}
         mx={{ base: 0, lg: 10 }}
         mt={{ base: 0, lg: 10 }}
-        borderRadius="2xl"
-        borderTop="3px solid"
-        borderTopColor="red.400"
-        px={4}
+        rounded={{ base: "0", lg: "3xl" }}
+        px={7}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
@@ -102,9 +101,13 @@ export default function Simple() {
           </HStack>
           <Flex alignItems={"center"} gap={2}>
             <Button
-              bg="red.400"
+              bgGradient="linear(to-r, red.400, pink.400)"
               size="sm"
-              _hover={{ bg: "red.500", transform: "translateY(-2px)" }}
+              _hover={{
+                bg: "red.500",
+                transform: "translateY(-2px)",
+                bgGradient: "linear(to-r, red.500, pink.500)",
+              }}
             >
               Download
             </Button>
