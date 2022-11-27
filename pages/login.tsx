@@ -120,6 +120,7 @@ export default function JoinOurTeam() {
                   bg={"gray.900"}
                   color={"gray.100"}
                   _hover={{ bg: "gray.700" }}
+                  _focus={{ bg: "gray.800" }}
                 >
                   Sign in with GitHub
                 </Button>
@@ -129,6 +130,7 @@ export default function JoinOurTeam() {
                   bg={"yellow.400"}
                   color={"gray.900"}
                   _hover={{ bg: "yellow.500" }}
+                  _focus={{ bg: "yellow.500" }}
                 >
                   Sign in with Guilded
                 </Button>
