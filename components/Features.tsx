@@ -95,7 +95,15 @@ const Features = () => {
         textAlign="center"
         fontFamily="Inter"
       >
-        What <chakra.span color="red.400">ReGuilded</chakra.span> has to offer.
+        What{" "}
+        <chakra.span
+          bgGradient="linear(to-r, red.400, pink.400)"
+          bgClip="text"
+          fontWeight="black"
+        >
+          ReGuilded
+        </chakra.span>{" "}
+        has to offer
       </chakra.h3>
       <SimpleGrid
         columns={{ base: 1, sm: 2, md: 3 }}
@@ -121,7 +129,7 @@ const Features = () => {
               p={2}
               w="max-content"
               color="white"
-              bg="red.400"
+              bgGradient="linear(to-r, red.400, pink.400)"
               rounded="md"
               marginInline="auto"
               pos="absolute"
