@@ -87,7 +87,7 @@ export default function Login() {
               <Stack spacing={4}>
                 <Button
                   leftIcon={<FcGoogle />}
-                  fontFamily={"heading"}
+                  fontFamily={"Inter"}
                   bg={"gray.200"}
                   color={"gray.800"}
                   _hover={{ bg: "gray.100" }}
@@ -96,7 +96,7 @@ export default function Login() {
                 </Button>
                 <Button
                   leftIcon={<AiFillGithub />}
-                  fontFamily={"heading"}
+                  fontFamily={"Inter"}
                   bg={"gray.900"}
                   color={"gray.100"}
                   _hover={{ bg: "gray.700" }}
@@ -106,7 +106,7 @@ export default function Login() {
                 </Button>
                 <Button
                   leftIcon={<FaGuilded />}
-                  fontFamily={"heading"}
+                  fontFamily={"Inter"}
                   bg={"yellow.400"}
                   color={"gray.900"}
                   _hover={{ bg: "yellow.500" }}
