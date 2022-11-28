@@ -16,8 +16,9 @@ import {
   useColorModeValue,
   Stack,
   color,
+  useColorMode,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 
 const Links = ["Themes", "Addons", "Contributors", "Support"];
@@ -50,6 +51,7 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
     _hover={{
       textDecoration: "underline",
     }}
+    color={useColorModeValue("gray.900", "gray.200")}
     href={href}
   >
     {children}
@@ -58,11 +60,12 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
       <Box
-        bg={"gray.800"}
+        bg={useColorModeValue("gray.100", "gray.800")}
         mx={{ base: 0, lg: 10 }}
         mt={{ base: 0, lg: 10 }}
         rounded={{ base: "0", lg: "3xl" }}
@@ -99,7 +102,14 @@ export default function Simple() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={"center"} gap={2}>
+          <Flex alignItems={"center"} gap={3}>
+            <IconButton
+              aria-label="Color switch"
+              icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+              variant="outline"
+              rounded="full"
+              onClick={toggleColorMode}
+            />
             <Button
               bgGradient="linear(to-r, red.400, pink.400)"
               size="sm"
@@ -108,11 +118,12 @@ export default function Simple() {
                 transform: "translateY(-2px)",
                 bgGradient: "linear(to-r, red.500, pink.500)",
               }}
+              color="gray.50"
             >
               Download
             </Button>
-            <Button size="sm" variant="outline">
-              Sign in
+            <Button size="sm" variant="outline" as="a" href="/login">
+              Login
             </Button>
           </Flex>
         </Flex>

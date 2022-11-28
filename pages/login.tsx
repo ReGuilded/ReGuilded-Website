@@ -12,6 +12,7 @@ import {
   AvatarGroup,
   useBreakpointValue,
   IconProps,
+  useColorModeValue,
   Icon,
   Divider,
 } from "@chakra-ui/react";
@@ -19,30 +20,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 import { FaGuilded } from "react-icons/fa";
 
-const avatars = [
-  {
-    name: "Ryan Florence",
-    url: "https://bit.ly/ryan-florence",
-  },
-  {
-    name: "Segun Adebayo",
-    url: "https://bit.ly/sage-adebayo",
-  },
-  {
-    name: "Kent Dodds",
-    url: "https://bit.ly/kent-c-dodds",
-  },
-  {
-    name: "Prosper Otemuyiwa",
-    url: "https://bit.ly/prosper-baba",
-  },
-  {
-    name: "Christian Nwamba",
-    url: "https://bit.ly/code-beast",
-  },
-];
-
-export default function JoinOurTeam() {
+export default function Login() {
   return (
     <>
       <Box position={"relative"}>
@@ -73,6 +51,8 @@ export default function JoinOurTeam() {
           </Stack>
           <Stack
             bg={"gray.50"}
+            border="1px solid"
+            borderColor="gray.200"
             rounded={"xl"}
             p={{ base: 4, sm: 6, md: 8 }}
             spacing={{ base: 8 }}
@@ -85,7 +65,7 @@ export default function JoinOurTeam() {
                 fontFamily="Inter"
                 fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
               >
-                Join the community
+                Join ReGuilded
                 <Text
                   as={"span"}
                   bgGradient="linear(to-r, red.400,pink.400)"
