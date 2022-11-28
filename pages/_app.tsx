@@ -6,7 +6,7 @@ import {
   type ThemeConfig,
 } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
