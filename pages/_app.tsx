@@ -6,10 +6,10 @@ import {
   type ThemeConfig,
 } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 
 const config: ThemeConfig = {
-  initialColorMode: "dark", // light mode not officially supported (switching is possible, just not officially supported)
+  initialColorMode: "dark",
   useSystemColorMode: false,
 };
 
