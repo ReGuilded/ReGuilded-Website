@@ -20,7 +20,7 @@ const features: IFeature[] = [
   {
     heading: "Themes",
     content:
-      "Choose from many well-crafted themes to experience on Guilded. Or, you can also create your own.",
+      "Choose from many well-crafted themes to experience on Guilded. Or, you can also create your own to build your own experience.",
     icon: (
       <svg
         width={36}
@@ -140,10 +140,15 @@ const Features = () => {
             >
               {feature.icon}
             </Flex>
-            <chakra.h3 fontWeight="semibold" fontSize="2xl" mt={6}>
+            <chakra.h3
+              fontWeight="semibold"
+              fontFamily="Inter"
+              fontSize="2xl"
+              mt={6}
+            >
               {feature.heading}
             </chakra.h3>
-            <Text fontSize="md" mt={4}>
+            <Text fontFamily="Inter" fontSize="md" mt={4}>
               {feature.content}
             </Text>
           </Box>
