@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import Layout from "../components/Layout/Layout";
+import { SessionProvider } from "next-auth/react";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
@@ -23,13 +24,18 @@ const styles = {
 
 const theme = extendTheme({ ...config, styles });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: any) {
   return (
     <>
       <ChakraProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <SessionProvider session={session}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </SessionProvider>
       </ChakraProvider>
     </>
   );
