@@ -119,6 +119,8 @@ export default function Simple() {
                 bgGradient: "linear(to-r, red.500, pink.500)",
               }}
               color="gray.50"
+              as="a"
+              href="/downloads"
             >
               Download
             </Button>

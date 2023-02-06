@@ -76,6 +76,8 @@ const HeroSection = () => {
                 shadow: "0 0 30px #E53E3E",
               }}
               color="gray.50"
+              as="a"
+              href="/downloads"
             >
               Download
             </Button>

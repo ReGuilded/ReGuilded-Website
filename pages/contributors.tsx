@@ -11,86 +11,80 @@ import {
   Text,
   IconButton,
   chakra,
+  Stack,
   Badge,
   Grid,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Image,
 } from "@chakra-ui/react";
 import { AttachmentIcon } from "@chakra-ui/icons";
 import { isIndexSignatureDeclaration } from "typescript";
+import { FaGithub } from "react-icons/fa";
 
-const people = [
-  {
-    name: "Atom",
-    role: "Web Developer",
-    avatar: "https://avatars.githubusercontent.com/u/99760654?v=4",
-    github: "atomisadev",
-  },
-  {
-    name: "Atom",
-    role: "Web Developer",
-    avatar: "https://avatars.githubusercontent.com/u/99760654?v=4",
-    github: "atomisadev",
-  },
-  {
-    name: "Atom",
-    role: "Web Developer",
-    avatar: "https://avatars.githubusercontent.com/u/99760654?v=4",
-    github: "atomisadev",
-  },
-  {
-    name: "Atom",
-    role: "Web Developer",
-    avatar: "https://avatars.githubusercontent.com/u/99760654?v=4",
-    github: "atomisadev",
-  },
-  {
-    name: "Atom",
-    role: "Web Developer",
-    avatar: "https://avatars.githubusercontent.com/u/99760654?v=4",
-    github: "atomisadev",
-  },
-];
+import { getProfilePicture } from "../utils/getProfilePicture";
+import { core } from "../utils/people";
 
-export default function Contributors() {
+export default async function Contributors() {
+
+
   return (
     <>
-      <Box mx={{ base: 5, md: "6rem" }} mt={{ base: "1rem", md: "2rem" }}>
-        <Heading>Core</Heading>
+      <Box
+        mx={{ base: 5, md: "6rem", lg: "10rem" }}
+        mt={{ base: "1rem", md: "2rem" }}
+      >
+        <Heading textAlign={{ base: "center", lg: "left" }}>Core</Heading>
         <Grid
-          templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(1, 1fr)",
+            lg: "repeat(2, 1fr)",
+          }}
           mt={3}
+          gap={3}
         >
-          {people.map((person, index) => (
-            <Box
-              display="flex"
-              key={index}
-              as="a"
-              href={`//github.com/${person.github}`}
-              borderRadius="2xl"
-              border="1px solid"
-              borderColor="gray.600"
-              flexDirection="row"
-              gap="4"
-              cursor="pointer"
-              alignItems="center"
-              maxW="20rem"
-              _hover={{
-                borderColor: "red.400",
-                transition: "all 0.3s ease-in-out",
-              }}
-              p={5}
-              mt={4}
-            >
-              <HStack>
-                <Avatar name="Atom" src={person.avatar} />
-                <Box display="flex" flexDirection="column">
-                  <Text fontSize="1rem" mb="0" fontWeight="bold">
-                    {person.name}
-                  </Text>
-                  <Badge colorScheme="red">{person.role}</Badge>
-                </Box>
-              </HStack>
-            </Box>
-          ))}
+          {core.map((developer, index) => {
+            return (
+              <Card
+                direction={{ base: "column", sm: "row" }}
+                overflow="hidden"
+                variant="outline"
+                key={index}
+              >
+                <Image
+                  objectFit="cover"
+                  maxW={{ base: "100%", sm: "200px" }}
+                  alt={developer.name}
+                />
+
+                <Stack>
+                  <CardBody>
+                    <Heading size="lg">{developer.name}</Heading>
+
+                    <Text py="2">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Minima, aperiam.
+                    </Text>
+
+                    <Box display="flex" mt={2} gap={2}>
+                      {developer.titles.map((title, index) => (
+                        <Badge key={index} colorScheme="red">
+                          {title}
+                        </Badge>
+                      ))}
+                    </Box>
+                  </CardBody>
+
+                  <CardFooter>
+                    <Button leftIcon={<FaGithub />}>GitHub</Button>
+                  </CardFooter>
+                </Stack>
+              </Card>
+            );
+          })}
         </Grid>
       </Box>
     </>

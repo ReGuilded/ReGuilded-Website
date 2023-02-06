@@ -65,7 +65,10 @@ export default function SmallWithLogoLeft() {
           </Text>
         </Box>
 
-        <Text fontFamily="Inter">© 2022 ReGuilded. All rights reserved</Text>
+        <Box>
+          <Text fontFamily="Inter" fontSize="sm">© 2021-{new Date().getFullYear()} ReGuilded. All rights reserved</Text>
+          <Text fontFamily="Inter" color="gray.400" fontSize="xs">ReGuilded is not affiliated or endorsed by Guilded, Inc.</Text>
+        </Box>
       </Container>
     </Box>
   );
