@@ -13,7 +13,7 @@ import {
 interface IFeature {
   heading: string;
   content: string;
-  icon: SVGProps<SVGElement>;
+  icon: any;
 }
 
 const features: IFeature[] = [
