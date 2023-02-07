@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Avatar,
   AvatarBadge,
@@ -20,16 +19,11 @@ import {
   CardFooter,
   Image,
 } from "@chakra-ui/react";
-import { AttachmentIcon } from "@chakra-ui/icons";
-import { isIndexSignatureDeclaration } from "typescript";
+import React from "react";
 import { FaGithub } from "react-icons/fa";
+import { BsTwitter } from "react-icons/bs";
 
-import { getProfilePicture } from "../utils/getProfilePicture";
-import { core } from "../utils/people";
-
-export default async function Contributors() {
-
-
+export default function Contributors({ data }: any) {
   return (
     <>
       <Box
@@ -46,47 +40,296 @@ export default async function Contributors() {
           mt={3}
           gap={3}
         >
-          {core.map((developer, index) => {
-            return (
-              <Card
-                direction={{ base: "column", sm: "row" }}
-                overflow="hidden"
-                variant="outline"
-                key={index}
-              >
-                <Image
-                  objectFit="cover"
-                  maxW={{ base: "100%", sm: "200px" }}
-                  alt={developer.name}
-                />
+          {data.coreDevelopers.map((developer: any, index: any) => (
+            <Card
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              variant="outline"
+              key={index}
+            >
+              <Image
+                objectFit="cover"
+                maxW={{ base: "100%", sm: "200px" }}
+                src={developer.profilePicture}
+                alt={developer.name}
+              />
 
-                <Stack>
-                  <CardBody>
-                    <Heading size="lg">{developer.name}</Heading>
+              <Stack>
+                <CardBody>
+                  <Heading size="lg">{developer.name}</Heading>
 
-                    <Text py="2">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Minima, aperiam.
-                    </Text>
+                  <Text py="2">
+                    {developer.bio ? developer.bio : "No description provided"}
+                  </Text>
 
-                    <Box display="flex" mt={2} gap={2}>
-                      {developer.titles.map((title, index) => (
-                        <Badge key={index} colorScheme="red">
-                          {title}
-                        </Badge>
-                      ))}
-                    </Box>
-                  </CardBody>
+                  <Box display="flex" mt={2} gap={2}>
+                    {developer.titles.map((title: any, index: any) => (
+                      <Badge key={index} colorScheme="red">
+                        {title}
+                      </Badge>
+                    ))}
+                  </Box>
+                </CardBody>
 
-                  <CardFooter>
-                    <Button leftIcon={<FaGithub />}>GitHub</Button>
-                  </CardFooter>
-                </Stack>
-              </Card>
-            );
-          })}
+                <CardFooter display="flex" gap="2">
+                  {developer.github ? (
+                    <Button
+                      leftIcon={<FaGithub />}
+                      as="a"
+                      href={`https://github.com/${developer.github}`}
+                    >
+                      GitHub
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                  {developer.twitter ? (
+                    <Button
+                      leftIcon={<BsTwitter />}
+                      as="a"
+                      href={`https://twitter.com/${developer.github}`}
+                    >
+                      Twitter
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                </CardFooter>
+              </Stack>
+            </Card>
+          ))}
+        </Grid>
+        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>
+          Contributors
+        </Heading>
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(1, 1fr)",
+            lg: "repeat(2, 1fr)",
+          }}
+          mt={3}
+          gap={3}
+        >
+          {data.contributors.map((developer: any, index: any) => (
+            <Card
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              variant="outline"
+              key={index}
+            >
+              <Image
+                objectFit="cover"
+                maxW={{ base: "100%", sm: "200px" }}
+                src={developer.profilePicture}
+                alt={developer.name}
+              />
+
+              <Stack>
+                <CardBody>
+                  <Heading size="lg">{developer.name}</Heading>
+
+                  <Text py="2">
+                    {developer.bio ? developer.bio : "No description provided"}
+                  </Text>
+
+                  <Box display="flex" mt={2} gap={2}>
+                    {developer.titles.map((title: any, index: any) => (
+                      <Badge key={index} colorScheme="red">
+                        {title}
+                      </Badge>
+                    ))}
+                  </Box>
+                </CardBody>
+
+                <CardFooter display="flex" gap="2">
+                  {developer.github ? (
+                    <Button
+                      leftIcon={<FaGithub />}
+                      as="a"
+                      href={`https://github.com/${developer.github}`}
+                    >
+                      GitHub
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                  {developer.twitter ? (
+                    <Button
+                      leftIcon={<BsTwitter />}
+                      as="a"
+                      href={`https://twitter.com/${developer.github}`}
+                    >
+                      Twitter
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                </CardFooter>
+              </Stack>
+            </Card>
+          ))}
+        </Grid>
+        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>
+          Social Media
+        </Heading>
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(1, 1fr)",
+            lg: "repeat(2, 1fr)",
+          }}
+          mt={3}
+          gap={3}
+        >
+          {data.socialMediaManagers.map((developer: any, index: any) => (
+            <Card
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              variant="outline"
+              key={index}
+            >
+              <Image
+                objectFit="cover"
+                maxW={{ base: "100%", sm: "200px" }}
+                src={developer.profilePicture}
+                alt={developer.name}
+              />
+
+              <Stack>
+                <CardBody>
+                  <Heading size="lg">{developer.name}</Heading>
+
+                  <Text py="2">
+                    {developer.bio ? developer.bio : "No description provided"}
+                  </Text>
+
+                  <Box display="flex" mt={2} gap={2}>
+                    {developer.titles.map((title: any, index: any) => (
+                      <Badge key={index} colorScheme="red">
+                        {title}
+                      </Badge>
+                    ))}
+                  </Box>
+                </CardBody>
+
+                <CardFooter display="flex" gap="2">
+                  {developer.github ? (
+                    <Button
+                      leftIcon={<FaGithub />}
+                      as="a"
+                      href={`https://github.com/${developer.github}`}
+                    >
+                      GitHub
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                  {developer.twitter ? (
+                    <Button
+                      leftIcon={<BsTwitter />}
+                      as="a"
+                      href={`https://twitter.com/${developer.github}`}
+                    >
+                      Twitter
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                </CardFooter>
+              </Stack>
+            </Card>
+          ))}
+        </Grid>
+        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>
+          Translators
+        </Heading>
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(1, 1fr)",
+            lg: "repeat(2, 1fr)",
+          }}
+          mt={3}
+          gap={3}
+          mb={10}
+        >
+          {data.translators.map((developer: any, index: any) => (
+            <Card
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              variant="outline"
+              key={index}
+            >
+              <Image
+                objectFit="cover"
+                maxW={{ base: "100%", sm: "200px" }}
+                src={developer.profilePicture}
+                alt={developer.name}
+              />
+
+              <Stack>
+                <CardBody>
+                  <Heading size="lg">{developer.name}</Heading>
+
+                  <Text py="2">
+                    {developer.bio ? developer.bio : "No description provided"}
+                  </Text>
+
+                  <Box display="flex" mt={2} gap={2}>
+                    {developer.titles.map((title: any, index: any) => (
+                      <Badge key={index} colorScheme="red">
+                        {title}
+                      </Badge>
+                    ))}
+                  </Box>
+                </CardBody>
+
+                <CardFooter display="flex" gap="2">
+                  {developer.github ? (
+                    <Button
+                      leftIcon={<FaGithub />}
+                      as="a"
+                      href={`https://github.com/${developer.github}`}
+                    >
+                      GitHub
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                  {developer.twitter ? (
+                    <Button
+                      leftIcon={<BsTwitter />}
+                      as="a"
+                      href={`https://twitter.com/${developer.github}`}
+                    >
+                      Twitter
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                </CardFooter>
+              </Stack>
+            </Card>
+          ))}
         </Grid>
       </Box>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:3001/team/getAll", {
+    headers: {
+      Authorization: process.env.NEXT_PUBLIC_REGUILDED_KEY!,
+    },
+  });
+
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
 }

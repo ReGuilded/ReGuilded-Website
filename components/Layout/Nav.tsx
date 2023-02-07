@@ -70,6 +70,7 @@ export default function Simple() {
         mt={{ base: 0, lg: 10 }}
         rounded={{ base: "0", lg: "3xl" }}
         px={7}
+        fontFamily="Inter"
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton

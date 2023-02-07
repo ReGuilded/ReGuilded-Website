@@ -17,10 +17,6 @@ import { useRouter } from "next/router";
 export default function Downloads({ release }: any) {
   const router = useRouter();
 
-  function handleDownload() {
-    router.push("/thanks");
-  }
-
   return (
     <>
       <Box
@@ -108,14 +104,7 @@ export default function Downloads({ release }: any) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    `https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest`,
-    {
-      headers: {
-        Accept: "application/vnd.github+json",
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_KEY}`,
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    }
+    `https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest`
   );
   const release = await res.json();
   return {
