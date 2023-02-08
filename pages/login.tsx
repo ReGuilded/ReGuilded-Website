@@ -7,6 +7,7 @@ import {
   Container,
   Input,
   Button,
+  Tooltip,
   SimpleGrid,
   Avatar,
   AvatarGroup,
@@ -19,117 +20,136 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 import { FaGuilded } from "react-icons/fa";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Login() {
-  return (
-    <>
-      <Box position={"relative"}>
-        <Container
-          as={SimpleGrid}
-          maxW={"7xl"}
-          columns={{ base: 1, md: 2 }}
-          spacing={{ base: 10, lg: 32 }}
-          py={{ base: 10, sm: 20, lg: 32 }}
-        >
-          <Stack display="flex" justifyContent="center" alignItems="center">
-            <Heading
-              lineHeight={1.1}
-              fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
-              fontFamily="Inter"
-            >
-              Enter the world of{" "}
-              <Text
-                as={"span"}
-                fontWeight="black"
-                bgGradient="linear(to-r, red.400,pink.400)"
-                bgClip="text"
-              >
-                Customization
-              </Text>
-              .
-            </Heading>
-          </Stack>
-          <Stack
-            bg={"gray.50"}
-            border="1px solid"
-            borderColor="gray.200"
-            rounded={"xl"}
-            p={{ base: 4, sm: 6, md: 8 }}
-            spacing={{ base: 8 }}
-            maxW={{ lg: "lg" }}
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  if (session) {
+    return router.push("/dashboard");
+  } else
+    return (
+      <>
+        <Box position={"relative"}>
+          <Container
+            as={SimpleGrid}
+            maxW={"7xl"}
+            columns={{ base: 1, md: 2 }}
+            spacing={{ base: 10, lg: 32 }}
+            py={{ base: 10, sm: 20, lg: 32 }}
           >
-            <Stack spacing={4}>
+            <Stack display="flex" justifyContent="center" alignItems="center">
               <Heading
-                color={"gray.800"}
                 lineHeight={1.1}
+                fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
                 fontFamily="Inter"
-                fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
               >
-                Join ReGuilded
+                Enter the world of{" "}
                 <Text
                   as={"span"}
+                  fontWeight="black"
                   bgGradient="linear(to-r, red.400,pink.400)"
                   bgClip="text"
                 >
-                  !
+                  Customization
                 </Text>
+                .
               </Heading>
-              <Text
-                color={"gray.500"}
-                fontFamily="Inter"
-                fontSize={{ base: "sm", sm: "md" }}
-              >
-                We&apos;re always welcoming new members like you to create your
-                own enhancements for Guilded.
-              </Text>
             </Stack>
-            <Box as={"form"} mt={10}>
+            <Stack
+              bg={"gray.50"}
+              border="1px solid"
+              borderColor="gray.200"
+              rounded={"xl"}
+              p={{ base: 4, sm: 6, md: 8 }}
+              spacing={{ base: 8 }}
+              maxW={{ lg: "lg" }}
+            >
               <Stack spacing={4}>
-                <Button
-                  leftIcon={<FcGoogle />}
-                  fontFamily={"Inter"}
-                  bg={"gray.200"}
+                <Heading
                   color={"gray.800"}
-                  _hover={{ bg: "gray.100" }}
+                  lineHeight={1.1}
+                  fontFamily="Inter"
+                  fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
                 >
-                  Sign in with Google
-                </Button>
-                <Button
-                  leftIcon={<AiFillGithub />}
-                  fontFamily={"Inter"}
-                  bg={"gray.900"}
-                  color={"gray.100"}
-                  _hover={{ bg: "gray.700" }}
-                  _focus={{ bg: "gray.800" }}
+                  Join ReGuilded
+                  <Text
+                    as={"span"}
+                    bgGradient="linear(to-r, red.400,pink.400)"
+                    bgClip="text"
+                  >
+                    !
+                  </Text>
+                </Heading>
+                <Text
+                  color={"gray.500"}
+                  fontFamily="Inter"
+                  fontSize={{ base: "sm", sm: "md" }}
                 >
-                  Sign in with GitHub
-                </Button>
-                <Button
-                  leftIcon={<FaGuilded />}
-                  fontFamily={"Inter"}
-                  bg={"yellow.400"}
-                  color={"gray.900"}
-                  _hover={{ bg: "yellow.500" }}
-                  _focus={{ bg: "yellow.500" }}
-                >
-                  Sign in with Guilded
-                </Button>
+                  We&apos;re always welcoming new members like you to create
+                  your own enhancements for Guilded.
+                </Text>
               </Stack>
-            </Box>
-            form
-          </Stack>
-        </Container>
+              <Box as={"form"} mt={10}>
+                <Stack spacing={4}>
+                  <Tooltip label="Authentication is not supported yet">
+                    <Button
+                      leftIcon={<FcGoogle />}
+                      fontFamily={"Inter"}
+                      bg={"gray.200"}
+                      color={"gray.800"}
+                      disabled
+                      _hover={{ bg: "gray.100" }}
+                    >
+                      Sign in with Google
+                    </Button>
+                  </Tooltip>
+                  <Tooltip label="Authentication is not supported yet">
+                    <Button
+                      leftIcon={<AiFillGithub />}
+                      fontFamily={"Inter"}
+                      bg={"gray.900"}
+                      color={"gray.100"}
+                      disabled
+                      _hover={{ bg: "gray.700" }}
+                      _focus={{ bg: "gray.800" }}
+                      // onClick={() => signIn("github")}
+                    >
+                      Sign in with GitHub
+                    </Button>
+                  </Tooltip>
+                  <Tooltip label="Authentication is not supported yet">
+                    <Button
+                      leftIcon={<FaGuilded />}
+                      fontFamily={"Inter"}
+                      bg={"yellow.400"}
+                      color={"gray.900"}
+                      disabled
+                      _hover={{ bg: "yellow.500" }}
+                      _focus={{ bg: "yellow.500" }}
+                    >
+                      Sign in with Guilded
+                    </Button>
+                  </Tooltip>
+                </Stack>
+              </Box>
+              form
+            </Stack>
+          </Container>
 
-        <Blur
-          position={"absolute"}
-          top={-10}
-          zIndex="-1"
-          left={-10}
-          style={{ filter: "blur(70px)" }}
-        />
-      </Box>
-    </>
-  );
+          <Blur
+            position={"absolute"}
+            top={-10}
+            zIndex="-1"
+            left={-10}
+            style={{ filter: "blur(70px)" }}
+          />
+        </Box>
+      </>
+    );
 }
 
 export const Blur = (props: IconProps) => {
