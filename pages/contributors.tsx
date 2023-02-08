@@ -331,9 +331,9 @@ export default function Contributors({ data }: any) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3001/team/getAll", {
+  const res = await fetch("http://localhost:3000/api/team/getall", {
     headers: {
-      Authorization: process.env.NEXT_PUBLIC_REGUILDED_KEY!,
+      Authorization: "test",
     },
   });
 
