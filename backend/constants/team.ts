@@ -31,7 +31,7 @@ export const contributors = [
   {
     guildedId: "ZdNv9Kwd",
     name: "Metalloriff",
-    titles: ["App Contributor"],
+    titles: ["Project Contributor"],
     socials: {
       github: "Metalloriff",
     },
@@ -42,17 +42,9 @@ export const contributors = [
     titles: ["Icon Designer"],
   },
   {
-    guildedId: "dwx26g0m",
-    name: "Bloom Sirenix",
-    titles: ["App Contributor"],
-    socials: {
-      github: "bloomsirenix",
-    },
-  },
-  {
     guildedId: "bdz2VWbd",
     name: "FireController#1847",
-    titles: ["App Contributor", "Website Host"],
+    titles: ["Project Contributor", "Website Host"],
     socials: {
       github: "FireController1847",
     },
@@ -60,7 +52,7 @@ export const contributors = [
   {
     guildedId: "GmjJZnMm",
     name: "Burrito",
-    titles: ["App Contributor"],
+    titles: ["Project Contributor"],
     socials: {
       github: "burritosoftware",
       twitter: "BurritoSOFTWARE",

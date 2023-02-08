@@ -7,6 +7,7 @@ import {
   Container,
   Input,
   Button,
+  Tooltip,
   SimpleGrid,
   Avatar,
   AvatarGroup,
@@ -94,36 +95,45 @@ export default function Login() {
               </Stack>
               <Box as={"form"} mt={10}>
                 <Stack spacing={4}>
-                  <Button
-                    leftIcon={<FcGoogle />}
-                    fontFamily={"Inter"}
-                    bg={"gray.200"}
-                    color={"gray.800"}
-                    _hover={{ bg: "gray.100" }}
-                  >
-                    Sign in with Google
-                  </Button>
-                  <Button
-                    leftIcon={<AiFillGithub />}
-                    fontFamily={"Inter"}
-                    bg={"gray.900"}
-                    color={"gray.100"}
-                    _hover={{ bg: "gray.700" }}
-                    _focus={{ bg: "gray.800" }}
-                    onClick={() => signIn("github")}
-                  >
-                    Sign in with GitHub
-                  </Button>
-                  <Button
-                    leftIcon={<FaGuilded />}
-                    fontFamily={"Inter"}
-                    bg={"yellow.400"}
-                    color={"gray.900"}
-                    _hover={{ bg: "yellow.500" }}
-                    _focus={{ bg: "yellow.500" }}
-                  >
-                    Sign in with Guilded
-                  </Button>
+                  <Tooltip label="Authentication is not supported yet">
+                    <Button
+                      leftIcon={<FcGoogle />}
+                      fontFamily={"Inter"}
+                      bg={"gray.200"}
+                      color={"gray.800"}
+                      disabled
+                      _hover={{ bg: "gray.100" }}
+                    >
+                      Sign in with Google
+                    </Button>
+                  </Tooltip>
+                  <Tooltip label="Authentication is not supported yet">
+                    <Button
+                      leftIcon={<AiFillGithub />}
+                      fontFamily={"Inter"}
+                      bg={"gray.900"}
+                      color={"gray.100"}
+                      disabled
+                      _hover={{ bg: "gray.700" }}
+                      _focus={{ bg: "gray.800" }}
+                      // onClick={() => signIn("github")}
+                    >
+                      Sign in with GitHub
+                    </Button>
+                  </Tooltip>
+                  <Tooltip label="Authentication is not supported yet">
+                    <Button
+                      leftIcon={<FaGuilded />}
+                      fontFamily={"Inter"}
+                      bg={"yellow.400"}
+                      color={"gray.900"}
+                      disabled
+                      _hover={{ bg: "yellow.500" }}
+                      _focus={{ bg: "yellow.500" }}
+                    >
+                      Sign in with Guilded
+                    </Button>
+                  </Tooltip>
                 </Stack>
               </Box>
               form

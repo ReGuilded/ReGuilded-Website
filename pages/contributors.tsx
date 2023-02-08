@@ -313,6 +313,18 @@ export default function Contributors({ data }: any) {
             </Card>
           ))}
         </Grid>
+
+        <Text
+          mb={10}
+          fontSize="2xl"
+          maxW={"27rem"}
+          fontFamily="Inter"
+          color="gray.300"
+        >
+          Special thanks to the{" "}
+          <chakra.span fontWeight="bold">Guilded team</chakra.span> for allowing
+          this project to exist 💖
+        </Text>
       </Box>
     </>
   );

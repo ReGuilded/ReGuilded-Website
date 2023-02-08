@@ -26,11 +26,11 @@ const Links = ["Themes", "Addons", "Contributors", "Support"];
 const navItems = [
   {
     name: "Themes",
-    href: "/themes",
+    href: "//www.guilded.gg/teams/ARmQz4mR/groups/RdK6o7jD/channels/d9b8d0c4-c213-4e65-b82b-c4a81facba79/forums",
   },
   {
     name: "Addons",
-    href: "/addons",
+    href: "//www.guilded.gg/teams/ARmQz4mR/groups/5d2ZN48d/channels/6ea79916-f450-47a9-af52-224a26ebf9c9/forums",
   },
   {
     name: "Contributors",
