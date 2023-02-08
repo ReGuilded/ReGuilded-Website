@@ -331,13 +331,30 @@ export default function Contributors({ data }: any) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://reguilded.dev/api/team/getall", {
-    headers: {
-      Authorization: "test",
-    },
-  });
+  // const res = await fetch("https://reguilded.dev/api/team/getall", {
+  //   headers: {
+  //     Authorization: "test",
+  //   },
+  // });
 
-  const data = await res.json();
+  // const data = await res.json();
+
+  const data = {
+    coreDevelopers: [
+      {
+        guildedId: "xd9ZOzpm",
+        name: "Nathaniel",
+        titles: ["Founder", "Project Lead", "Lead Developer"],
+        socials: {
+          github: "ItzNxthaniel",
+          twitter: "ItzNxthaniel",
+        },
+      }
+    ],
+    contributors: [],
+    socialMediaManagers: [],
+    translators: []
+  }
 
   return {
     props: {
