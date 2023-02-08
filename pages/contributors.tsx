@@ -331,7 +331,7 @@ export default function Contributors({ data }: any) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/team/getall", {
+  const res = await fetch("https://reguilded.dev/api/team/getall", {
     headers: {
       Authorization: "test",
     },
