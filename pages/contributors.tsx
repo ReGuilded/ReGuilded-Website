@@ -22,10 +22,14 @@ import {
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
+import Head from "next/head";
 
 export default function Contributors({ data }: any) {
   return (
     <>
+    <Head>
+      <title>Contributors • ReGuilded</title>
+    </Head>
       <Box
         mx={{ base: 5, md: "6rem", lg: "10rem" }}
         mt={{ base: "1rem", md: "2rem" }}

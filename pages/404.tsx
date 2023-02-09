@@ -9,10 +9,14 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { IoChevronBack } from "react-icons/io5";
+import Head from "next/head";
 
 export default function PageNotFound() {
   return (
     <>
+      <Head>
+        <title>Page not found • ReGuilded</title>
+      </Head>
       <Box
         display="flex"
         justifyContent="center"

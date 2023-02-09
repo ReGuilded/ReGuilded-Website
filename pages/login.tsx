@@ -23,6 +23,7 @@ import { FaGuilded } from "react-icons/fa";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Head from "next/head";
 
 export default function Login() {
   const { data: session } = useSession();
@@ -33,6 +34,9 @@ export default function Login() {
   } else
     return (
       <>
+        <Head>
+          <title>Login • ReGuilded</title>
+        </Head>
         <Box position={"relative"}>
           <Container
             as={SimpleGrid}
