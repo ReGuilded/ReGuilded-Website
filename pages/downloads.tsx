@@ -25,7 +25,7 @@ export default function Downloads({ release }: any) {
         gap="10"
         justifyContent="center"
         alignItems="center"
-        height="70vh"
+        height={{ base: "105vh", md: "70vh" }}
       >
         <Card w={"15rem"} bg="gray.800">
           <CardBody
