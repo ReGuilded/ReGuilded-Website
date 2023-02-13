@@ -331,11 +331,7 @@ export default function Contributors({ data }: any) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3001/team/getAll", {
-    headers: {
-      Authorization: process.env.NEXT_PUBLIC_REGUILDED_KEY!,
-    },
-  });
+  const res = await fetch("https://reguilded.dev/api/team/getall");
 
   const data = await res.json();
 
