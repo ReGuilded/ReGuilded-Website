@@ -13,19 +13,23 @@ import {
 import { AiFillWindows, AiFillApple } from "react-icons/ai";
 import { DiLinux } from "react-icons/di";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function Downloads({ release }: any) {
   const router = useRouter();
 
   return (
     <>
+      <Head>
+        <title>Downloads • ReGuilded</title>
+      </Head>
       <Box
         display="flex"
         flexDir={{ base: "column", md: "row" }}
         gap="10"
         justifyContent="center"
         alignItems="center"
-        height="70vh"
+        height={{ base: "105vh", md: "70vh" }}
       >
         <Card w={"15rem"} bg="gray.800">
           <CardBody

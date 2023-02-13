@@ -9,6 +9,9 @@ import Features from "../components/Landing/Features";
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>ReGuilded</title>
+      </Head>
       <Hero />
       <Divider />
       <Features />

@@ -9,10 +9,14 @@ import {
   Button,
   Container,
 } from "@chakra-ui/react";
+import Head from "next/head";
 
 export default function Thanks() {
   return (
     <>
+      <Head>
+        <title>Thanks • ReGuikded</title>
+      </Head>
       <Box
         display="flex"
         justifyContent="center"
