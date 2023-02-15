@@ -335,7 +335,12 @@ export default function Contributors({ data }: any) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://reguilded.dev/api/team/getall");
+  const res = await fetch("https://api.reguilded.dev/team", {
+    // @ts-ignore
+    headers: {
+      "Authorization": process.env.AUTH_TOKEN_PUBLIC
+    }
+  });
 
   const data = await res.json();
 
