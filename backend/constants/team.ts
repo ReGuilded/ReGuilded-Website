@@ -83,20 +83,20 @@ export const social = [
 
 export const translators = [
   {
-    guildedId: "kdK8ob9m",
-    name: "daSk0ut",
-    titles: ["French"],
-    socials: {
-      twitter: "daSk0ut",
-    },
-  },
-  {
     guildedId: "R40Mp0Wd",
     name: "IdkGoodName",
     titles: ["Lithuanian"],
     socials: {
       github: "IdkGoodName",
       twitter: "IdkGoodName",
+    },
+  },
+  {
+    guildedId: "kdK8ob9m",
+    name: "daSk0ut",
+    titles: ["Hungarian"],
+    socials: {
+      twitter: "daSk0ut",
     },
   },
   {
@@ -109,7 +109,7 @@ export const translators = [
     name: "Koiske",
     titles: ["Polish"],
     socials: {
-      github: "ItsKoiske",
+      twitter: "ItsKoiske",
     },
   },
   {
@@ -122,4 +122,35 @@ export const translators = [
     name: "MCUmbrella",
     titles: ["Chinese (Simplified)"],
   },
+  {
+    guildedId: "x4o91eYm",
+    name: "fh.prv",
+    titles: ["German"]
+  },
+  {
+    guildedId: "amGlq6ZA",
+    name: "BaranSenkul",
+    titles: ["Turkish"],
+    socials: {
+      twitter: "SenkulBaran"
+    }
+  },
+  {
+    guildedId: "dBL9K3vA",
+    name: "Danni",
+    titles: ["Czech"],
+    socials: {
+      github: "DanniSec"
+    }
+  },
+  {
+    guildedId: "Pm7oxEam",
+    name: "dealfons",
+    titles: ["Czech"]
+  },
+  {
+    guildedId: "mGOkp9Pm",
+    name: "SrWesly",
+    titles: ["Spanish"]
+  }
 ];
