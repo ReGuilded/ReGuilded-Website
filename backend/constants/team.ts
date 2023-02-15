@@ -149,6 +149,11 @@ export const translators = [
     titles: ["Czech"]
   },
   {
+    guildedId: "kdK0j9Bm",
+    name: "Ali Alshamsi",
+    titles: ["Arabic"]
+  },
+  {
     guildedId: "mGOkp9Pm",
     name: "SrWesly",
     titles: ["Spanish"]
