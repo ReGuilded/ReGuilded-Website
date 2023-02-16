@@ -58,6 +58,14 @@ export const contributors = [
       twitter: "BurritoSOFTWARE",
     },
   },
+  {
+    guildedId: "pmbOB8VA",
+    name: "nico",
+    titles: ["Project Contributor"],
+    socials: {
+      github: "zaida04",
+    },
+  }
 ];
 
 export const social = [
