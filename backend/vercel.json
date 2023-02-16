@@ -1,6 +1,4 @@
 {
-  "buildCommand": "next build",
-  "installCommand": "yarn install",
   "rewrites": [
     {
       "source": "/:path*",
