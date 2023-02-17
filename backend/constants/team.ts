@@ -72,19 +72,18 @@ export const social = [
   {
     guildedId: "GAnY7w2m",
     name: "Zane DragonBorn",
-    titles: ["Reddit Manager"],
+    titles: ["Community Manager"],
     socials: {
       github: "ZaneDragonBorn",
       twitter: "DragonbornZane",
     },
   },
   {
-    guildedId: "GmjJZnMm",
-    name: "Burrito",
-    titles: ["Reddit Manager"],
+    guildedId: "bdz78kDm",
+    name: "Ska",
+    titles: ["Community Manager"],
     socials: {
-      github: "burritosoftware",
-      twitter: "BurritoSOFTWARE",
+      twitter: "SkaDoesThings",
     },
   },
 ];
