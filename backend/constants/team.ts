@@ -20,7 +20,7 @@ export const core = [
   {
     guildedId: "4WaRKznm",
     name: "Atom",
-    titles: ["Web Developer"],
+    titles: ["Project Lead", "Website Developer"],
     socials: {
       github: "atomisadev",
     },
