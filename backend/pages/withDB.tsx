@@ -9,12 +9,10 @@ if (!dbUri) {
   );
 }
 
-const withDB = (handler: any) => async (req: any, res: any) => {
+export const withDB = (handler: any) => async (req: any, res: any) => {
   if (connection.readyState !== 1) {
     await connect(dbUri);
   }
 
   return handler(req, res);
 };
-
-export default withDB;

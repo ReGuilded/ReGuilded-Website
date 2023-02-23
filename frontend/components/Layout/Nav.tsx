@@ -65,7 +65,7 @@ export default function Simple() {
   return (
     <>
       <Box
-        bg="rgba(255, 255, 255, 0.05)"
+        bg={useColorModeValue("gray.100", "gray.800")}
         mx={{ base: 0, lg: 10 }}
         mt={{ base: 0, lg: 10 }}
         rounded={{ base: "0", lg: "3xl" }}

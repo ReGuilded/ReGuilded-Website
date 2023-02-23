@@ -46,8 +46,7 @@ const SocialButton = ({
 export default function SmallWithLogoLeft() {
   return (
     <Box
-      borderTop="1px solid"
-      borderTopColor="rgba(255, 255, 255, 0.2)"
+      bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
       <Container
@@ -67,12 +66,8 @@ export default function SmallWithLogoLeft() {
         </Box>
 
         <Box>
-          <Text fontFamily="Inter" fontSize="sm">
-            © 2021-{new Date().getFullYear()} ReGuilded. All rights reserved
-          </Text>
-          <Text fontFamily="Inter" color="gray.400" fontSize="xs">
-            ReGuilded is not affiliated or endorsed by Guilded, Inc.
-          </Text>
+          <Text fontFamily="Inter" fontSize="sm">© 2021-{new Date().getFullYear()} ReGuilded. All rights reserved</Text>
+          <Text fontFamily="Inter" color="gray.400" fontSize="xs">ReGuilded is not affiliated or endorsed by Guilded, Inc.</Text>
         </Box>
       </Container>
     </Box>
