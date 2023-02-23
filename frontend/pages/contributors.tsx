@@ -27,9 +27,9 @@ import Head from "next/head";
 export default function Contributors({ data }: any) {
   return (
     <>
-    <Head>
-      <title>Contributors • ReGuilded</title>
-    </Head>
+      <Head>
+        <title>Contributors • ReGuilded</title>
+      </Head>
       <Box
         mx={{ base: 5, md: "6rem", lg: "10rem" }}
         mt={{ base: "1rem", md: "2rem" }}
@@ -336,10 +336,9 @@ export default function Contributors({ data }: any) {
 
 export async function getStaticProps() {
   const res = await fetch("https://api.reguilded.dev/team", {
-    // @ts-ignore
     headers: {
-      "Authorization": process.env.AUTH_TOKEN_PUBLIC
-    }
+      Authorization: process.env.AUTH_TOKEN_PUBLIC!,
+    },
   });
 
   const data = await res.json();

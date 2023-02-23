@@ -14,15 +14,27 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 };
 
-const styles = {
-  global: (props: any) => ({
-    body: {
-      bg: mode("gray.50", "#151a23")(props),
+const theme = extendTheme({
+  config,
+  styles: {
+    global: () => ({
+      body: {
+        bg: "#1E1E1E",
+      },
+    }),
+  },
+  colors: {
+    brand: {
+      100: "#313131",
+      // 200: "#302F34",
+      // 300: "#252429",
+      // 400: "#18171C",
     },
-  }),
-};
-
-const theme = extendTheme({ ...config, styles });
+    background: {
+      100: "#1E1E1E",
+    },
+  },
+});
 
 export default function App({
   Component,
