@@ -5,6 +5,7 @@ import { Button, Divider } from "@chakra-ui/react";
 import Nav from "../components/Layout/Nav";
 import Hero from "../components/Landing/Hero";
 import Features from "../components/Landing/Features";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 export default function Home() {
   return (
@@ -18,3 +19,9 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = async ({ locale }: any) => ({
+    props: {
+        ...(await serverSideTranslations(locale, ["common"]))
+    }
+});

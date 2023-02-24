@@ -19,25 +19,25 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { IoLanguageOutline } from "react-icons/io5";
 import Image from "next/image";
-
-const Links = ["Themes", "Addons", "Contributors", "Support"];
+import { useTranslation } from "next-i18next";
 
 const navItems = [
   {
-    name: "Themes",
+    name: "nav.themes",
     href: "//www.guilded.gg/teams/ARmQz4mR/groups/RdK6o7jD/channels/d9b8d0c4-c213-4e65-b82b-c4a81facba79/forums",
   },
   {
-    name: "Addons",
+    name: "nav.addons",
     href: "//www.guilded.gg/teams/ARmQz4mR/groups/5d2ZN48d/channels/6ea79916-f450-47a9-af52-224a26ebf9c9/forums",
   },
   {
-    name: "Contributors",
+    name: "nav.contributors",
     href: "/contributors",
   },
   {
-    name: "Support",
+    name: "nav.support",
     href: "//guilded.gg/reguilded",
   },
 ];
@@ -61,6 +61,7 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const { t } = useTranslation("common");
 
   return (
     <>
@@ -98,12 +99,18 @@ export default function Simple() {
             >
               {navItems.map((navItem, index) => (
                 <NavLink key={index} href={navItem.href}>
-                  {navItem.name}
+                  {t(navItem.name)}
                 </NavLink>
               ))}
             </HStack>
           </HStack>
           <Flex alignItems={"center"} gap={3}>
+            <IconButton
+                aria-label="Localization switch"
+                icon={<IoLanguageOutline />}
+                variant="outline"
+                rounded="full"
+            />
             <IconButton
               aria-label="Color switch"
               icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
@@ -123,10 +130,10 @@ export default function Simple() {
               as="a"
               href="/downloads"
             >
-              Download
+              {t("nav.download")}
             </Button>
             <Button size="sm" variant="outline" as="a" href="/login">
-              Login
+              {t("nav.login")}
             </Button>
           </Flex>
         </Flex>
