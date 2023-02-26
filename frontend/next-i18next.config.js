@@ -3,7 +3,7 @@
 module.exports = {
     i18n: {
         defaultLocale: "en-US",
-        locales: ["en-US", "ja-JP"],
+        locales: ["en-US"],
     },
 
     localePath: typeof window === "undefined" ? require("path").resolve("./lang") : '/lang',
