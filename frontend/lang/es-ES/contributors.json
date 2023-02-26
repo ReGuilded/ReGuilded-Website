@@ -1,15 +1,15 @@
 {
-  "tab.title": "Contributors • ReGuilded",
-  "team.title.core": "Core",
-  "team.title.socialMedia": "Social Media",
-  "team.title.translators": "Translators",
-  "member.title.Founder": "Founder",
-  "member.title.Project Lead": "Project Lead",
-  "member.title.Lead Developer": "Lead Developer",
-  "member.title.Website Developer": "Website Developer",
-  "member.title.Project Contributor": "Project Contributor",
-  "member.title.Icon Designer": "Icon Designer",
-  "member.title.Website Host": "Website Host",
+  "tab.title": "Colaboradores • ReGuilded",
+  "team.title.core": "Núcleo",
+  "team.title.socialMedia": "Red social",
+  "team.title.translators": "Traductores",
+  "member.title.Founder": "Fundador",
+  "member.title.Project Lead": "Líder del proyecto",
+  "member.title.Lead Developer": "Responsable del desarrollo",
+  "member.title.Website Developer": "Desarrollador web",
+  "member.title.Project Contributor": "Colaborador del proyecto",
+  "member.title.Icon Designer": "Diseñador del icono",
+  "member.title.Website Host": "Proveedor de alojamiento web",
   "member.title.Community Manager": "Community Manager",
-  "page.specialThanks": "Special thanks to the <1>Guilded team</1> for allowing this project to exist 💖"
+  "page.specialThanks": "Un agradecimiento especial al <1>equipo de Guilded</1> por permitir que este proyecto exista 💖"
 }

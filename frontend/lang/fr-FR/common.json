@@ -1,9 +1,9 @@
 {
   "commonWord.support": "Support",
-  "commonWord.download": "Download",
-  "commonWord.themes": "Themes",
-  "commonWord.addons": "Addons",
-  "commonWord.sounds": "Sounds",
-  "commonWord.contributors": "Contributors",
-  "nav.login": "Login"
+  "commonWord.download": "Télécharger",
+  "commonWord.themes": "Thèmes",
+  "commonWord.addons": "Modules",
+  "commonWord.sounds": "Sons",
+  "commonWord.contributors": "Contributeurs",
+  "nav.login": "Connexion"
 }
