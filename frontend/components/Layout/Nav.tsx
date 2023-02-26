@@ -20,29 +20,30 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 import Image from "next/image";
-
-const Links = ["Themes", "Addons", "Contributors", "Support"];
+import { useTranslation } from "next-i18next";
+import { NextRouter, useRouter } from "next/router";
+import { getLocalePath } from "../../utils/getLocalePath";
 
 const navItems = [
   {
-    name: "Themes",
+    name: "commonWord.themes",
     href: "//www.guilded.gg/teams/ARmQz4mR/groups/RdK6o7jD/channels/d9b8d0c4-c213-4e65-b82b-c4a81facba79/forums",
   },
   {
-    name: "Addons",
+    name: "commonWord.addons",
     href: "//www.guilded.gg/teams/ARmQz4mR/groups/5d2ZN48d/channels/6ea79916-f450-47a9-af52-224a26ebf9c9/forums",
   },
   {
-    name: "Contributors",
+    name: "commonWord.contributors",
     href: "/contributors",
   },
   {
-    name: "Support",
+    name: "commonWord.support",
     href: "//guilded.gg/reguilded",
   },
 ];
 
-const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
+const NavLink = ({ children, href, router }: { children: ReactNode; href: string, router: NextRouter }) => (
   <Link
     px={2}
     py={1}
@@ -52,7 +53,7 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
       textDecoration: "underline",
     }}
     color={useColorModeValue("gray.900", "gray.200")}
-    href={href}
+    href={getLocalePath(href, router)}
   >
     {children}
   </Link>
@@ -61,6 +62,8 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const { t } = useTranslation("common");
+  const router = useRouter();
 
   return (
     <>
@@ -82,7 +85,7 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Link href="/">
+              <Link href={getLocalePath("/", router)}>
                 <Image
                   src="/LogoTransparent.svg"
                   height="30"
@@ -97,8 +100,8 @@ export default function Simple() {
               display={{ base: "none", md: "flex" }}
             >
               {navItems.map((navItem, index) => (
-                <NavLink key={index} href={navItem.href}>
-                  {navItem.name}
+                <NavLink key={index} href={navItem.href} router={router}>
+                  {t(navItem.name)}
                 </NavLink>
               ))}
             </HStack>
@@ -121,12 +124,12 @@ export default function Simple() {
               }}
               color="gray.50"
               as="a"
-              href="/downloads"
+              href={getLocalePath("/downloads", router)}
             >
-              Download
+              {t("commonWord.download")}
             </Button>
-            <Button size="sm" variant="outline" as="a" href="/login">
-              Login
+            <Button size="sm" variant="outline" as="a" href={getLocalePath("/login", router)}>
+              {t("nav.login")}
             </Button>
           </Flex>
         </Flex>
@@ -135,7 +138,7 @@ export default function Simple() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {navItems.map((navItem, index) => (
-                <NavLink key={index} href={navItem.href}>
+                <NavLink key={index} href={navItem.href} router={router}>
                   {navItem.name}
                 </NavLink>
               ))}

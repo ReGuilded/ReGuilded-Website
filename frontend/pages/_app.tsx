@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import {
   ChakraProvider,
   extendTheme,
@@ -8,6 +7,7 @@ import {
 import { mode } from "@chakra-ui/theme-tools";
 import Layout from "../components/Layout/Layout";
 import { SessionProvider } from "next-auth/react";
+import { appWithTranslation } from "next-i18next";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
@@ -24,11 +24,7 @@ const styles = {
 
 const theme = extendTheme({ ...config, styles });
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}: any) {
-  return (
+const App = ({ Component, pageProps: {session, ...pageProps}}: any) => (
     <>
       <ChakraProvider theme={theme}>
         <SessionProvider session={session}>
@@ -38,5 +34,6 @@ export default function App({
         </SessionProvider>
       </ChakraProvider>
     </>
-  );
-}
+)
+
+export default appWithTranslation(App)
