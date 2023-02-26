@@ -1,8 +1,10 @@
 {
-  "nav.themes": "Themes",
-  "nav.addons": "Addons",
-  "nav.support": "Support",
-  "nav.contributors": "Contributors",
-  "nav.download": "Download",
+  "commonWord.support": "Support",
+  "commonWord.download": "Download",
+  "commonWord.themes": "Themes",
+  "commonWord.addons": "Addons",
+  "commonWord.sounds": "Sounds",
+  "commonWord.contributors": "Contributors",
+
   "nav.login": "Login"
 }

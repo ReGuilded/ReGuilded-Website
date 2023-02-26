@@ -3,8 +3,9 @@
 module.exports = {
     i18n: {
         defaultLocale: "en-US",
-        locales: ["en-US"],
+        locales: ["en-US", "ja-JP"],
     },
 
-    localePath: typeof window === "undefined" ? require("path").resolve("./lang") : '/lang'
+    localePath: typeof window === "undefined" ? require("path").resolve("./lang") : '/lang',
+    reloadOnPrerender: process.env.NODE_ENV === 'development'
 }

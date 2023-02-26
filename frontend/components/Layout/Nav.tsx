@@ -25,19 +25,19 @@ import { useTranslation } from "next-i18next";
 
 const navItems = [
   {
-    name: "nav.themes",
+    name: "commonWord.themes",
     href: "//www.guilded.gg/teams/ARmQz4mR/groups/RdK6o7jD/channels/d9b8d0c4-c213-4e65-b82b-c4a81facba79/forums",
   },
   {
-    name: "nav.addons",
+    name: "commonWord.addons",
     href: "//www.guilded.gg/teams/ARmQz4mR/groups/5d2ZN48d/channels/6ea79916-f450-47a9-af52-224a26ebf9c9/forums",
   },
   {
-    name: "nav.contributors",
+    name: "commonWord.contributors",
     href: "/contributors",
   },
   {
-    name: "nav.support",
+    name: "commonWord.support",
     href: "//guilded.gg/reguilded",
   },
 ];
@@ -130,7 +130,7 @@ export default function Simple() {
               as="a"
               href="/downloads"
             >
-              {t("nav.download")}
+              {t("commonWord.download")}
             </Button>
             <Button size="sm" variant="outline" as="a" href="/login">
               {t("nav.login")}

@@ -14,14 +14,17 @@ import { AiFillWindows, AiFillApple } from "react-icons/ai";
 import { DiLinux } from "react-icons/di";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function Downloads({ release }: any) {
+  const { t } = useTranslation(["downloads", "common"]);
   const router = useRouter();
 
   return (
     <>
       <Head>
-        <title>Downloads • ReGuilded</title>
+        <title>{t("tab.title")}</title>
       </Head>
       <Box
         display="flex"
@@ -51,7 +54,7 @@ export default function Downloads({ release }: any) {
                 router.push("/thanks");
               }}
             >
-              Download
+              {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
@@ -74,7 +77,7 @@ export default function Downloads({ release }: any) {
               as="a"
               href="https://www.guilded.gg/ReGuilded/groups/k3yaNW83/channels/e194cb81-5ea5-4e32-a44d-f5ba816e3cf5/docs/344767"
             >
-              Download
+              {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
@@ -97,7 +100,7 @@ export default function Downloads({ release }: any) {
               as="a"
               href="https://www.guilded.gg/ReGuilded/groups/k3yaNW83/channels/e194cb81-5ea5-4e32-a44d-f5ba816e3cf5/docs/344767"
             >
-              Download
+              {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
@@ -106,13 +109,15 @@ export default function Downloads({ release }: any) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: any) {
   const res = await fetch(
-    `https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest`
+      `https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest`
   );
+
   const release = await res.json();
   return {
     props: {
+      ...(await serverSideTranslations(locale, ["common", "downloads"])),
       release,
     },
   };

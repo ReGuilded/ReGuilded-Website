@@ -23,18 +23,22 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Trans, useTranslation } from "next-i18next";
 
 export default function Contributors({ data }: any) {
+  const { t, i18n } = useTranslation(["contributors", "common"])
+
   return (
     <>
       <Head>
-        <title>Contributors • ReGuilded</title>
+        <title>{t("tab.title")}</title>
       </Head>
       <Box
         mx={{ base: 5, md: "6rem", lg: "10rem" }}
         mt={{ base: "1rem", md: "2rem" }}
       >
-        <Heading textAlign={{ base: "center", lg: "left" }}>Core</Heading>
+        <Heading textAlign={{ base: "center", lg: "left" }}>{t("team.title.core")}</Heading>
         <Grid
           templateColumns={{
             base: "repeat(1, 1fr)",
@@ -62,14 +66,12 @@ export default function Contributors({ data }: any) {
                 <CardBody>
                   <Heading size="lg">{developer.name}</Heading>
 
-                  <Text py="2">
-                    {developer.bio ? developer.bio : "No description provided"}
-                  </Text>
+                  {developer.bio && <Text py="2">{developer.bio}</Text>}
 
                   <Box display="flex" mt={2} gap={2}>
                     {developer.titles.map((title: any, index: any) => (
                       <Badge key={index} colorScheme="red">
-                        {title}
+                        {i18n.exists(`member.title.${title}`, { ns: "contributors"}) ? t(`member.title.${title}`) : title}
                       </Badge>
                     ))}
                   </Box>
@@ -91,7 +93,7 @@ export default function Contributors({ data }: any) {
                     <Button
                       leftIcon={<BsTwitter />}
                       as="a"
-                      href={`https://twitter.com/${developer.github}`}
+                      href={`https://twitter.com/${developer.twitter}`}
                     >
                       Twitter
                     </Button>
@@ -103,9 +105,7 @@ export default function Contributors({ data }: any) {
             </Card>
           ))}
         </Grid>
-        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>
-          Contributors
-        </Heading>
+        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>{t("commonWord.contributors", {ns: "common"})}</Heading>
         <Grid
           templateColumns={{
             base: "repeat(1, 1fr)",
@@ -133,14 +133,12 @@ export default function Contributors({ data }: any) {
                 <CardBody>
                   <Heading size="lg">{developer.name}</Heading>
 
-                  <Text py="2">
-                    {developer.bio ? developer.bio : "No description provided"}
-                  </Text>
+                  {developer.bio && <Text py="2">{developer.bio}</Text>}
 
                   <Box display="flex" mt={2} gap={2}>
                     {developer.titles.map((title: any, index: any) => (
                       <Badge key={index} colorScheme="red">
-                        {title}
+                          {i18n.exists(`member.title.${title}`, { ns: "contributors"}) ? t(`member.title.${title}`) : title}
                       </Badge>
                     ))}
                   </Box>
@@ -162,7 +160,7 @@ export default function Contributors({ data }: any) {
                     <Button
                       leftIcon={<BsTwitter />}
                       as="a"
-                      href={`https://twitter.com/${developer.github}`}
+                      href={`https://twitter.com/${developer.twitter}`}
                     >
                       Twitter
                     </Button>
@@ -174,9 +172,7 @@ export default function Contributors({ data }: any) {
             </Card>
           ))}
         </Grid>
-        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>
-          Social Media
-        </Heading>
+        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>{t("team.title.socialMedia")}</Heading>
         <Grid
           templateColumns={{
             base: "repeat(1, 1fr)",
@@ -204,14 +200,12 @@ export default function Contributors({ data }: any) {
                 <CardBody>
                   <Heading size="lg">{developer.name}</Heading>
 
-                  <Text py="2">
-                    {developer.bio ? developer.bio : "No description provided"}
-                  </Text>
+                  {developer.bio && <Text py="2">{developer.bio}</Text>}
 
                   <Box display="flex" mt={2} gap={2}>
                     {developer.titles.map((title: any, index: any) => (
                       <Badge key={index} colorScheme="red">
-                        {title}
+                          {i18n.exists(`member.title.${title}`, { ns: "contributors"}) ? t(`member.title.${title}`) : title}
                       </Badge>
                     ))}
                   </Box>
@@ -233,7 +227,7 @@ export default function Contributors({ data }: any) {
                     <Button
                       leftIcon={<BsTwitter />}
                       as="a"
-                      href={`https://twitter.com/${developer.github}`}
+                      href={`https://twitter.com/${developer.twitter}`}
                     >
                       Twitter
                     </Button>
@@ -245,9 +239,7 @@ export default function Contributors({ data }: any) {
             </Card>
           ))}
         </Grid>
-        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>
-          Translators
-        </Heading>
+        <Heading mt={10} textAlign={{ base: "center", lg: "left" }}>{t("team.title.translators")}</Heading>
         <Grid
           templateColumns={{
             base: "repeat(1, 1fr)",
@@ -276,9 +268,7 @@ export default function Contributors({ data }: any) {
                 <CardBody>
                   <Heading size="lg">{developer.name}</Heading>
 
-                  <Text py="2">
-                    {developer.bio ? developer.bio : "No description provided"}
-                  </Text>
+                  {developer.bio && <Text py="2">{developer.bio}</Text>}
 
                   <Box display="flex" mt={2} gap={2}>
                     {developer.titles.map((title: any, index: any) => (
@@ -325,16 +315,18 @@ export default function Contributors({ data }: any) {
           fontFamily="Inter"
           color="gray.300"
         >
-          Special thanks to the{" "}
-          <chakra.span fontWeight="bold">Guilded team</chakra.span> for allowing
-          this project to exist 💖
+          <Trans i18nKey="page.specialThanks" t={t}>
+            Special thanks to the
+            <chakra.span fontWeight="bold">Guilded team</chakra.span> for allowing
+            this project to exist 💖
+          </Trans>
         </Text>
       </Box>
     </>
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: any) {
   const res = await fetch("https://api.reguilded.dev/team", {
     headers: {
       Authorization: process.env.AUTH_TOKEN_PUBLIC!,
@@ -345,7 +337,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data,
+        ...(await serverSideTranslations(locale, ["common", "contributors"])),
+        data,
     },
   };
 }
