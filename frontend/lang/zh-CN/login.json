@@ -1,0 +1,9 @@
+{
+  "tab.title": "登录 • ReGuilded",
+  "page.header": "进入<1>个性化</1>的世界",
+  "loginModel.header": "加入ReGuilded<1>!</1>",
+  "loginModel.description": "我们一直欢迎像你一样的新成员创建自己的Guilded增强。",
+  "loginModel.option.google": "使用Google登录",
+  "loginModel.option.github": "使用GitHub登录",
+  "loginModel.option.guilded": "使用Guilded登录"
+}
