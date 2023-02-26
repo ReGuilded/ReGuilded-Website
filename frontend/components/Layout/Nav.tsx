@@ -19,9 +19,10 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
-import { IoLanguageOutline } from "react-icons/io5";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import { NextRouter, useRouter } from "next/router";
+import { getLocalePath } from "../../utils/getLocalePath";
 
 const navItems = [
   {
@@ -42,7 +43,7 @@ const navItems = [
   },
 ];
 
-const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
+const NavLink = ({ children, href, router }: { children: ReactNode; href: string, router: NextRouter }) => (
   <Link
     px={2}
     py={1}
@@ -52,7 +53,7 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
       textDecoration: "underline",
     }}
     color={useColorModeValue("gray.900", "gray.200")}
-    href={href}
+    href={getLocalePath(href, router)}
   >
     {children}
   </Link>
@@ -62,6 +63,7 @@ export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const { t } = useTranslation("common");
+  const router = useRouter();
 
   return (
     <>
@@ -83,7 +85,7 @@ export default function Simple() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Link href="/">
+              <Link href={getLocalePath("/", router)}>
                 <Image
                   src="/LogoTransparent.svg"
                   height="30"
@@ -98,19 +100,13 @@ export default function Simple() {
               display={{ base: "none", md: "flex" }}
             >
               {navItems.map((navItem, index) => (
-                <NavLink key={index} href={navItem.href}>
+                <NavLink key={index} href={navItem.href} router={router}>
                   {t(navItem.name)}
                 </NavLink>
               ))}
             </HStack>
           </HStack>
           <Flex alignItems={"center"} gap={3}>
-            <IconButton
-                aria-label="Localization switch"
-                icon={<IoLanguageOutline />}
-                variant="outline"
-                rounded="full"
-            />
             <IconButton
               aria-label="Color switch"
               icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
@@ -128,11 +124,11 @@ export default function Simple() {
               }}
               color="gray.50"
               as="a"
-              href="/downloads"
+              href={getLocalePath("/downloads", router)}
             >
               {t("commonWord.download")}
             </Button>
-            <Button size="sm" variant="outline" as="a" href="/login">
+            <Button size="sm" variant="outline" as="a" href={getLocalePath("/login", router)}>
               {t("nav.login")}
             </Button>
           </Flex>
@@ -142,7 +138,7 @@ export default function Simple() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {navItems.map((navItem, index) => (
-                <NavLink key={index} href={navItem.href}>
+                <NavLink key={index} href={navItem.href} router={router}>
                   {navItem.name}
                 </NavLink>
               ))}

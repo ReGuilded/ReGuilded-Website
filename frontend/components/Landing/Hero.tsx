@@ -18,7 +18,8 @@ import { GoChevronRight } from "react-icons/go";
 import { MdBolt } from "react-icons/md";
 import { FaGuilded } from "react-icons/fa";
 import { Trans, useTranslation } from "next-i18next";
-
+import { useRouter } from "next/router";
+import { getLocalePath } from "../../utils/getLocalePath";
 
 function DottedBox() {
   return (
@@ -60,6 +61,7 @@ function DottedBox() {
 
 export default function HeroSection() {
   const { t } = useTranslation(["index", "common"]);
+  const router = useRouter();
 
   return (
       <Container maxW="7xl" px={{ base: 6, md: 3 }} py={24}>
@@ -119,7 +121,7 @@ export default function HeroSection() {
                   }}
                   color="gray.50"
                   as="a"
-                  href="/downloads"
+                  href={getLocalePath("/downloads", router)}
               >
                 {t("commonWord.download", { ns: "common" })}
               </Button>
