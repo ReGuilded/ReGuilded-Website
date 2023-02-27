@@ -26,10 +26,10 @@ export default function Document() {
 
         <meta name="theme-color" content="#F56565" />
 
-        <meta name="og:image" content="https://github.com/ReGuilded/.github/blob/main/assets/banner.png?raw=true" />
+        <meta name="og:image" content="https://github.com/ReGuilded/.github/blob/main/assets/logo.png?raw=true" />
         <meta name="og:image:alt" content="ReGuilded Banner Image" />
 
-        <meta name="twitter:image:src" content="https://github.com/ReGuilded/.github/blob/main/assets/banner.png?raw=true" />
+        <meta name="twitter:image:src" content="https://github.com/ReGuilded/.github/blob/main/assets/logo.png?raw=true" />
         <meta name="twitter:image:alt" content="ReGuilded Banner Image" />
       </Head>
       <body>
