@@ -85,7 +85,7 @@ export default function SmallWithLogoLeft() {
               new Intl.DisplayNames([router.locale || "en"], { type: "language", languageDisplay: "standard"}).of(router.locale || "en")
             }</option>
             {router.locales?.filter((locale) => locale != router.locale).map((locale: string, index: number) => (
-                <option key={locale} value={locale}>{
+                <option key={index} value={locale}>{
                   new Intl.DisplayNames(locale, { type: "language", languageDisplay: "standard"}).of(locale)
                 }</option>
             ))}
