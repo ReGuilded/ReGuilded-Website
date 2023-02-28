@@ -9,6 +9,7 @@ import {
   Link,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Trans, useTranslation } from "next-i18next";
 
 interface IFeature {
   heading: string;
@@ -18,9 +19,9 @@ interface IFeature {
 
 const features: IFeature[] = [
   {
-    heading: "Themes",
+    heading: "commonWord.themes",
     content:
-      "Choose from many well-crafted themes to experience on Guilded. Or, you can also create your own to build your own experience.",
+      "features.themes.description",
     icon: (
       <svg
         width={36}
@@ -40,9 +41,9 @@ const features: IFeature[] = [
     ),
   },
   {
-    heading: "Addons",
+    heading: "commonWord.addons",
     content:
-      "Extend Guilded with addons. Addons can be used to add new features to Guilded, or to modify existing features.",
+      "features.addons.description",
     icon: (
       <svg
         width={36}
@@ -62,9 +63,9 @@ const features: IFeature[] = [
     ),
   },
   {
-    heading: "Sounds",
+    heading: "commonWord.sounds",
     content:
-      "Add sounds to Guilded. Build your own soundpacks, or use one of the many soundpacks from the community.",
+      "features.sounds.description",
     icon: (
       <svg
         width={36}
@@ -85,77 +86,79 @@ const features: IFeature[] = [
   },
 ];
 
-const Features = () => {
+export default function Features() {
+  const { t } = useTranslation(["index", "common"])
+
   return (
-    <Container maxW="6xl" p={{ base: 5, md: 10 }}>
-      <chakra.h3
-        fontSize="4xl"
-        fontWeight="bold"
-        mb={20}
-        textAlign="center"
-        fontFamily="Inter"
-      >
-        What{" "}
-        <chakra.span
-          bgGradient="linear(to-r, red.400, pink.400)"
-          bgClip="text"
-          fontWeight="black"
-        >
-          ReGuilded
-        </chakra.span>{" "}
-        has to offer
-      </chakra.h3>
-      <SimpleGrid
-        columns={{ base: 1, sm: 2, md: 3 }}
-        placeItems="center"
-        spacing={10}
-        mb={4}
-      >
-        {features.map((feature, index) => (
-          <Box
-            key={index}
-            bg="rgba(255, 255, 255, 0.05)"
-            p={6}
-            rounded="lg"
+      <Container maxW="6xl" p={{ base: 5, md: 10 }}>
+        <chakra.h3
+            fontSize="4xl"
+            fontWeight="bold"
+            mb={20}
             textAlign="center"
-            pos="relative"
-            _hover={{
-              transition: "all 0.2s ease-in-out",
-              transform: "translateY(-10px)",
-            }}
-            boxShadow="lg"
-          >
-            <Flex
-              p={2}
-              w="max-content"
-              color="white"
-              bgGradient="linear(to-r, red.400, pink.400)"
-              rounded="md"
-              marginInline="auto"
-              pos="absolute"
-              left={0}
-              right={0}
-              top="-1.5rem"
-              boxShadow="lg"
+            fontFamily="Inter"
+        >
+          <Trans i18nKey="features.header" t={t}>
+            What
+            <chakra.span
+                bgGradient="linear(to-r, red.400, pink.400)"
+                bgClip="text"
+                fontWeight="black"
             >
-              {feature.icon}
-            </Flex>
-            <chakra.h3
-              fontWeight="semibold"
-              fontFamily="Inter"
-              fontSize="2xl"
-              mt={6}
-            >
-              {feature.heading}
-            </chakra.h3>
-            <Text fontFamily="Inter" fontSize="md" mt={4}>
-              {feature.content}
-            </Text>
-          </Box>
-        ))}
-      </SimpleGrid>
-    </Container>
+              ReGuilded
+            </chakra.span>
+            has to offer
+          </Trans>
+        </chakra.h3>
+        <SimpleGrid
+            columns={{ base: 1, sm: 2, md: 3 }}
+            placeItems="center"
+            spacing={10}
+            mb={4}
+        >
+          {features.map((feature, index) => (
+              <Box
+                  key={index}
+                  bg="rgba(255, 255, 255, 0.05)"
+                  p={6}
+                  rounded="lg"
+                  textAlign="center"
+                  pos="relative"
+                  _hover={{
+                    transition: "all 0.2s ease-in-out",
+                    transform: "translateY(-10px)",
+                  }}
+                  boxShadow="lg"
+              >
+                <Flex
+                    p={2}
+                    w="max-content"
+                    color="white"
+                    bgGradient="linear(to-r, red.400, pink.400)"
+                    rounded="md"
+                    marginInline="auto"
+                    pos="absolute"
+                    left={0}
+                    right={0}
+                    top="-1.5rem"
+                    boxShadow="lg"
+                >
+                  {feature.icon}
+                </Flex>
+                <chakra.h3
+                    fontWeight="semibold"
+                    fontFamily="Inter"
+                    fontSize="2xl"
+                    mt={6}
+                >
+                  {t(feature.heading, { ns: "common" })}
+                </chakra.h3>
+                <Text fontFamily="Inter" fontSize="md" mt={4}>
+                  {t(feature.content)}
+                </Text>
+              </Box>
+          ))}
+        </SimpleGrid>
+      </Container>
   );
 };
-
-export default Features;

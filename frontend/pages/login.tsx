@@ -22,10 +22,37 @@ import { AiFillGithub } from "react-icons/ai";
 import { FaGuilded } from "react-icons/fa";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import Head from "next/head";
+import { Trans, useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { getLocalePath, getLocalePathByLocale } from "../utils/getLocalePath";
+
+export const Blur = (props: IconProps) => {
+  return (
+      <Icon
+          width={useBreakpointValue({ base: "100%", md: "40vw", lg: "30vw" })}
+          zIndex={useBreakpointValue({ base: -1, md: -1, lg: 0 })}
+          height="560px"
+          viewBox="0 0 528 560"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          {...props}
+      >
+        <circle cx="71" cy="61" r="111" fill="#F56565" />
+        <circle cx="244" cy="106" r="139" fill="#ED64A6" />
+        <circle cy="291" r="139" fill="#ED64A6" />
+        <circle cx="80.5" cy="189.5" r="101.5" fill="#ED8936" />
+        <circle cx="196.5" cy="317.5" r="101.5" fill="#ECC94B" />
+        <circle cx="70.5" cy="458.5" r="101.5" fill="#48BB78" />
+        <circle cx="426.5" cy="-0.5" r="101.5" fill="#4299E1" />
+      </Icon>
+  );
+};
+
 
 export default function Login() {
+  const { t } = useTranslation(["login", "common"]);
+
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -35,7 +62,24 @@ export default function Login() {
     return (
       <>
         <Head>
-          <title>Login • ReGuilded</title>
+          <title>{t("tab.title")}</title>
+
+          <meta name="description" content={t("page.metadata.description", { ns: "common"}).toString()} />
+          <meta name="keywords" content={
+            t("page.metadata.keywords", { ns: "common", returnObjects: true}).toString()
+          } />
+
+          <meta name="og:title" content={t("tab.title").toString()} />
+          <meta name="og:description" content={t("page.metadata.description", { ns: "common"}).toString()} />
+          <meta name="og:url" content={`https://reguilded.dev${getLocalePath(router.asPath, router)}`} />
+
+          <meta name="twitter:title" content={t("tab.title").toString()} />
+          <meta name="twitter:description" content={t("page.metadata.description", { ns: "common"}).toString()} />
+          <meta name="twitter:url" content={`https://reguilded.dev${getLocalePath(router.asPath, router)}`} />
+
+          {router.locales?.filter((locale) => locale != router.locale).map((locale: string, index: number) => (
+              <link key={index} rel="alternate" href={getLocalePathByLocale(router.asPath, locale, router)} hrefLang={locale} />
+          ))}
         </Head>
         <Box position={"relative"}>
           <Container
@@ -51,16 +95,15 @@ export default function Login() {
                 fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
                 fontFamily="Inter"
               >
-                Enter the world of{" "}
-                <Text
-                  as={"span"}
-                  fontWeight="black"
-                  bgGradient="linear(to-r, red.400,pink.400)"
-                  bgClip="text"
-                >
-                  Customization
-                </Text>
-                .
+                <Trans i18nKey="page.header" t={t}>
+                  Enter the world of
+                  <Text
+                      as={"span"}
+                      fontWeight="black"
+                      bgGradient="linear(to-r, red.400,pink.400)"
+                      bgClip="text"
+                  >Customization</Text>.
+                </Trans>
               </Heading>
             </Stack>
             <Stack
@@ -79,22 +122,21 @@ export default function Login() {
                   fontFamily="Inter"
                   fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
                 >
-                  Join ReGuilded
-                  <Text
-                    as={"span"}
-                    bgGradient="linear(to-r, red.400,pink.400)"
-                    bgClip="text"
-                  >
-                    !
-                  </Text>
+                  <Trans i18nKey="loginModel.header" t={t}>
+                    Join ReGuilded
+                    <Text
+                        as={"span"}
+                        bgGradient="linear(to-r, red.400,pink.400)"
+                        bgClip="text"
+                    >!</Text>
+                  </Trans>
                 </Heading>
                 <Text
                   color={"gray.500"}
                   fontFamily="Inter"
                   fontSize={{ base: "sm", sm: "md" }}
                 >
-                  We&apos;re always welcoming new members like you to create
-                  your own enhancements for Guilded.
+                  {t("loginModel.description")}
                 </Text>
               </Stack>
               <Box as={"form"} mt={10}>
@@ -108,7 +150,7 @@ export default function Login() {
                       disabled
                       _hover={{ bg: "gray.100" }}
                     >
-                      Sign in with Google
+                      {t("loginModel.option.google")}
                     </Button>
                   </Tooltip>
                   <Tooltip label="Authentication is not supported yet">
@@ -122,7 +164,7 @@ export default function Login() {
                       _focus={{ bg: "gray.800" }}
                       // onClick={() => signIn("github")}
                     >
-                      Sign in with GitHub
+                      {t("loginModel.option.github")}
                     </Button>
                   </Tooltip>
                   <Tooltip label="Authentication is not supported yet">
@@ -135,7 +177,7 @@ export default function Login() {
                       _hover={{ bg: "yellow.500" }}
                       _focus={{ bg: "yellow.500" }}
                     >
-                      Sign in with Guilded
+                      {t("loginModel.option.guilded")}
                     </Button>
                   </Tooltip>
                 </Stack>
@@ -156,24 +198,8 @@ export default function Login() {
     );
 }
 
-export const Blur = (props: IconProps) => {
-  return (
-    <Icon
-      width={useBreakpointValue({ base: "100%", md: "40vw", lg: "30vw" })}
-      zIndex={useBreakpointValue({ base: -1, md: -1, lg: 0 })}
-      height="560px"
-      viewBox="0 0 528 560"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <circle cx="71" cy="61" r="111" fill="#F56565" />
-      <circle cx="244" cy="106" r="139" fill="#ED64A6" />
-      <circle cy="291" r="139" fill="#ED64A6" />
-      <circle cx="80.5" cy="189.5" r="101.5" fill="#ED8936" />
-      <circle cx="196.5" cy="317.5" r="101.5" fill="#ECC94B" />
-      <circle cx="70.5" cy="458.5" r="101.5" fill="#48BB78" />
-      <circle cx="426.5" cy="-0.5" r="101.5" fill="#4299E1" />
-    </Icon>
-  );
-};
+export const getStaticProps = async ({ locale }: any) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "login"]))
+  }
+});

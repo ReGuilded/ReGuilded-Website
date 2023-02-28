@@ -6,10 +6,13 @@ import {
   Text,
   useColorModeValue,
   VisuallyHidden,
+  Select,
 } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { IoLanguageOutline } from "react-icons/io5";
 import { ReactNode } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import placeholder from "lodash/fp/placeholder";
 
 const SocialButton = ({
   children,
@@ -44,10 +47,11 @@ const SocialButton = ({
 };
 
 export default function SmallWithLogoLeft() {
+  const router = useRouter();
+
   return (
     <Box
-      borderTop="1px solid"
-      borderTopColor="rgba(255, 255, 255, 0.2)"
+      bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
       <Container
@@ -67,12 +71,28 @@ export default function SmallWithLogoLeft() {
         </Box>
 
         <Box>
-          <Text fontFamily="Inter" fontSize="sm">
-            © 2021-{new Date().getFullYear()} ReGuilded. All rights reserved
-          </Text>
-          <Text fontFamily="Inter" color="gray.400" fontSize="xs">
-            ReGuilded is not affiliated or endorsed by Guilded, Inc.
-          </Text>
+          <Select
+              size="xs"
+              variant="flushed"
+              icon={<IoLanguageOutline />}
+              onChange={(event) => {
+                if (!event.target.value || event.target.value === router.locale) return;
+
+                router.push(router.asPath, router.asPath, { locale: event.target.value});
+              }}
+          >
+            <option value={router.locale}>{
+              new Intl.DisplayNames([router.locale || "en"], { type: "language", languageDisplay: "standard"}).of(router.locale || "en")
+            }</option>
+            {router.locales?.filter((locale) => locale != router.locale).map((locale: string, index: number) => (
+                <option key={index} value={locale}>{
+                  new Intl.DisplayNames(locale, { type: "language", languageDisplay: "standard"}).of(locale)
+                }</option>
+            ))}
+
+          </Select>
+          <Text fontFamily="Inter" fontSize="sm">© 2021-{new Date().getFullYear()} ReGuilded. All rights reserved</Text>
+          <Text fontFamily="Inter" color="gray.400" fontSize="xs">ReGuilded is not affiliated or endorsed by Guilded, Inc.</Text>
         </Box>
       </Container>
     </Box>

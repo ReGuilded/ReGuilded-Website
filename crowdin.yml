@@ -1,0 +1,7 @@
+preserve_hierarchy: true
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+
+files:
+  - source: /frontend/lang/en-US/*.json
+    translation: /frontend/lang/%locale%/%original_file_name%

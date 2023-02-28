@@ -1,0 +1,9 @@
+{
+  "tab.title": "Connexion • ReGuilded",
+  "page.header": "Entrez dans le monde de la <1>Personnalisation</1>.",
+  "loginModel.header": "Rejoignez ReGuilded<1>!</1>",
+  "loginModel.description": "Nous accueillons toujours de nouveaux membres comme vous pour créer vos propres améliorations pour Guilded.",
+  "loginModel.option.google": "Se connecter avec Google",
+  "loginModel.option.github": "Se connecter avec GitHub",
+  "loginModel.option.guilded": "Se connecter avec Guilded"
+}

@@ -14,14 +14,35 @@ import { AiFillWindows, AiFillApple } from "react-icons/ai";
 import { DiLinux } from "react-icons/di";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { getLocalePath, getLocalePathByLocale } from "../utils/getLocalePath";
 
 export default function Downloads({ release }: any) {
+  const { t } = useTranslation(["downloads", "common"]);
   const router = useRouter();
 
   return (
     <>
       <Head>
-        <title>Downloads • ReGuilded</title>
+        <title>{t("tab.title")}</title>
+
+        <meta name="description" content={t("page.metadata.description", { ns: "common"}).toString()} />
+        <meta name="keywords" content={
+          t("page.metadata.keywords", { ns: "common", returnObjects: true}).toString()
+        } />
+
+        <meta name="og:title" content={t("tab.title").toString()} />
+        <meta name="og:description" content={t("page.metadata.description", { ns: "common"}).toString()} />
+        <meta name="og:url" content={`https://reguilded.dev${getLocalePath(router.asPath, router)}`} />
+
+        <meta name="twitter:title" content={t("tab.title").toString()} />
+        <meta name="twitter:description" content={t("page.metadata.description", { ns: "common"}).toString()} />
+        <meta name="twitter:url" content={`https://reguilded.dev${getLocalePath(router.asPath, router)}`} />
+
+        {router.locales?.filter((locale) => locale != router.locale).map((locale: string, index: number) => (
+            <link key={index} rel="alternate" href={getLocalePathByLocale(router.asPath, locale, router)} hrefLang={locale} />
+        ))}
       </Head>
       <Box
         display="flex"
@@ -51,7 +72,7 @@ export default function Downloads({ release }: any) {
                 router.push("/thanks");
               }}
             >
-              Download
+              {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
@@ -74,7 +95,7 @@ export default function Downloads({ release }: any) {
               as="a"
               href="https://www.guilded.gg/ReGuilded/groups/k3yaNW83/channels/e194cb81-5ea5-4e32-a44d-f5ba816e3cf5/docs/344767"
             >
-              Download
+              {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
@@ -97,7 +118,7 @@ export default function Downloads({ release }: any) {
               as="a"
               href="https://www.guilded.gg/ReGuilded/groups/k3yaNW83/channels/e194cb81-5ea5-4e32-a44d-f5ba816e3cf5/docs/344767"
             >
-              Download
+              {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
@@ -106,13 +127,15 @@ export default function Downloads({ release }: any) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: any) {
   const res = await fetch(
-    `https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest`
+      `https://api.github.com/repos/ReGuilded/ReGuilded-Installer/releases/latest`
   );
+
   const release = await res.json();
   return {
     props: {
+      ...(await serverSideTranslations(locale, ["common", "downloads"])),
       release,
     },
   };
