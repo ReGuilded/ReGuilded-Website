@@ -12,6 +12,7 @@ import {
   Box,
   Link,
   Icon,
+  Flex,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { GoChevronRight } from "react-icons/go";
@@ -60,10 +61,11 @@ const HeroSection = () => {
             functionality of Guilded&apos;s client by providing theme and add-on
             support.
           </Text>
-          <HStack
-            spacing={{ base: 0, sm: 2 }}
+          <Flex
             mb={{ base: "3rem !important", sm: 0 }}
             flexWrap="wrap"
+            flexDir={{ base: "column", md: "row" }}
+            gap={4}
           >
             <Button
               bg="red.400"
@@ -77,6 +79,7 @@ const HeroSection = () => {
               }}
               color="gray.50"
               as="a"
+              w={{ base: "full", md: "max-content" }}
               href="/downloads"
             >
               Download
@@ -87,10 +90,11 @@ const HeroSection = () => {
               _hover={{ transform: "translateY(-2px)" }}
               fontFamily="Inter"
               leftIcon={<FaGuilded />}
+              w={{ base: "full", md: "max-content" }}
             >
               Support
             </Button>
-          </HStack>
+          </Flex>
         </Stack>
         <Box ml={{ base: 0, md: 5 }} pos="relative">
           <DottedBox />

@@ -16,13 +16,13 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
-  styles: {
-    global: () => ({
-      body: {
-        bg: "#1E1E1E",
-      },
-    }),
-  },
+  // styles: {
+  //   global: () => ({
+  //     body: {
+  //       bg: "#1E1E1E",
+  //     },
+  //   }),
+  // },
   colors: {
     brand: {
       100: "#313131",

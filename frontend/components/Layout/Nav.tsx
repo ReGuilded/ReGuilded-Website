@@ -47,9 +47,8 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
     px={2}
     py={1}
     rounded={"md"}
-    textUnderlineOffset="4px"
     _hover={{
-      textDecoration: "underline",
+      bg: "whiteAlpha.200",
     }}
     color={useColorModeValue("gray.900", "gray.200")}
     href={href}
@@ -70,6 +69,8 @@ export default function Simple() {
         mt={{ base: 0, lg: 10 }}
         rounded={{ base: "0", lg: "3xl" }}
         px={7}
+        border="2px solid"
+        borderColor="whiteAlpha.200"
         fontFamily="Inter"
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
