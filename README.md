@@ -8,6 +8,7 @@ The technologies used to make the ReGuilded website:
 - Next.js
 - React
 - Chakra
+- Next-I18Next
 
 > **Note**: More will be added soon.
 
