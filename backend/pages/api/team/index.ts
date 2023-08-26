@@ -3,10 +3,10 @@ import { core, contributors, social, translators} from "@/constants/team";
 import axios from "axios";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.headers.authorization !== process.env.AUTH_TOKEN) return res.status(401).json({
-        code: 401,
-        message: "Unauthorized Request",
-    })
+    // if (req.headers.authorization !== process.env.AUTH_TOKEN) return res.status(401).json({
+    //     code: 401,
+    //     message: "Unauthorized Request",
+    // })
 
     const coreDevelopersObject = [];
     const contributorsObject = [];
