@@ -5,7 +5,16 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "/api/:path*"
+        destination: "/api/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" },
+        ]
+      },
+      {
+        source: "/api/team",
+        headers: [
+          { key: "Access-Control-Allow-Methods", value: "GET" },
+        ]
       }
     ]
   }
