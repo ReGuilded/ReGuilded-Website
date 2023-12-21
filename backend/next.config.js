@@ -5,11 +5,7 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "/api/:path*"
-      },
-      {
-        source: "/api/team",
-        destination: "/api/team",
+        destination: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
