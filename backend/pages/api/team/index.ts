@@ -86,7 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     for (const translator of translators) {
-        const { guildedId, name, titles, socials } = translator;
+        const {guildedId, name, titles, socials} = translator;
 
         const response = await axios.get(
             `https://www.guilded.gg/api/users/${guildedId}/profilev3`,
@@ -96,7 +96,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 },
             }
         );
-        const { data } = response;
+        const {data} = response;
 
         translatorsObject.push({
             guildedId,
@@ -109,6 +109,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
     }
 
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.status(200).json({
         coreDevelopers: coreDevelopersObject,
         contributors: contributorsObject,
