@@ -12,6 +12,7 @@ const nextConfig = {
       },
       {
         source: "/api/team",
+        destination: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Methods", value: "GET" },
         ]
