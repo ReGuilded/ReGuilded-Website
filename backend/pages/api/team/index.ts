@@ -1,6 +1,25 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { core, contributors, social, translators} from "@/constants/team";
 import axios from "axios";
+import Cors from "cors";
+
+const cors = Cors({
+    methods: ["GET"]
+})
+
+function runMiddleware(
+    req: NextApiRequest,
+    res: NextApiResponse,
+    fn: Function
+) {
+    return new Promise((resolve, reject) => {
+        fn(req, res, (result: any) => {
+            if (result instanceof Error) return reject(result)
+
+            return resolve(result);
+        })
+    })
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     // if (req.headers.authorization !== process.env.AUTH_TOKEN) return res.status(401).json({
@@ -108,6 +127,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             profilePicture: data.profilePicture,
         });
     }
+
+    await runMiddleware(req, res, cors);
 
     res.status(200).json({
         coreDevelopers: coreDevelopersObject,
