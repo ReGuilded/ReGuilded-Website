@@ -5,16 +5,16 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "/api/:path*",
-        headers: [
-          { key: "Access-Control-Allow-Origin", value: "*" },
-        ]
+        destination: "/api/:path*"
       },
       {
         source: "/api/team",
-        destination: "/api/:path*",
+        destination: "/api/team",
         headers: [
+          { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
           { key: "Access-Control-Allow-Methods", value: "GET" },
+          { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
         ]
       }
     ]
