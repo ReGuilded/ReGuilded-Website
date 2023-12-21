@@ -4,7 +4,8 @@ import axios from "axios";
 import Cors from "cors";
 
 const cors = Cors({
-    methods: ["GET"]
+    methods: ["GET"],
+    origin: "*"
 })
 
 function runMiddleware(
