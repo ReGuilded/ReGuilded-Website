@@ -23,6 +23,7 @@ function runMiddleware(
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    await runMiddleware(req, res, cors);
     // if (req.headers.authorization !== process.env.AUTH_TOKEN) return res.status(401).json({
     //     code: 401,
     //     message: "Unauthorized Request",
@@ -128,8 +129,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             profilePicture: data.profilePicture,
         });
     }
-
-    await runMiddleware(req, res, cors);
 
     res.status(200).json({
         coreDevelopers: coreDevelopersObject,
