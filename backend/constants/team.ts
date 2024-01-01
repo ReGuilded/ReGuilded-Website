@@ -6,7 +6,7 @@ export const core = [
     socials: {
       github: "ItzNxthaniel",
       twitter: "ItzNxthaniel",
-    },
+    }
   },
   {
     guildedId: "R40Mp0Wd",
@@ -15,7 +15,7 @@ export const core = [
     socials: {
       github: "IdkGoodName",
       twitter: "IdkGoodName",
-    },
+    }
   },
   {
     guildedId: "rdOvLeW4",
@@ -24,7 +24,7 @@ export const core = [
     socials: {
       github: "Codeize",
       twitter: "Codeize",
-    },
+    }
   }
 ];
 
