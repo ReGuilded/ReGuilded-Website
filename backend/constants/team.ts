@@ -16,6 +16,15 @@ export const core = [
       github: "IdkGoodName",
       twitter: "IdkGoodName",
     },
+  },
+  {
+    guildedId: "rdOvLeW4",
+    name: "Codeize",
+    titles: ["Project Lead", "Website Developer"],
+    socials: {
+      github: "Codeize",
+      twitter: "Codeize",
+    },
   }
 ];
 
