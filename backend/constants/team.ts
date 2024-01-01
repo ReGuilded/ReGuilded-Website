@@ -16,18 +16,18 @@ export const core = [
       github: "IdkGoodName",
       twitter: "IdkGoodName",
     },
-  },
+  }
+];
+
+export const contributors = [
   {
     guildedId: "4WaRKznm",
     name: "Atom",
-    titles: ["Project Lead", "Website Developer"],
+    titles: ["Project Contributor", "Website Developer"],
     socials: {
       github: "atomisadev",
     },
   },
-];
-
-export const contributors = [
   {
     guildedId: "ZdNv9Kwd",
     name: "Metalloriff",
@@ -44,7 +44,7 @@ export const contributors = [
   {
     guildedId: "bdz2VWbd",
     name: "FireController#1847",
-    titles: ["Project Contributor", "Website Host"],
+    titles: ["Project Contributor"],
     socials: {
       github: "FireController1847",
     },
@@ -105,6 +105,11 @@ export const translators = [
     socials: {
       twitter: "daSk0ut",
     },
+  },
+  {
+    guildedId: "d56P0Vkm",
+    name: "Riley Nagata",
+    titles: ["Hungarian"]
   },
   {
     guildedId: "x4oN2yJA",
