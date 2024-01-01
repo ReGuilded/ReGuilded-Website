@@ -131,6 +131,8 @@ export default function HeroSection() {
                   _hover={{ transform: "translateY(-2px)" }}
                   fontFamily="Inter"
                   leftIcon={<FaGuilded />}
+                  as="a"
+                  href="//guilded.gg/ReGuilded"
               >
                 {t("commonWord.support", { ns: "common" })}
               </Button>
