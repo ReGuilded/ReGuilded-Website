@@ -347,7 +347,7 @@ export default function Contributors({ data }: any) {
 }
 
 export async function getStaticProps({ locale }: any) {
-  const res = await fetch("https://api.reguilded.dev/team", {
+  const res = await fetch((process.env.NODE_ENV == "development" ? "http://localhost:3001/team" : "https://api.reguilded.dev/team"), {
     headers: {
       Authorization: process.env.AUTH_TOKEN_PUBLIC!,
     },
