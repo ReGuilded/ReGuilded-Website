@@ -162,7 +162,7 @@ export default function Simple() {
             <Stack as={"nav"} spacing={4}>
               {navItems.map((navItem, index) => (
                 <NavLink key={index} href={navItem.href} router={router}>
-                  {navItem.name}
+                  {t(navItem.name)}
                 </NavLink>
               ))}
             </Stack>
