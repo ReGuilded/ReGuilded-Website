@@ -184,7 +184,7 @@ export default function Simple() {
                 bg={bgColor}
 
                 height={'fit-content'}
-                rounded={{ base: "0", lg: "3xl" }}
+                rounded={{ base: "3xl" }}
                 fontFamily={"Inter"}
             >
               <ModalCloseButton />
