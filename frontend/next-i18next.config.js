@@ -4,6 +4,12 @@ module.exports = {
     i18n: {
         defaultLocale: "en-US",
         locales: ["en-US", "es-ES", "fr-FR", "zh-CN"],
+        fallbackLng: {
+            default: ["en"],
+            'es': ["es-ES"],
+            'fr': ["fr-FR"],
+            'zh': ["zh-CN"]
+        },
         nonExplicitSupportedLngs: true
     },
 
