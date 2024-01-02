@@ -183,6 +183,7 @@ export default function Simple() {
                 mr={{ base: 0, lg: 10 }}
                 height={'fit-content'}
                 rounded={{ base: "0", lg: "3xl" }}
+                fontFamily={"Inter"}
             >
               <ModalCloseButton />
               <ModalHeader>{t("nav.preferences.title")}</ModalHeader>
