@@ -71,26 +71,6 @@ export default function SmallWithLogoLeft() {
         </Box>
 
         <Box>
-          <Select
-              size="xs"
-              variant="flushed"
-              icon={<IoLanguageOutline />}
-              onChange={(event) => {
-                if (!event.target.value || event.target.value === router.locale) return;
-
-                router.push(router.asPath, router.asPath, { locale: event.target.value});
-              }}
-          >
-            <option value={router.locale}>{
-              new Intl.DisplayNames([router.locale || "en"], { type: "language", languageDisplay: "standard"}).of(router.locale || "en")
-            }</option>
-            {router.locales?.filter((locale) => locale != router.locale).map((locale: string, index: number) => (
-                <option key={index} value={locale}>{
-                  new Intl.DisplayNames(locale, { type: "language", languageDisplay: "standard"}).of(locale)
-                }</option>
-            ))}
-
-          </Select>
           <Text fontFamily="Inter" fontSize="sm">© 2021-{new Date().getFullYear()} ReGuilded. All rights reserved</Text>
           <Text fontFamily="Inter" color="gray.400" fontSize="xs">ReGuilded is not affiliated or endorsed by Guilded, Inc.</Text>
         </Box>

@@ -5,5 +5,8 @@
   "commonWord.addons": "Modules",
   "commonWord.sounds": "Sons",
   "commonWord.contributors": "Contributeurs",
-  "nav.login": "Connexion"
+  "nav.login": "Connexion",
+  "nav.preferences.title": "Préférences du Site",
+  "nav.preferences.theme": "Thème",
+  "nav.preferences.language": "Langue"
 }

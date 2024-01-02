@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import {
   Box,
   Flex,
@@ -17,8 +17,21 @@ import {
   Stack,
   color,
   useColorMode,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalHeader,
+  ModalBody,
+  Input,
+  ModalFooter,
+  FormLabel,
+  TagLabel,
+  Text,
+  Select,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon, SettingsIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { IoLanguageOutline } from "react-icons/io5";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { NextRouter, useRouter } from "next/router";
@@ -62,13 +75,24 @@ const NavLink = ({ children, href, router }: { children: ReactNode; href: string
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+
+  // Need to rename the variables as the other useDisclosure hook is used by the mobile hamburger menu
+  const { 
+    isOpen: isOpenPreferences, 
+    onOpen: onOpenPreferences, 
+    onClose: onClosePreferences 
+  } = useDisclosure()
+  const btnRef = useRef()
+  
   const { t } = useTranslation("common");
   const router = useRouter();
+
+  const bgColor = useColorModeValue("gray.100", "gray.800");
 
   return (
     <>
       <Box
-        bg={useColorModeValue("gray.100", "gray.800")}
+        bg={bgColor}
         mx={{ base: 0, lg: 10 }}
         mt={{ base: 0, lg: 10 }}
         rounded={{ base: "0", lg: "3xl" }}
@@ -108,11 +132,12 @@ export default function Simple() {
           </HStack>
           <Flex alignItems={"center"} gap={3}>
             <IconButton
-              aria-label="Color switch"
-              icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
+              aria-label="Open preferences"
+              icon={<SettingsIcon />}
               variant="outline"
               rounded="full"
-              onClick={toggleColorMode}
+              ref={btnRef as unknown as React.RefObject<HTMLButtonElement>}
+              onClick={onOpenPreferences}
             />
             <Button
               bgGradient="linear(to-r, red.400, pink.400)"
@@ -139,12 +164,68 @@ export default function Simple() {
             <Stack as={"nav"} spacing={4}>
               {navItems.map((navItem, index) => (
                 <NavLink key={index} href={navItem.href} router={router}>
-                  {navItem.name}
+                  {t(navItem.name)}
                 </NavLink>
               ))}
             </Stack>
           </Box>
         ) : null}
+        {isOpenPreferences ? (
+            <Modal
+            isOpen={isOpenPreferences}
+            onClose={onClosePreferences}
+            size={'sm'}
+            finalFocusRef={btnRef as unknown as React.RefObject<HTMLElement>}
+            isCentered
+          >
+            <ModalOverlay />
+            <ModalContent
+                // I don't know why this is red. It works 😁
+                bg={bgColor}
+
+                height={'fit-content'}
+                rounded={{ base: "3xl" }}
+                fontFamily={"Inter"}
+            >
+              <ModalCloseButton />
+              <ModalHeader>{t("nav.preferences.title")}</ModalHeader>
+    
+              <ModalBody>
+                <Text>{t("nav.preferences.theme")}:</Text>
+                <IconButton aria-label="Change theme" onClick={toggleColorMode}>
+                  {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                </IconButton>
+
+                <Text>{t("nav.preferences.language")}:</Text>
+                <Select
+                    icon={<IoLanguageOutline />}
+                    variant={"filled"}
+                    onChange={(event) => {
+                        if (!event.target.value || event.target.value === router.locale) return;
+
+                        onClosePreferences();
+                        router.push(router.asPath, router.asPath, { locale: event.target.value});
+                    }}
+                >
+                    <option value={router.locale}>{
+                    new Intl.DisplayNames([router.locale || "en"], { type: "language", languageDisplay: "standard"}).of(router.locale || "en")
+                    }</option>
+                    {router.locales?.filter((locale) => locale != router.locale).map((locale: string, index: number) => (
+                        <option key={index} value={locale}>{
+                        new Intl.DisplayNames(locale, { type: "language", languageDisplay: "standard"}).of(locale)
+                        }</option>
+                    ))}
+                </Select>
+              </ModalBody>
+    
+              <ModalFooter>
+                <Button variant='outline' mr={3} onClick={onClosePreferences}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+          ) : null}
       </Box>
     </>
   );
