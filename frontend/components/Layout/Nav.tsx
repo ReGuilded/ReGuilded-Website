@@ -182,7 +182,7 @@ export default function Simple() {
             <ModalContent
                 // I don't know why this is red. It works 😁
                 bg={bgColor}
-                mr={{ base: 0, lg: 10 }}
+
                 height={'fit-content'}
                 rounded={{ base: "0", lg: "3xl" }}
                 fontFamily={"Inter"}
