@@ -87,10 +87,12 @@ export default function Simple() {
   const { t } = useTranslation("common");
   const router = useRouter();
 
+  const bgColor = useColorModeValue("gray.100", "gray.800");
+
   return (
     <>
       <Box
-        bg={useColorModeValue("gray.100", "gray.800")}
+        bg={bgColor}
         mx={{ base: 0, lg: 10 }}
         mt={{ base: 0, lg: 10 }}
         rounded={{ base: "0", lg: "3xl" }}
@@ -179,7 +181,7 @@ export default function Simple() {
             <ModalOverlay />
             <ModalContent
                 // I don't know why this is red. It works 😁
-                bg={useColorModeValue("gray.100", "gray.800")}
+                bg={bgColor}
                 mr={{ base: 0, lg: 10 }}
                 height={'fit-content'}
                 rounded={{ base: "0", lg: "3xl" }}
