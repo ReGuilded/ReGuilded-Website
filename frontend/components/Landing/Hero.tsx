@@ -105,7 +105,7 @@ export default function HeroSection() {
               {t("hero.description")}
             </Text>
             <HStack
-                spacing={{ base: 0, sm: 2 }}
+                spacing={{ base: 2 }}
                 mb={{ base: "3rem !important", sm: 0 }}
                 flexWrap="wrap"
             >
