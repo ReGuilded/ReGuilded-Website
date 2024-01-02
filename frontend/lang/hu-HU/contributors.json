@@ -1,15 +1,15 @@
 {
-  "tab.title": "Contributors • ReGuilded",
-  "team.title.core": "Core",
-  "team.title.socialMedia": "Social Media",
-  "team.title.translators": "Translators",
-  "member.title.Founder": "Founder",
-  "member.title.Project Lead": "Project Lead",
-  "member.title.Lead Developer": "Lead Developer",
-  "member.title.Website Developer": "Website Developer",
-  "member.title.Project Contributor": "Project Contributor",
-  "member.title.Icon Designer": "Icon Designer",
-  "member.title.Website Host": "Website Host",
-  "member.title.Community Manager": "Community Manager",
-  "page.specialThanks": "Special thanks to the <1>Guilded team</1> for allowing this project to exist 💖"
+  "tab.title": "Kontribútorok • ReGuilded",
+  "team.title.core": "Projekt vezetők",
+  "team.title.socialMedia": "Közösségi Média",
+  "team.title.translators": "Fordítók",
+  "member.title.Founder": "Alapító",
+  "member.title.Project Lead": "Projektvezető",
+  "member.title.Lead Developer": "Vezető Fejlesztő",
+  "member.title.Website Developer": "Weboldal Fejlesztő",
+  "member.title.Project Contributor": "Projekt Kontribútor",
+  "member.title.Icon Designer": "Ikontervező",
+  "member.title.Website Host": "Weboldal Host",
+  "member.title.Community Manager": "Közösségi Menedzser",
+  "page.specialThanks": "Külön köszönet a <1>Guilded csapatának</1>, hogy engedélyezték a projekt létrejöttét 💖"
 }

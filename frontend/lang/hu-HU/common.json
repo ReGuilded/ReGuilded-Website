@@ -1,9 +1,22 @@
 {
-  "commonWord.support": "Support",
-  "commonWord.download": "Download",
-  "commonWord.themes": "Themes",
-  "commonWord.addons": "Addons",
-  "commonWord.sounds": "Sounds",
-  "commonWord.contributors": "Contributors",
-  "nav.login": "Login"
+  "page.metadata.description": "ReGuilded egy kliens injektor/mod amely lehetővé teszi a Guilded funkcionalitásának bővítését téma, bővítmény (addon) és hangcsomag támogatással.",
+  "page.metadata.keywords": [
+    "reguilded",
+    "guilded",
+    "kliens",
+    "mod",
+    "témák",
+    "bővítmények",
+    "letöltés"
+  ],
+  "commonWord.support": "Támogatás",
+  "commonWord.download": "Letöltés",
+  "commonWord.themes": "Témák",
+  "commonWord.addons": "Bővítmények",
+  "commonWord.sounds": "Hangok",
+  "commonWord.contributors": "Közreműködők",
+  "nav.login": "Bejelentkezés",
+  "nav.preferences.title": "Oldal Beállításai",
+  "nav.preferences.theme": "Téma",
+  "nav.preferences.language": "Nyelv"
 }

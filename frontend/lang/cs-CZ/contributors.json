@@ -1,15 +1,15 @@
 {
-  "tab.title": "Contributors • ReGuilded",
-  "team.title.core": "Core",
-  "team.title.socialMedia": "Social Media",
-  "team.title.translators": "Translators",
-  "member.title.Founder": "Founder",
-  "member.title.Project Lead": "Project Lead",
-  "member.title.Lead Developer": "Lead Developer",
-  "member.title.Website Developer": "Website Developer",
-  "member.title.Project Contributor": "Project Contributor",
-  "member.title.Icon Designer": "Icon Designer",
-  "member.title.Website Host": "Website Host",
-  "member.title.Community Manager": "Community Manager",
-  "page.specialThanks": "Special thanks to the <1>Guilded team</1> for allowing this project to exist 💖"
+  "tab.title": "Přispěvatelé • ReGuilded",
+  "team.title.core": "Hlavní",
+  "team.title.socialMedia": "Sociální sítě",
+  "team.title.translators": "Překladatelé",
+  "member.title.Founder": "Zakladatel",
+  "member.title.Project Lead": "Vedoucí projektu",
+  "member.title.Lead Developer": "Hlavní vývojář",
+  "member.title.Website Developer": "Vývojář webu",
+  "member.title.Project Contributor": "Přispěvatel projektu",
+  "member.title.Icon Designer": "Návrhář ikon",
+  "member.title.Website Host": "Hostitel webu",
+  "member.title.Community Manager": "Komunitní Manažer",
+  "page.specialThanks": "Zvláštní poděkování <1>týmu Guilded</1> za umožnění existence tohoto projektu 💖"
 }

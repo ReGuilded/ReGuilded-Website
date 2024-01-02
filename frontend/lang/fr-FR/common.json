@@ -1,4 +1,14 @@
 {
+  "page.metadata.description": "ReGuilded est un mod d'injecteur de client qui vous permet d'étendre les fonctionnalités du client Guilded en fournissant la prise en charge de thèmes, de modules ainsi que de pack de sons.",
+  "page.metadata.keywords": [
+    "reguilded",
+    "guilded",
+    "client",
+    "mod",
+    "thèmes",
+    "modules",
+    "télécharger"
+  ],
   "commonWord.support": "Support",
   "commonWord.download": "Télécharger",
   "commonWord.themes": "Thèmes",
