@@ -180,6 +180,10 @@ export default function Simple() {
             <ModalContent
                 // I don't know why this is red. It works 😁
                 bg={useColorModeValue("gray.100", "gray.800")}
+                mr={{ base: 0, lg: 10 }}
+                height={'fit-content'}
+                rounded={{ base: "0", lg: "3xl" }}
+            >
               <ModalCloseButton />
               <ModalHeader>{t("nav.preferences.title")}</ModalHeader>
     
