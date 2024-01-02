@@ -9,5 +9,9 @@
   "commonWord.sounds": "Sounds",
   "commonWord.contributors": "Contributors",
 
-  "nav.login": "Login"
+  "nav.login": "Login",
+
+  "nav.preferences.title": "Site Preferences",
+  "nav.preferences.theme": "Theme",
+  "nav.preferences.language": "Language"
 }
