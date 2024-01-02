@@ -4,15 +4,15 @@ module.exports = {
     i18n: {
         defaultLocale: "en-US",
         locales: ["en-US", "es-ES", "fr-FR", "zh-CN", "de-DE"],
-        fallbackLng: {
-            default: ["en"],
-            'es': ["es-ES"],
-            'fr': ["fr-FR"],
-            'zh': ["zh-CN"],
-            'de': ["de-DE"]
-        },
-        nonExplicitSupportedLngs: true
     },
+    fallbackLng: {
+        default: ["en"],
+        'es': ["es-ES"],
+        'fr': ["fr-FR"],
+        'zh': ["zh-CN"],
+        'de': ["de-DE"]
+    },
+    nonExplicitSupportedLngs: true,
 
     localePath: typeof window === "undefined" ? require("path").resolve("./lang") : '/lang',
     reloadOnPrerender: process.env.NODE_ENV === 'development'
