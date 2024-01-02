@@ -17,14 +17,14 @@ import {
   Stack,
   color,
   useColorMode,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalHeader,
+  ModalBody,
   Input,
-  DrawerFooter,
+  ModalFooter,
   FormLabel,
   TagLabel,
   Text,
@@ -169,19 +169,21 @@ export default function Simple() {
           </Box>
         ) : null}
         {isOpenPreferences ? (
-            <Drawer
+            <Modal
             isOpen={isOpenPreferences}
-            placement='right'
             onClose={onClosePreferences}
             size={'sm'}
             finalFocusRef={btnRef as unknown as React.RefObject<HTMLElement>}
+            isCentered
           >
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader>{t("nav.preferences.title")}</DrawerHeader>
+            <ModalOverlay />
+            <ModalContent
+                // I don't know why this is red. It works 😁
+                bg={useColorModeValue("gray.100", "gray.800")}
+              <ModalCloseButton />
+              <ModalHeader>{t("nav.preferences.title")}</ModalHeader>
     
-              <DrawerBody>
+              <ModalBody>
                 <Text>{t("nav.preferences.theme")}:</Text>
                 <IconButton aria-label="Change theme" onClick={toggleColorMode}>
                   {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
@@ -207,15 +209,15 @@ export default function Simple() {
                         }</option>
                     ))}
                 </Select>
-              </DrawerBody>
+              </ModalBody>
     
-              <DrawerFooter>
+              <ModalFooter>
                 <Button variant='outline' mr={3} onClick={onClosePreferences}>
                   Close
                 </Button>
-              </DrawerFooter>
-            </DrawerContent>
-          </Drawer>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
           ) : null}
       </Box>
     </>
