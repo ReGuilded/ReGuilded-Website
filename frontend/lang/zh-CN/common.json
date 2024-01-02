@@ -1,9 +1,22 @@
 {
+  "page.metadata.description": "ReGilded是一个客户端注入器/模组，通过提供主题和附加组件支持来让你扩展Guilded客户端的功能。",
+  "page.metadata.keywords": [
+    "reguilded",
+    "guilded",
+    "客户端",
+    "mod",
+    "主题",
+    "附加组件",
+    "下载"
+  ],
   "commonWord.support": "支持",
   "commonWord.download": "下载",
   "commonWord.themes": "主题",
   "commonWord.addons": "附加组件",
   "commonWord.sounds": "音效",
   "commonWord.contributors": "贡献者",
-  "nav.login": "登录"
+  "nav.login": "登录",
+  "nav.preferences.title": "Site Preferences",
+  "nav.preferences.theme": "Theme",
+  "nav.preferences.language": "Language"
 }

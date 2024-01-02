@@ -1,9 +1,22 @@
 {
-  "commonWord.support": "Support",
-  "commonWord.download": "Download",
-  "commonWord.themes": "Themes",
-  "commonWord.addons": "Addons",
-  "commonWord.sounds": "Sounds",
-  "commonWord.contributors": "Contributors",
-  "nav.login": "Login"
+  "page.metadata.description": "ReGuilded je klientský injektor/modifikace, která umožňuje rozšířit funkčnost klienta Guilded o podporu motivů, doplňků a zvukových balíčků.",
+  "page.metadata.keywords": [
+    "reguilded",
+    "guilded",
+    "klient",
+    "mod",
+    "motivy vzhledu",
+    "rozšíření",
+    "stáhnout"
+  ],
+  "commonWord.support": "Podpora",
+  "commonWord.download": "Stáhnout",
+  "commonWord.themes": "Motivy",
+  "commonWord.addons": "Rozšíření",
+  "commonWord.sounds": "Zvuky",
+  "commonWord.contributors": "Přispěvatelé",
+  "nav.login": "Přihlásit se",
+  "nav.preferences.title": "Site Preferences",
+  "nav.preferences.theme": "Theme",
+  "nav.preferences.language": "Language"
 }

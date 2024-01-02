@@ -1,15 +1,15 @@
 {
-  "tab.title": "Contributors • ReGuilded",
-  "team.title.core": "Core",
-  "team.title.socialMedia": "Social Media",
-  "team.title.translators": "Translators",
-  "member.title.Founder": "Founder",
-  "member.title.Project Lead": "Project Lead",
-  "member.title.Lead Developer": "Lead Developer",
-  "member.title.Website Developer": "Website Developer",
+  "tab.title": "Katkıda Bulunanlar • ReGuilded",
+  "team.title.core": "Temel",
+  "team.title.socialMedia": "Sosyal Medya",
+  "team.title.translators": "Çevirmenler",
+  "member.title.Founder": "Kurucu",
+  "member.title.Project Lead": "Proje Lideri",
+  "member.title.Lead Developer": "Baş Geliştirici",
+  "member.title.Website Developer": "Site Geliştiricisi",
   "member.title.Project Contributor": "Project Contributor",
-  "member.title.Icon Designer": "Icon Designer",
-  "member.title.Website Host": "Website Host",
-  "member.title.Community Manager": "Community Manager",
-  "page.specialThanks": "Special thanks to the <1>Guilded team</1> for allowing this project to exist 💖"
+  "member.title.Icon Designer": "İkon tasarımcısı",
+  "member.title.Website Host": "Site sağlayıcısı",
+  "member.title.Community Manager": "Topluluk Yöneticisi",
+  "page.specialThanks": "Bu projenin var olmasını sağlayan <1>Guilded Ekibine</1> özellikle teşekkürler ederiz💖"
 }

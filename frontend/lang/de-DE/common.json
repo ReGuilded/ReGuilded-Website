@@ -1,9 +1,22 @@
 {
+  "page.metadata.description": "ReGuilded ist eine Client-Injektor-Modifikation, mit dem du die Funktionalität von Guilded erweitern kannst, indem du Themen und Erweiterungen hinzufügst.",
+  "page.metadata.keywords": [
+    "reguilded",
+    "guilded",
+    "client",
+    "mod",
+    "themes",
+    "erweiterungen",
+    "download"
+  ],
   "commonWord.support": "Support",
   "commonWord.download": "Download",
   "commonWord.themes": "Themes",
-  "commonWord.addons": "Addons",
+  "commonWord.addons": "Erweiterungen",
   "commonWord.sounds": "Sounds",
-  "commonWord.contributors": "Contributors",
-  "nav.login": "Login"
+  "commonWord.contributors": "Mitwirkende",
+  "nav.login": "Anmelden",
+  "nav.preferences.title": "Site Preferences",
+  "nav.preferences.theme": "Theme",
+  "nav.preferences.language": "Language"
 }

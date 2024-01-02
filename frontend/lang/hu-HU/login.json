@@ -1,9 +1,9 @@
 {
-  "tab.title": "Login • ReGuilded",
-  "page.header": "Enter the world of <1>Customization</1>.",
-  "loginModel.header": "Join ReGuilded<1>!</1>",
-  "loginModel.description": "We're always welcoming new members like you to create your own enhancements for Guilded.",
-  "loginModel.option.google": "Sign in with Google",
-  "loginModel.option.github": "Sign in with GitHub",
-  "loginModel.option.guilded": "Sign in with Guilded"
+  "tab.title": "Bejelentkezés • ReGuilded",
+  "page.header": "Lépj be a <1>Testreszabhatóság<1> világába.",
+  "loginModel.header": "Csatlakozz a ReGuildedhez<1>!</1>",
+  "loginModel.description": "Mindig várjuk az új tagokat akik hozzá akarnak adni valami újat a Guildedhez.",
+  "loginModel.option.google": "Bejelentkezés Google Fiókkal",
+  "loginModel.option.github": "Bejelentkezés GitHub Fiókkal",
+  "loginModel.option.guilded": "Bejelentkezés Guilded Fiókkal"
 }

@@ -1,9 +1,22 @@
 {
-  "commonWord.support": "Support",
-  "commonWord.download": "Download",
-  "commonWord.themes": "Themes",
-  "commonWord.addons": "Addons",
-  "commonWord.sounds": "Sounds",
-  "commonWord.contributors": "Contributors",
-  "nav.login": "Login"
+  "page.metadata.description": "ReGuilded, Guilded için temalar, eklentiler, ses paketleri gibi özellikler sağlayan bir istemci modifikasyonudur.",
+  "page.metadata.keywords": [
+    "reguilded",
+    "guilded",
+    "istemci",
+    "modifikasyon",
+    "temalar",
+    "eklentiler",
+    "indir"
+  ],
+  "commonWord.support": "Destek",
+  "commonWord.download": "İndir",
+  "commonWord.themes": "Temalar",
+  "commonWord.addons": "Eklentiler",
+  "commonWord.sounds": "Sesler",
+  "commonWord.contributors": "Katkıda Bulunanlar",
+  "nav.login": "Giriş Yap",
+  "nav.preferences.title": "Site Preferences",
+  "nav.preferences.theme": "Theme",
+  "nav.preferences.language": "Language"
 }

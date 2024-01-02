@@ -1,9 +1,22 @@
 {
+  "page.metadata.description": "ReGuilded es una herramienta que te permite personalizar y mejorar tu experiencia en Guilded a través de la inyección de mods en el cliente. Con ReGuilded, puedes expandir la funcionalidad de Guilded mediante el uso de temas, complementos y paquetes de sonido.",
+  "page.metadata.keywords": [
+    "reguilded",
+    "guilded",
+    "cliente",
+    "mod",
+    "temas",
+    "complementos",
+    "descarga"
+  ],
   "commonWord.support": "Soporte",
   "commonWord.download": "Descargar",
   "commonWord.themes": "Temas",
   "commonWord.addons": "Complementos",
   "commonWord.sounds": "Sonidos",
   "commonWord.contributors": "Colaboradores",
-  "nav.login": "Iniciar sesión"
+  "nav.login": "Iniciar sesión",
+  "nav.preferences.title": "Site Preferences",
+  "nav.preferences.theme": "Theme",
+  "nav.preferences.language": "Language"
 }
