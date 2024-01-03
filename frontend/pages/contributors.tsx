@@ -469,7 +469,6 @@ export async function getStaticProps({locale}: any) {
     response => response.json(),
     e => console.warn("Failed to fetch Guilded Subscribers")
   ).then(json => {
-    console.log(json);
     guildedSubscribers.gold = json.members.filter((member: GuildedMember) =>
       member.roleIds.includes(28956691)).map((member: GuildedMember) => ({
       userId: member.user.id,
