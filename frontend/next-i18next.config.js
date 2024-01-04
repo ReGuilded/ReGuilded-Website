@@ -3,7 +3,7 @@
 module.exports = {
     i18n: {
         defaultLocale: "en-US",
-        locales: ["en-US", "es-ES", "fr-FR", "zh-CN", "de-DE", "hu-HU"],
+        locales: ["en-US", "es-ES", "fr-FR", "zh-CN", "de-DE", "hu-HU", "ru-RU"],
     },
     fallbackLng: {
         default: ["en"],
@@ -11,7 +11,8 @@ module.exports = {
         "fr": ["fr-FR"],
         "zh": ["zh-CN"],
         "de": ["de-DE"],
-        "hu": ["hu-HU"]
+        "hu": ["hu-HU"],
+        "ru": ["ru-RU"]
     },
     nonExplicitSupportedLngs: true,
 
