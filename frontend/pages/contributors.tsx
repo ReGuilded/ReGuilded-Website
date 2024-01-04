@@ -5,25 +5,27 @@ import {
   Card,
   CardBody,
   CardFooter,
-  chakra,
   Grid,
   Heading,
   Image,
   Stack,
+  chakra,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import {FaGithub} from "react-icons/fa";
 import {BsTwitter} from "react-icons/bs";
 import Head from "next/head";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {Trans, useTranslation} from "next-i18next";
 import {getLocalePath, getLocalePathByLocale} from "../utils/getLocalePath";
 import {useRouter} from "next/router";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 export default function Contributors({data}: any) {
   const {t, i18n} = useTranslation(["contributors", "common"]);
   const router = useRouter();
+  const gradientStartColor = useColorModeValue("gray.800", "gray.100")
 
   return (
     <>
@@ -353,7 +355,7 @@ export default function Contributors({data}: any) {
                   <Box display="flex" mt={2} gap={2}>
                     <Text
                       fontFamily={'Inter'}
-                      bgGradient={'linear(to-r, #FFFFFF, #F5C400)'}
+                      bgGradient={`linear(to-r, ${gradientStartColor}, #F5C400)`}
                       bgClip={'text'}
                       fontSize={'lg'}
                       fontWeight={'bold'}
@@ -380,7 +382,7 @@ export default function Contributors({data}: any) {
                   <Box display="flex" mt={2} gap={2}>
                     <Text
                       fontFamily={'Inter'}
-                      bgGradient={'linear(to-r, #FFFFFF, #B2B2B2)'}
+                      bgGradient={`linear(to-r, ${gradientStartColor}, #B2B2B2)`}
                       bgClip={'text'}
                       fontSize={'lg'}
                       fontWeight={'bold'}
@@ -407,7 +409,7 @@ export default function Contributors({data}: any) {
                   <Box display="flex" mt={2} gap={2}>
                     <Text
                       fontFamily={'Inter'}
-                      bgGradient={'linear(to-r, #FFFFFF, #FF9F68)'}
+                      bgGradient={`linear(to-r, ${gradientStartColor}, #FF9F68)`}
                       bgClip={'text'}
                       fontSize={'lg'}
                       fontWeight={'bold'}
