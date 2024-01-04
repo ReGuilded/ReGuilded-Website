@@ -16,7 +16,7 @@
   "commonWord.sounds": "音效",
   "commonWord.contributors": "贡献者",
   "nav.login": "登录",
-  "nav.preferences.title": "Site Preferences",
-  "nav.preferences.theme": "Theme",
-  "nav.preferences.language": "Language"
+  "nav.preferences.title": "网站首选项",
+  "nav.preferences.theme": "主题",
+  "nav.preferences.language": "语言"
 }

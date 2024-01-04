@@ -1,22 +1,22 @@
 {
-  "page.metadata.description": "ReGuilded is a client injector/client mod that allows you to extend the functionality of Guilded's client by providing theme, addon, and sound pack support.",
+  "page.metadata.description": "ReGuilded — это клиентский внедритель/клиентский мод, который позволяет расширить функциональность клиента Guilded, предоставляя поддержку в виде темы, аддона и звуковых пакетов.",
   "page.metadata.keywords": [
     "reguilded",
     "guilded",
-    "client",
-    "mod",
-    "themes",
-    "addons",
-    "download"
+    "клиент",
+    "мод",
+    "темы",
+    "аддоны",
+    "скачать"
   ],
-  "commonWord.support": "Support",
-  "commonWord.download": "Download",
-  "commonWord.themes": "Themes",
-  "commonWord.addons": "Addons",
-  "commonWord.sounds": "Sounds",
-  "commonWord.contributors": "Contributors",
-  "nav.login": "Login",
-  "nav.preferences.title": "Site Preferences",
-  "nav.preferences.theme": "Theme",
-  "nav.preferences.language": "Language"
+  "commonWord.support": "Поддержка",
+  "commonWord.download": "Скачать",
+  "commonWord.themes": "Темы",
+  "commonWord.addons": "Аддоны",
+  "commonWord.sounds": "Звуки",
+  "commonWord.contributors": "Участники",
+  "nav.login": "Войти",
+  "nav.preferences.title": "Параметры сайта",
+  "nav.preferences.theme": "Тема",
+  "nav.preferences.language": "Язык"
 }

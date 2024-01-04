@@ -1,15 +1,15 @@
 {
-  "tab.title": "Contributors • ReGuilded",
-  "team.title.core": "Core",
-  "team.title.socialMedia": "Social Media",
-  "team.title.translators": "Translators",
-  "member.title.Founder": "Founder",
-  "member.title.Project Lead": "Project Lead",
-  "member.title.Lead Developer": "Lead Developer",
-  "member.title.Website Developer": "Website Developer",
-  "member.title.Project Contributor": "Project Contributor",
-  "member.title.Icon Designer": "Icon Designer",
-  "member.title.Website Host": "Website Host",
-  "member.title.Community Manager": "Community Manager",
-  "page.specialThanks": "Special thanks to the <1>Guilded team</1> for allowing this project to exist 💖"
+  "tab.title": "Участники • ReGuilded",
+  "team.title.core": "Ядро",
+  "team.title.socialMedia": "Соцсети",
+  "team.title.translators": "Переводчики",
+  "member.title.Founder": "Основатель",
+  "member.title.Project Lead": "Руководитель проекта",
+  "member.title.Lead Developer": "Ведущий разработчик",
+  "member.title.Website Developer": "Разработчик веб-сайта",
+  "member.title.Project Contributor": "Участник проекта",
+  "member.title.Icon Designer": "Дизайнер значка",
+  "member.title.Website Host": "Хост веб-сайта",
+  "member.title.Community Manager": "Менеджер сообщества",
+  "page.specialThanks": "Особая благодарность <1>Команде Guilded</1> за то, что позволили этому проекту существовать 💖"
 }
