@@ -25,7 +25,8 @@ import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 export default function Contributors({data}: any) {
   const {t, i18n} = useTranslation(["contributors", "common"]);
   const router = useRouter();
-  const gradientStartColor = useColorModeValue("gray.800", "gray.100")
+  const bgColor = useColorModeValue("gray.100", "gray.800");
+  const oppositeBgColor = useColorModeValue("gray.800", "gray.100");
 
   return (
     <>
@@ -69,8 +70,9 @@ export default function Contributors({data}: any) {
             <Card
               direction={{base: "column", sm: "row"}}
               overflow="hidden"
-              variant="outline"
+              variant="elevated"
               key={index}
+              bgColor={bgColor}
             >
               <Image
                 objectFit="cover"
@@ -138,8 +140,9 @@ export default function Contributors({data}: any) {
             <Card
               direction={{base: "column", sm: "row"}}
               overflow="hidden"
-              variant="outline"
+              variant="elevated"
               key={index}
+              bgColor={bgColor}
             >
               <Image
                 objectFit="cover"
@@ -206,8 +209,9 @@ export default function Contributors({data}: any) {
             <Card
               direction={{base: "column", sm: "row"}}
               overflow="hidden"
-              variant="outline"
+              variant="elevated"
               key={index}
+              bgColor={bgColor}
             >
               <Image
                 objectFit="cover"
@@ -275,8 +279,9 @@ export default function Contributors({data}: any) {
             <Card
               direction={{base: "column", sm: "row"}}
               overflow="hidden"
-              variant="outline"
+              variant="elevated"
               key={index}
+              bgColor={bgColor}
             >
               <Image
                 objectFit="cover"
@@ -344,8 +349,9 @@ export default function Contributors({data}: any) {
             <Card
               direction={{base: "column", sm: "row"}}
               overflow="hidden"
-              variant="outline"
+              variant="elevated"
               key={index}
+              bgColor={bgColor}
             >
 
               <Stack>
@@ -355,7 +361,7 @@ export default function Contributors({data}: any) {
                   <Box display="flex" mt={2} gap={2}>
                     <Text
                       fontFamily={'Inter'}
-                      bgGradient={`linear(to-r, ${gradientStartColor}, #F5C400)`}
+                      bgGradient={`linear(to-r, ${oppositeBgColor}, #F5C400)`}
                       bgClip={'text'}
                       fontSize={'lg'}
                       fontWeight={'bold'}
@@ -371,8 +377,9 @@ export default function Contributors({data}: any) {
             <Card
               direction={{base: "column", sm: "row"}}
               overflow="hidden"
-              variant="outline"
+              variant="elevated"
               key={index}
+              bgColor={bgColor}
             >
 
               <Stack>
@@ -382,7 +389,7 @@ export default function Contributors({data}: any) {
                   <Box display="flex" mt={2} gap={2}>
                     <Text
                       fontFamily={'Inter'}
-                      bgGradient={`linear(to-r, ${gradientStartColor}, #B2B2B2)`}
+                      bgGradient={`linear(to-r, ${oppositeBgColor}, #B2B2B2)`}
                       bgClip={'text'}
                       fontSize={'lg'}
                       fontWeight={'bold'}
@@ -398,8 +405,9 @@ export default function Contributors({data}: any) {
             <Card
               direction={{base: "column", sm: "row"}}
               overflow="hidden"
-              variant="outline"
+              variant="elevated"
               key={index}
+              bgColor={bgColor}
             >
 
               <Stack>
@@ -409,7 +417,7 @@ export default function Contributors({data}: any) {
                   <Box display="flex" mt={2} gap={2}>
                     <Text
                       fontFamily={'Inter'}
-                      bgGradient={`linear(to-r, ${gradientStartColor}, #FF9F68)`}
+                      bgGradient={`linear(to-r, ${oppositeBgColor}, #FF9F68)`}
                       bgClip={'text'}
                       fontSize={'lg'}
                       fontWeight={'bold'}
@@ -428,11 +436,12 @@ export default function Contributors({data}: any) {
           fontSize="2xl"
           maxW={"27rem"}
           fontFamily="Inter"
-          color="gray.300"
+          fontWeight={'bold'}
+          color={oppositeBgColor}
         >
           <Trans i18nKey="page.specialThanks" t={t}>
             Special thanks to the
-            <chakra.span fontWeight="bold">Guilded team</chakra.span> for allowing
+            <chakra.span fontWeight="extrabold">Guilded team</chakra.span> for allowing
             this project to exist 💖
           </Trans>
         </Text>

@@ -8,6 +8,7 @@ import {
   Text,
   Icon,
   Box,
+  useColorModeValue
 } from "@chakra-ui/react";
 
 import { AiFillWindows, AiFillApple } from "react-icons/ai";
@@ -21,6 +22,8 @@ import { getLocalePath, getLocalePathByLocale } from "../utils/getLocalePath";
 export default function Downloads({ release }: any) {
   const { t } = useTranslation(["downloads", "common"]);
   const router = useRouter();
+  const bgColor = useColorModeValue("gray.100", "gray.800");
+  const oppositeBgColor = useColorModeValue("gray.800", "gray.100");
 
   return (
     <>
@@ -52,17 +55,21 @@ export default function Downloads({ release }: any) {
         alignItems="center"
         height={{ base: "105vh", md: "70vh" }}
       >
-        <Card w={"15rem"} bg="gray.800">
+        <Card
+          w={"15rem"}
+          bg={bgColor}
+          variant={"elevated"}
+        >
           <CardBody
             display="flex"
             flexDir="column"
             justifyContent="center"
             alignItems="center"
           >
-            <Heading fontSize="xl" mb={2} fontFamily="Inter">
+            <Heading color={oppositeBgColor} fontSize="xl" mb={2} fontFamily="Inter">
               Windows
             </Heading>
-            <Icon as={AiFillWindows} h={90} w={90} />
+            <Icon as={AiFillWindows} color={oppositeBgColor} h={90} w={90} />
           </CardBody>
           <CardFooter fontFamily="Inter">
             <Button
@@ -71,52 +78,66 @@ export default function Downloads({ release }: any) {
                 router.push(release.assets[0].browser_download_url);
                 router.push("/thanks");
               }}
+              bgColor={oppositeBgColor}
+              color={bgColor}
             >
               {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
 
-        <Card w={"15rem"} bg="gray.800">
+        <Card
+          w={"15rem"}
+          bg={bgColor}
+          variant={"elevated"}
+        >
           <CardBody
             display="flex"
             flexDir="column"
             justifyContent="center"
             alignItems="center"
           >
-            <Heading fontSize="xl" mb={2} fontFamily="Inter">
+            <Heading color={oppositeBgColor} fontSize="xl" mb={2} fontFamily="Inter">
               macOS
             </Heading>
-            <Icon as={AiFillApple} h={90} w={90} />
+            <Icon as={AiFillApple} color={oppositeBgColor} h={90} w={90} />
           </CardBody>
           <CardFooter fontFamily="Inter">
             <Button
               w="full"
               as="a"
               href="https://www.guilded.gg/ReGuilded/groups/k3yaNW83/channels/e194cb81-5ea5-4e32-a44d-f5ba816e3cf5/docs/344767"
+              bgColor={oppositeBgColor}
+              color={bgColor}
             >
               {t("commonWord.download", { ns: "common" })}
             </Button>
           </CardFooter>
         </Card>
 
-        <Card w={"15rem"} bg="gray.800">
+        <Card
+          w={"15rem"}
+          bg={bgColor}
+          variant={"elevated"}
+        >
           <CardBody
             display="flex"
             flexDir="column"
             justifyContent="center"
             alignItems="center"
           >
-            <Heading fontSize="xl" mb={2} fontFamily="Inter">
+            <Heading color={oppositeBgColor} fontSize="xl" mb={2} fontFamily="Inter">
               Linux
             </Heading>
-            <Icon as={DiLinux} h={90} w={90} />
+            <Icon as={DiLinux} color={oppositeBgColor} h={90} w={90} />
           </CardBody>
           <CardFooter fontFamily="Inter">
             <Button
               w="full"
               as="a"
               href="https://www.guilded.gg/ReGuilded/groups/k3yaNW83/channels/e194cb81-5ea5-4e32-a44d-f5ba816e3cf5/docs/344767"
+              bgColor={oppositeBgColor}
+              color={bgColor}
             >
               {t("commonWord.download", { ns: "common" })}
             </Button>
