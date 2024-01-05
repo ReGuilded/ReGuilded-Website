@@ -48,11 +48,11 @@ const SocialButton = ({
 
 export default function SmallWithLogoLeft() {
   const router = useRouter();
+  const oppositeBgColor = useColorModeValue("gray.800", "gray.100");
 
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
-      color={useColorModeValue("gray.700", "gray.200")}
+      color={oppositeBgColor}
     >
       <Container
         as={Stack}
@@ -65,7 +65,12 @@ export default function SmallWithLogoLeft() {
       >
         <Box display="flex" alignItems="center" gap="2">
           <Image src="/LogoTransparent.svg" height="30" width="30" alt="Logo" />
-          <Text color="red.400" fontWeight="bold" fontSize="1.4rem">
+          <Text
+            bgGradient={"linear(to-r, red.400,pink.400)"}
+            bgClip={"text"}
+            fontWeight="bold"
+            fontSize="2xl"
+          >
             ReGuilded
           </Text>
         </Box>
