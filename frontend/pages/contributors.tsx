@@ -11,7 +11,8 @@ import {
   Stack,
   chakra,
   Text,
-  useColorModeValue,
+  Container,
+  useColorModeValue, Link,
 } from "@chakra-ui/react";
 import React from "react";
 import {FaGithub} from "react-icons/fa";
@@ -431,20 +432,66 @@ export default function Contributors({data}: any) {
           ))}
         </Grid>
 
-        <Text
-          mb={10}
-          fontSize="2xl"
-          maxW={"27rem"}
-          fontFamily="Inter"
-          fontWeight={'bold'}
+
+        <Box
           color={oppositeBgColor}
         >
-          <Trans i18nKey="page.specialThanks" t={t}>
-            Special thanks to the
-            <chakra.span fontWeight="extrabold">Guilded team</chakra.span> for allowing
-            this project to exist 💖
-          </Trans>
-        </Text>
+          <Container
+            as={Stack}
+            maxW={"100%"}
+            direction={{ base: "column", md: "row" }}
+            justify={{ base: "center", md: "space-between" }}
+            align={{ base: "center", md: "center" }}
+          >
+            <Text
+              mb={10}
+              fontSize="2xl"
+              maxW={"27rem"}
+              fontFamily="Inter"
+              fontWeight={'bold'}
+              color={oppositeBgColor}
+            >
+              <Trans i18nKey="page.specialThanks" t={t}>
+                Special thanks to the
+                <chakra.span fontWeight="extrabold">Guilded team</chakra.span> for allowing
+                this project to exist 💖
+              </Trans>
+            </Text>
+
+            <Text
+              mb={10}
+              fontSize="2xl"
+              noOfLines={2}
+              fontFamily="Inter"
+              fontWeight={'bold'}
+              color={oppositeBgColor}
+            >
+              <Trans i18nKey="page.support-contribute" t={t}>
+                Like what we do? Please consider<br/>
+                <Link bgGradient={"linear(to-r, red.400,pink.400)"} bgClip={"text"}
+                      href="https://github.com/reguilded" fontWeight={"extrabold"}
+                      _hover={{
+                        bgGradient: "linear(to-r, red.500,pink.500)",
+                        transform: "translateY(-2px)",
+                        textStyle: "underline"
+                      }}
+                >
+                  contributing
+                </Link> or&nbsp;
+                <Link bgGradient={"linear(to-r, red.400,pink.400)"} bgClip={"text"}
+                      href="https://guilded.gg/reguilded/subscriptions" fontWeight={"extrabold"}
+                      _hover={{
+                        bgGradient: "linear(to-r, red.500,pink.500)",
+                        transform: "translateY(-2px)",
+                        textStyle: "underline"
+                      }}
+                >
+                  supporting
+                </Link>&nbsp;us!
+              </Trans>
+            </Text>
+          </Container>
+        </Box>
       </Box>
     </>
   );
