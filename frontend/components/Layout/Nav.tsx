@@ -31,7 +31,8 @@ import {
   Select,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon, SettingsIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import { IoLanguageOutline } from "react-icons/io5";
+import { IoLanguageOutline, IoLogoGithub } from "react-icons/io5";
+import NextLink from "next/link"
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { NextRouter, useRouter } from "next/router";
@@ -131,6 +132,14 @@ export default function Simple() {
             </HStack>
           </HStack>
           <Flex alignItems={"center"} gap={3}>
+            <NextLink href={"https://github.com/reguilded"}>
+              <IconButton
+                aria-label="GitHub"
+                icon={<IoLogoGithub />}
+                variant="outline"
+                rounded="full"
+              />
+            </NextLink>
             <IconButton
               aria-label="Open preferences"
               icon={<SettingsIcon />}
