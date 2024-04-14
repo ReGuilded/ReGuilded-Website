@@ -79,6 +79,9 @@ export const contributors = [
     guildedId: "4EZypJWd",
     name: "Lilly",
     titles: ["Mac OS Tester"],
+    socials: {
+      github: "Lillyliv7"
+    }
   }
 ];
 
