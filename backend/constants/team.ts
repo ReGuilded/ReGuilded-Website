@@ -74,6 +74,11 @@ export const contributors = [
     socials: {
       github: "zaida04",
     },
+  },
+  {
+    guildedId: "4EZypJWd",
+    name: "Lilly",
+    titles: ["Mac OS Tester"],
   }
 ];
 
