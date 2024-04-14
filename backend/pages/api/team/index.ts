@@ -22,6 +22,31 @@ function runMiddleware(
     })
 }
 
+async function getGuildedUser(guildedId: string) {
+    const userResponse = await axios.get(`https://www.guilded.gg/api/users/${guildedId}/profilev3`);
+    
+    return userResponse.data;
+}
+
+async function getUserIcon(guildedId: string) {
+    return new Promise(async (resolve) => {
+        await axios.get(
+          `https://www.guilded.gg/api/v1/servers/ARmQz4mR/members/${guildedId}`,
+          {
+              headers: {
+                  Authorization: `Bearer ${process.env.GUILDED_AUTH_TOKEN}`,
+              }
+          }
+        ).then((response) => {
+            if (response.status === 200) {
+                resolve(response.data.member.user.avatar)
+            } else {
+                resolve("https://www.reguilded.dev/LogoTransparent.svg")
+            }
+        }).catch(() => { resolve("https://www.reguilded.dev/LogoTransparent.svg") })
+    })
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     await runMiddleware(req, res, cors);
     // if (req.headers.authorization !== process.env.AUTH_TOKEN) return res.status(401).json({
@@ -37,15 +62,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     for (const developer of core) {
         const { guildedId, name, titles, socials } = developer;
 
-        const response = await axios.get(
-            `https://www.guilded.gg/api/users/${guildedId}/profilev3`,
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.GUILDED_API}`,
-                },
-            }
-        );
-        const { data } = response;
+        const userData = await getGuildedUser(guildedId);
+        const userIcon = await getUserIcon(guildedId);
 
         coreDevelopersObject.push({
             guildedId,
@@ -53,23 +71,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             titles,
             github: socials.github,
             twitter: socials.twitter ? socials.twitter : null,
-            bio: data.aboutInfo ? data.aboutInfo.tagLine : null,
-            profilePicture: data.profilePicture,
+            bio: userData.aboutInfo ? userData.aboutInfo.tagLine : null,
+            profilePicture: userIcon,
         });
     }
 
     for (const contributor of contributors) {
         const { guildedId, name, titles, socials } = contributor;
 
-        const response = await axios.get(
-            `https://www.guilded.gg/api/users/${guildedId}/profilev3`,
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.GUILDED_API}`,
-                },
-            }
-        );
-        const { data } = response;
+        const userData = await getGuildedUser(guildedId);
+        const userIcon = await getUserIcon(guildedId);
 
         contributorsObject.push({
             guildedId,
@@ -77,23 +88,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             titles,
             github: socials?.github,
             twitter: socials?.twitter ? socials?.twitter : null,
-            bio: data.aboutInfo ? data.aboutInfo.tagLine : null,
-            profilePicture: data.profilePicture,
+            bio: userData.aboutInfo ? userData.aboutInfo.tagLine : null,
+            profilePicture: userIcon,
         });
     }
 
     for (const socialMediaManager of social) {
         const { guildedId, name, titles, socials } = socialMediaManager;
 
-        const response = await axios.get(
-            `https://www.guilded.gg/api/users/${guildedId}/profilev3`,
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.GUILDED_API}`,
-                },
-            }
-        );
-        const { data } = response;
+        const userData = await getGuildedUser(guildedId);
+        const userIcon = await getUserIcon(guildedId);
 
         socialMediaManagersObject.push({
             guildedId,
@@ -101,23 +105,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             titles,
             github: socials?.github,
             twitter: socials?.twitter ? socials?.twitter : null,
-            bio: data.aboutInfo ? data.aboutInfo.tagLine : null,
-            profilePicture: data.profilePicture,
+            bio: userData.aboutInfo ? userData.aboutInfo.tagLine : null,
+            profilePicture: userIcon,
         });
     }
 
     for (const translator of translators) {
         const {guildedId, name, titles, socials} = translator;
 
-        const response = await axios.get(
-            `https://www.guilded.gg/api/users/${guildedId}/profilev3`,
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.GUILDED_API}`,
-                },
-            }
-        );
-        const {data} = response;
+        const userData = await getGuildedUser(guildedId);
+        const userIcon = await getUserIcon(guildedId);
 
         translatorsObject.push({
             guildedId,
@@ -125,8 +122,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             titles,
             github: socials?.github,
             twitter: socials?.twitter ? socials?.twitter : null,
-            bio: data.aboutInfo ? data.aboutInfo.tagLine : null,
-            profilePicture: data.profilePicture,
+            bio: userData.aboutInfo ? userData.aboutInfo.tagLine : null,
+            profilePicture: userIcon,
         });
     }
 
