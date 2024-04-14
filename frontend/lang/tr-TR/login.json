@@ -1,9 +1,9 @@
 {
-  "tab.title": "Login • ReGuilded",
-  "page.header": "Enter the world of <1>Customization</1>.",
-  "loginModel.header": "Join ReGuilded<1>!</1>",
-  "loginModel.description": "We're always welcoming new members like you to create your own enhancements for Guilded.",
-  "loginModel.option.google": "Sign in with Google",
-  "loginModel.option.github": "Sign in with GitHub",
-  "loginModel.option.guilded": "Sign in with Guilded"
+  "tab.title": "Giriş Yap • ReGuilded",
+  "page.header": "<1>Özelleştirmenin</1> dünyasına giriş yapın.",
+  "loginModel.header": "ReGuilded'a katılın<1>!</1>",
+  "loginModel.description": "Guilded için kendi geliştirmelerinizi yaratmak üzere sizin gibi yeni üyeleri her zaman memnuniyetle karşılıyoruz.",
+  "loginModel.option.google": "Google ile Giriş Yap",
+  "loginModel.option.github": "Github ile Giriş Yap",
+  "loginModel.option.guilded": "Guilded ile Giriş Yap"
 }
