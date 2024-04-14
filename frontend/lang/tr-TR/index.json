@@ -1,9 +1,9 @@
 {
   "tab.title": "ReGuilded",
-  "hero.header": "Enhancing Guilded <1 /> <2>with ReGuilded</2>",
-  "hero.description": "ReGuilded is a client injector mod that allows you to extend the functionality of Guilded's client by providing theme and add-on support.",
-  "features.header": "What <1>ReGuilded</1> has to offer",
-  "features.themes.description": "Choose from many well-crafted themes to experience on Guilded. Or, you can also create your own to build your own experience.",
-  "features.addons.description": "Extend Guilded with addons. Addons can be used to add new features to Guilded, or to modify existing features.",
-  "features.sounds.description": "Add sounds to Guilded. Build your own soundpacks, or use one of the many soundpacks from the community."
+  "hero.header": "<2>ReGuilded ile</2> Guilded'ı geliştirmek<1 />",
+  "hero.description": "ReGuilded, tema ve eklenti desteği sağlayarak Guilded'in istemcisinin işlevselliğini genişletmenize olanak tanıyan bir istemci enjektör modudur.",
+  "features.header": "<1>ReGuilded'in</1> sundukları",
+  "features.themes.description": "Guilded'da deneyimlemek için bir çok güzel tasarlanmış bir sürü temalardan seçin. Yada, kendi deneyiminiz için kendi temanızı yapabilirsiniz.",
+  "features.addons.description": "Guilded'ı eklentiler ile genişletin. Eklentiler yeni özellikler eklemek, veya var olan özellikleri geliştirmek için kullanılabilir.",
+  "features.sounds.description": "Guilded'a sesler ekleyin. Kendi ses paketlerinizi oluşturun, veya topluluk tarafından oluşturulmuş bir sürü ses paketlerinden birini kullanın."
 }
